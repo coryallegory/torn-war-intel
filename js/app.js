@@ -1286,13 +1286,28 @@
 
             const attackUrl = `https://www.torn.com/loader.php?sid=attack&user2ID=${p.id}`;
 
-            // Render last action as minutes:seconds when a timestamp is available
-            let lastActionDisplay = p.last_action?.relative ?? "--";
+            // Render last action as minutes:seconds, include hours when > 60 minutes,
+            // and color-code the text: green (<15m), red (>1h), default otherwise.
+            let lastActionDisplayText = p.last_action?.relative ?? "--";
+            let lastActionClass = "";
             if (p.last_action && p.last_action.timestamp) {
                 const delta = Math.max(0, nowSec - Number(p.last_action.timestamp));
-                const mins = Math.floor(delta / 60);
+                const hours = Math.floor(delta / 3600);
+                const mins = Math.floor((delta % 3600) / 60);
                 const secs = delta % 60;
-                lastActionDisplay = `${mins}m ${secs}s`;
+                if (hours > 0) {
+                    lastActionDisplayText = `${hours}h ${mins}m ${secs}s`;
+                } else {
+                    lastActionDisplayText = `${mins}m ${secs}s`;
+                }
+
+                if (delta < 15 * 60) {
+                    lastActionClass = "state-green";
+                } else if (delta > 60 * 60) {
+                    lastActionClass = "state-red";
+                } else {
+                    lastActionClass = "";
+                }
             }
 
             // Choose a color for the status dot: prefer explicit `status.color` if present,
@@ -1313,7 +1328,7 @@
                 <td><span class="status-dot" style="background:${statusDotColor}"></span>${p.name}</td>
                 <td>${p.level}</td>
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
-                <td>${lastActionDisplay}</td>
+                <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
                 <td><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"}</a></td>
             `;
 
