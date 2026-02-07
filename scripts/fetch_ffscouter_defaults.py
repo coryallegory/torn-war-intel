@@ -97,7 +97,20 @@ def fetch_torn_faction_members(faction_id, torn_key, timeout=15):
         elif isinstance(data.get('members'), list):
             members_raw = data.get('members')
 
-    return members_raw
+    # Resolve a friendly faction name from several possible shapes
+    resolved_name = None
+    try:
+        if isinstance(faction, dict):
+            resolved_name = faction.get('name') or (faction.get('basic') or {}).get('name')
+        if not resolved_name and isinstance(data, dict):
+            resolved_name = data.get('name') or (data.get('basic') or {}).get('name')
+    except Exception:
+        resolved_name = None
+
+    if not resolved_name:
+        resolved_name = f"Faction {faction_id}"
+
+    return members_raw, resolved_name
 
 
 def extract_player_ids(members_raw):
@@ -226,7 +239,7 @@ def main():
 
     print(f'Fetching faction members for faction {faction_id}...')
     try:
-        members_raw = fetch_torn_faction_members(faction_id, torn_key)
+        members_raw, faction_name = fetch_torn_faction_members(faction_id, torn_key)
     except Exception as e:
         print('Failed to fetch faction members:', e)
         sys.exit(1)
@@ -249,12 +262,18 @@ def main():
         except Exception as e:
             print(f'  Batch {i//args.batch + 1} failed:', e)
 
-    # Write output
+    # Write output with metadata
     out_path = args.out
+    out_obj = {
+        'faction_id': int(faction_id) if str(faction_id).isdigit() else faction_id,
+        'faction_name': faction_name,
+        'generated_at': int(time.time()),
+        'data': all_map
+    }
     try:
         with open(out_path, 'w', encoding='utf-8') as f:
-            json.dump(all_map, f, indent=2, ensure_ascii=False)
-        print(f'Wrote {len(all_map)} entries to {out_path}')
+            json.dump(out_obj, f, indent=2, ensure_ascii=False)
+        print(f'Wrote {len(all_map)} entries to {out_path} (faction: {faction_name})')
     except Exception as e:
         print('Failed to write output file:', e)
         sys.exit(1)
