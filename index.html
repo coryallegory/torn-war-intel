@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,128 +9,70 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div id="app-container">
-
-        <section id="meta-section" class="panel grouped-panel">
-
-            <!-- API Key+User Box -->
-            <div id="apikey-box">
-                <p class="storage-note">This web app runs entirely on your device and only calls official Torn APIs and FFScouter.
-To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
-
-                <div class="apikey-grid">
-                    <div class="apikey-row">
-                        <div class="apikey-control-group">
-                            <div class="apikey-input-row" id="apikey-input-row">
-                                <input type="text" id="apikey-input" placeholder="Torn API Key (Public)">
-                                <button id="apikey-apply">Apply</button>
-                            </div>
-                            <div class="apikey-display-row hidden" id="apikey-display-row">
-                                <div id="apikey-prompt" class="apikey-prompt">Torn API Key (Public)</div>
-                                <button id="apikey-clear" class="clear-button" aria-label="Clear Torn API key">&times;</button>
-                            </div>
-                            <div class="apikey-meta-row">
-                                <span class="apikey-subtext">Required for data updates</span>
-                                <label class="remember-toggle" id="apikey-remember-wrap">
-                                    <input type="checkbox" id="apikey-remember">
-                                    <span>Remember on this device</span>
-                                </label>
-                            </div>
+    <main id="app-container">
+        <header>
+            <h1 class="app-title">Torn War Intel</h1>
+        </header>
+        <section id="apikey-section" class="panel">
+            <form id="apikey-form" autocomplete="off">
+                <div class="apikey-row apikey-row-clean">
+                    <div class="apikey-input-group apikey-field">
+                        <label for="apikey-input" class="visually-hidden">Torn API Key (Public)</label>
+                        <input type="text" id="apikey-input" placeholder="Torn API Key (Public)" aria-label="Torn API Key (Public)">
+                        <div class="apikey-subtext-remember">
+                            <span class="apikey-subtext">Required for data updates</span>
+                            <label class="remember-toggle" for="apikey-remember">
+                                <input type="checkbox" id="apikey-remember">
+                                <span>Remember</span>
+                            </label>
                         </div>
-                        <span id="apikey-status" class="status-text status-error inline-status">No API key loaded</span>
                     </div>
-
-                    <div class="apikey-row">
-                        <div class="apikey-control-group">
-                            <div class="apikey-input-row" id="ffapikey-input-row">
-                                <input type="text" id="ffapikey-input" placeholder="FFScouter API Key">
-                                <button id="ffapikey-apply">Apply</button>
-                            </div>
-                            <div class="apikey-display-row hidden" id="ffapikey-display-row">
-                                <div id="ffapikey-prompt" class="apikey-prompt">FFScouter API Key</div>
-                                <button id="ffapikey-clear" class="clear-button" aria-label="Clear FFScouter API key">&times;</button>
-                            </div>
-                            <div class="apikey-meta-row">
-                                <span class="apikey-subtext">Optional, used for Battle Stat Estimates</span>
-                                <label class="remember-toggle" id="ffapikey-remember-wrap">
-                                    <input type="checkbox" id="ffapikey-remember">
-                                    <span>Remember on this device</span>
-                                </label>
-                            </div>
-                        </div>
-                        <span id="ffapikey-status" class="status-text status-error inline-status">Not configured</span>
+                    <div class="apikey-refresh-group apikey-field">
+                        <label for="refresh-period-input" class="visually-hidden">Refresh period (seconds)</label>
+                        <input type="number" id="refresh-period-input" min="10" value="10" class="refresh-period-input" placeholder="s" aria-label="Refresh period (seconds)">
+                        <span class="refresh-label">Refresh seconds</span>
+                    </div>
+                    <div class="apikey-apply-group apikey-field">
+                        <button id="apikey-apply" class="apikey-apply" type="submit">Apply</button>
                     </div>
                 </div>
-
-                <div id="userinfo-box" class="userinfo-box hidden">
-                    <div id="user-info-content"></div>
+                <span id="apikey-status" class="status-text status-error inline-status" role="status">No API key loaded</span>
+                <div class="apikey-row" id="settings-row">
+                    <span id="settings-status" class="status-text inline-status hidden">Settings saved</span>
                 </div>
-            </div>
-
-            <div id="settings-row" class="apikey-row">
-                <div class="apikey-control-group">
-                    <div class="apikey-input-row">
-                        <input type="number" id="faction-id-input" placeholder="Faction ID (optional)">
-                        <input type="number" id="refresh-period-input" min="10" value="10" style="width:120px;" placeholder="Refresh (s)">
-                        <button id="settings-apply">Apply</button>
-                    </div>
-                    <div class="apikey-meta-row">
-                        <span class="apikey-subtext">Set faction for quick lookups and global refresh period for data polling (seconds).</span>
-                    </div>
-                </div>
-                <span id="settings-status" class="status-text inline-status hidden">Settings saved</span>
-            </div>
-
-            <!-- faction results now appear directly in the Faction/Players tables when a Faction ID is set -->
-
-            <!-- Team list removed — app manages a single Faction only -->
-
-            <!-- Shared metadata refresh indicator -->
-            <div class="refresh-indicator top-right">
-                <span id="metadata-refresh-icon" class="spinner hidden"></span>
-                <div><span id="metadata-refresh-timer">Next refresh: --</span></div>
-                <div><small id="metadata-last-run" class="last-run">Last: --</small></div>
-            </div>
+            </form>
+            <p class="apikey-note">
+                This web app runs entirely on your device and only calls official Torn APIs. To avoid rate-limit issues, keep only one tab open with the same API key.
+            </p>
         </section>
-
-        <!-- PLAYER LIST + FILTERS -->
+        <aside class="refresh-indicator" aria-live="polite">
+            <span id="metadata-refresh-icon" class="spinner hidden" aria-hidden="true"></span>
+            <div><span id="metadata-refresh-timer">Next refresh: --</span></div>
+            <div><small id="metadata-last-run" class="last-run">Last: --</small></div>
+        </aside>
         <section id="player-section" class="panel">
-
-            <h2 id="players-title">Faction Players</h2>
-
-            <div id="team-data-refresh-box" class="refresh-indicator top-right">
-                <span id="team-refresh-icon" class="spinner hidden"></span>
-                <div><span id="team-refresh-timer">Next refresh: --</span></div>
-                <div><small id="team-last-run" class="last-run">Last: --</small></div>
-            </div>
-
-            <!-- Filters -->
-            <div id="player-filters">
-                <label class="range-label">Level:
-                    <input type="number" id="level-min" class="range-input" value="0">
+            <h2 id="players-title">Faction Members</h2>
+            <form id="player-filters" autocomplete="off">
+                <label class="range-label" for="level-min">Level:
+                    <input type="number" id="level-min" class="range-input" value="0" min="0" max="100" aria-label="Minimum level">
                     to
-                    <input type="number" id="level-max" class="range-input" value="100">
+                    <input type="number" id="level-max" class="range-input" value="100" min="0" max="100" aria-label="Maximum level">
                 </label>
-
-                <label class="range-label">BStats:
-                    <input type="text" id="bs-min" class="range-input" placeholder="min">
+                <label class="range-label" for="bs-min">BStats:
+                    <input type="text" id="bs-min" class="range-input" placeholder="min" aria-label="Minimum battle stats">
                     to
-                    <input type="text" id="bs-max" class="range-input" placeholder="max">
+                    <input type="text" id="bs-max" class="range-input" placeholder="max" aria-label="Maximum battle stats">
                 </label>
-
-                <label>
+                <label for="filter-okay-only">
                     <input type="checkbox" id="filter-okay-only"> "Okay" only
                 </label>
-
-                <label>
+                <label for="location-filter">
                     Location:
                     <select id="location-filter">
                         <option value="all">All</option>
                     </select>
                 </label>
-            </div>
-
+            </form>
             <div class="table-wrapper">
                 <table id="player-table">
                     <thead>
@@ -137,22 +81,17 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
                             <th data-col="name">Name</th>
                             <th data-col="level">Level</th>
                             <th data-col="status">Status</th>
+                            <th data-col="until_ok">Until Ok</th>
                             <th data-col="last_action">Last Action</th>
-                            
-                            <th data-col="bs_estimate_human">Est Battlestats</th>
-                            <th class="hidden raw-data-column">Raw Data</th>
+                            <th data-col="bs_estimate_human">Battle Stats</th>
                         </tr>
                     </thead>
                     <tbody id="player-table-body"></tbody>
                 </table>
             </div>
         </section>
-
-    </div>
-
-    <script src="js/api.js"></script>
-    <script src="js/state.js"></script>
+    </main>
+    <script src="js/ffscouter_defaults.js"></script>
     <script src="js/app.js"></script>
-
 </body>
 </html>

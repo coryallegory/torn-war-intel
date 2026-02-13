@@ -1,4 +1,5 @@
-{
+// ffscouter_defaults.js - generated from ffscouter_defaults.json
+window.FFSCOUTER_DEFAULTS = {
   "faction_id": 48443,
   "faction_name": "Knockout - Ringside",
   "generated_at": 1770488161,
@@ -61,4 +62,4 @@
     "4048144": "35.8k",
     "4049574": "4.06k"
   }
-}
+};
