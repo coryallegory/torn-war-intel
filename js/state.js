@@ -2,7 +2,7 @@ window.state = {
     apikey: "",
     rememberApiKey: false,
     factionId: null,
-    refreshPeriodSeconds: 10,
+    refreshPeriodSeconds: 60,
     user: null,
     teams: [],
     selectedTeamId: null,
@@ -16,8 +16,8 @@ window.state = {
     metadataTimestamp: 0,
     factionCache: {},
 
-    METADATA_REFRESH_MS: 30000,
-    TEAM_REFRESH_MS: 10000,
+    METADATA_REFRESH_MS: 60000,
+    TEAM_REFRESH_MS: 60000,
     MIN_REFRESH_MS: 10000,
 
     loadFromStorage() {
@@ -58,8 +58,8 @@ window.state = {
             this.factionId = factionIdRaw ? (Number.isNaN(Number(factionIdRaw)) ? null : parseInt(factionIdRaw, 10)) : null;
             this.refreshPeriodSeconds = refreshSecondsRaw ? parseInt(refreshSecondsRaw, 10) : this.refreshPeriodSeconds;
             // apply refresh period to ms settings
-            this.METADATA_REFRESH_MS = (this.refreshPeriodSeconds || 30) * 1000;
-            this.TEAM_REFRESH_MS = (this.refreshPeriodSeconds || 30) * 1000;
+            this.METADATA_REFRESH_MS = (this.refreshPeriodSeconds || 60) * 1000;
+            this.TEAM_REFRESH_MS = (this.refreshPeriodSeconds || 60) * 1000;
             localStorage.removeItem("hidePinkPowerTeam");
             localStorage.removeItem("ffapikey");
             localStorage.removeItem("rememberFfApiKey");
@@ -91,7 +91,7 @@ window.state = {
     },
 
     saveRefreshPeriod(seconds) {
-        const sec = Number(seconds) || 30;
+        const sec = Number(seconds) || 60;
         this.refreshPeriodSeconds = sec;
         localStorage.setItem("refreshPeriodSeconds", String(sec));
         this.METADATA_REFRESH_MS = sec * 1000;
