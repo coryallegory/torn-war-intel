@@ -621,10 +621,26 @@
 
         const payload = await ffDefaultsPromise;
         const map = new Map();
-        const raw = payload && payload.data && typeof payload.data === "object" ? payload.data : {};
-        Object.entries(raw).forEach(([id, val]) => {
+        const raw = payload && payload.data;
+
+        if (Array.isArray(raw)) {
+            raw.forEach(entry => {
+                if (!entry || typeof entry !== "object") return;
+                const id = Number(entry.player_id ?? entry.playerId ?? entry.id ?? entry.user_id ?? entry.userId);
+                if (Number.isNaN(id)) return;
+                const val = entry.bs_estimate_human ?? entry.bs_estimate ?? entry.bs;
+                if (val === null || val === undefined || val === "") return;
+                map.set(id, String(val));
+            });
+            return map;
+        }
+
+        const legacyMap = raw && typeof raw === "object" ? raw : {};
+        Object.entries(legacyMap).forEach(([id, val]) => {
             const num = Number(id);
-            if (!Number.isNaN(num)) map.set(num, val);
+            if (Number.isNaN(num)) return;
+            if (val === null || val === undefined || val === "") return;
+            map.set(num, String(val));
         });
         return map;
     }
