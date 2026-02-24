@@ -136,9 +136,14 @@
         dom.apikeyRememberWrap.classList.add("hidden");
     }
 
+    function extractUserProfile(data) {
+        if (!data) return null;
+        return data.profile || (data.name ? data : null);
+    }
+
     function init() {
         state.loadFromStorage();
-        dom.apikeyRemember.checked = state.rememberApiKey;
+        if (dom.apikeyRemember) dom.apikeyRemember.checked = state.rememberApiKey;
         dom.apikeyInput.value = "";
 
         // settings inputs
@@ -186,7 +191,7 @@
                 showNoKey();
                 return;
             }
-            state.saveApiKey(key, dom.apikeyRemember.checked);
+            state.saveApiKey(key, dom.apikeyRemember ? dom.apikeyRemember.checked : false);
             validateAndStart();
         });
 
@@ -235,16 +240,17 @@
         setStatus(dom.apikeyStatus, "Validating...", false, false);
 
         const data = await api.getUser(state.apikey);
-        if (data.error || !data.profile) {
+        const profile = extractUserProfile(data);
+        if (!profile || data.error) {
             stopIntervals();
             clearAuthenticatedState();
             state.clearApiKey();
-            dom.apikeyRemember.checked = false;
+            if (dom.apikeyRemember) dom.apikeyRemember.checked = false;
             showNoKey("API key invalid");
             return;
         }
 
-        state.user = await attachOfflineTeamToUser(data.profile);
+        state.user = await attachOfflineTeamToUser(profile);
         enforcePinkPowerRestriction(state.user);
         setStatus(dom.apikeyStatus, "API key loaded", false, true);
         setApiKeyClearMode();
@@ -287,7 +293,7 @@
     function clearApiKeyAndUi() {
         stopIntervals();
         state.clearApiKey();
-        dom.apikeyRemember.checked = false;
+        if (dom.apikeyRemember) dom.apikeyRemember.checked = false;
         clearAuthenticatedState();
         showNoKey();
         dom.apikeyInput.focus();
@@ -311,9 +317,9 @@
 
         const refreshPromise = (async () => {
             const userData = await api.getUser(state.apikey);
-
-            if (!userData.error && userData.profile) {
-                state.user = await attachOfflineTeamToUser(userData.profile);
+            const userProfile = extractUserProfile(userData);
+            if (userProfile && !userData.error) {
+                state.user = await attachOfflineTeamToUser(userProfile);
                 enforcePinkPowerRestriction(state.user);
                 renderUserInfo();
             }
