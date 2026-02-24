@@ -221,6 +221,16 @@ tr.selected-row {
     background: #555 !important;
 }
 
+
+.claimed-row {
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
+}
+
+.claimed-cell {
+    text-align: center;
+}
+
 .eliminated-row {
     color: #ff6666;
 }

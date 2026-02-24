@@ -919,6 +919,11 @@
         renderPlayers();
     }
 
+    function handleClaimToggle(teamId, playerId, claimed) {
+        state.setPlayerClaimed(teamId, playerId, claimed);
+        renderPlayers();
+    }
+
     async function refreshTeamPlayers(force = false) {
         const teamId = state.selectedTeamId;
         if (!teamId) return;
@@ -1185,6 +1190,9 @@
                 }
             }
 
+            const isClaimed = state.isPlayerClaimed(teamId, p.id);
+            if (isClaimed) row.classList.add("claimed-row");
+
             row.innerHTML = `
                 <td><a href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.id}</a></td>
                 <td><span class="status-dot" style="background:${statusDotColor}"></span>${p.name}</td>
@@ -1192,12 +1200,21 @@
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
                 <td><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"}</a></td>
+                <td class="claimed-cell"><input type="checkbox" class="claimed-checkbox" ${isClaimed ? "checked" : ""} aria-label="Mark ${p.name} as claimed"></td>
             `;
 
             const rawCell = document.createElement("td");
             rawCell.classList.add("hidden", "raw-data-cell");
             rawCell.textContent = JSON.stringify(p.rawData || {}, null, 0);
             row.appendChild(rawCell);
+
+            const claimCheckbox = row.querySelector(".claimed-checkbox");
+            if (claimCheckbox) {
+                claimCheckbox.addEventListener("click", event => event.stopPropagation());
+                claimCheckbox.addEventListener("change", event => {
+                    handleClaimToggle(teamId, p.id, event.target.checked);
+                });
+            }
 
             if (selectedPlayerId === p.id) row.classList.add("selected-row");
             row.addEventListener("click", () => handlePlayerSelect(teamId, p.id));
