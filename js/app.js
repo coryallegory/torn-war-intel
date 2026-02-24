@@ -558,6 +558,7 @@
             timestamp: lastActionRaw.timestamp ?? null
         };
         const canonicalLocation = player.location ?? determinePlayerLocation(status);
+        const fairFight = deriveFairFightValue(player);
         const bsEstimateHuman = player.bs_estimate_human === undefined ? "--" : player.bs_estimate_human;
         const bsEstimateNumeric = deriveBsEstimateNumber(player);
         const attacks = player.attacks ?? "--";
@@ -568,6 +569,7 @@
             last_action: lastAction,
             location: canonicalLocation,
             rawData: rawData || { ...rest },
+            fair_fight: fairFight,
             bs_estimate_human: bsEstimateHuman,
             bs_estimate: bsEstimateNumeric,
             attacks
@@ -602,10 +604,16 @@
             if (playerId === null || playerId === undefined) return;
 
             const numericId = Number(playerId);
-            const val = statsMap.get(numericId);
-            if (val !== undefined) {
-                p.bs_estimate_human = val;
+            const stats = statsMap.get(numericId);
+            if (!stats) return;
+
+            if (stats.bs_estimate_human !== undefined) {
+                p.bs_estimate_human = stats.bs_estimate_human;
                 p.bs_estimate = deriveBsEstimateNumber(p);
+            }
+
+            if (stats.fair_fight !== undefined && stats.fair_fight !== null) {
+                p.fair_fight = stats.fair_fight;
             }
         });
     }
@@ -628,9 +636,13 @@
                 if (!entry || typeof entry !== "object") return;
                 const id = Number(entry.player_id ?? entry.playerId ?? entry.id ?? entry.user_id ?? entry.userId);
                 if (Number.isNaN(id)) return;
-                const val = entry.bs_estimate_human ?? entry.bs_estimate ?? entry.bs;
-                if (val === null || val === undefined || val === "") return;
-                map.set(id, String(val));
+                const bsVal = entry.bs_estimate_human ?? entry.bs_estimate ?? entry.bs;
+                const fairFight = parseFairFightValue(entry.fair_fight ?? entry.fairFight ?? entry.ff);
+                if ((bsVal === null || bsVal === undefined || bsVal === "") && (fairFight === null || fairFight === undefined)) return;
+                map.set(id, {
+                    bs_estimate_human: bsVal === null || bsVal === undefined || bsVal === "" ? undefined : String(bsVal),
+                    fair_fight: fairFight
+                });
             });
             return map;
         }
@@ -640,7 +652,7 @@
             const num = Number(id);
             if (Number.isNaN(num)) return;
             if (val === null || val === undefined || val === "") return;
-            map.set(num, String(val));
+            map.set(num, { bs_estimate_human: String(val), fair_fight: undefined });
         });
         return map;
     }
@@ -780,6 +792,8 @@
                 return player.last_action?.relative || null;
             case "bs_estimate_human":
                 return parseBattlestatValue(player.bs_estimate_human);
+            case "fair_fight":
+                return parseFairFightValue(player.fair_fight);
             case "id":
             case "level":
             case "attacks":
@@ -805,6 +819,19 @@
         const numeric = parseFloat(cleaned);
         if (Number.isNaN(numeric)) return lower;
         return numeric * multiplier;
+    }
+
+    function parseFairFightValue(value) {
+        if (value === undefined || value === null || value === "--") return null;
+        if (typeof value === "number") return Number.isNaN(value) ? null : value;
+
+        const numeric = Number(value);
+        if (Number.isNaN(numeric)) return null;
+        return numeric;
+    }
+
+    function deriveFairFightValue(player) {
+        return parseFairFightValue(player?.fair_fight);
     }
 
     function deriveBsEstimateNumber(player) {
@@ -1199,6 +1226,7 @@
                 <td>${p.level}</td>
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
+                <td>${p.fair_fight ?? "--"}</td>
                 <td><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"}</a></td>
                 <td class="claimed-cell"><input type="checkbox" class="claimed-checkbox" ${isClaimed ? "checked" : ""} aria-label="Mark ${p.name} as claimed"></td>
             `;
