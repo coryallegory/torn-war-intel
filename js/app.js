@@ -9,16 +9,6 @@
         apikeyClear: document.getElementById("apikey-clear"),
         apikeyPrompt: document.getElementById("apikey-prompt"),
         apikeyDisplayRow: document.getElementById("apikey-display-row"),
-        ffapikeyInput: document.getElementById("ffapikey-input"),
-        ffapikeyInputRow: document.getElementById("ffapikey-input-row"),
-        ffapikeyRemember: document.getElementById("ffapikey-remember"),
-        ffapikeyRememberWrap: document.getElementById("ffapikey-remember-wrap"),
-        ffapikeyStatus: document.getElementById("ffapikey-status"),
-        ffapikeyApply: document.getElementById("ffapikey-apply"),
-        ffapikeyClear: document.getElementById("ffapikey-clear"),
-        ffapikeyPrompt: document.getElementById("ffapikey-prompt"),
-        ffapikeyDisplayRow: document.getElementById("ffapikey-display-row"),
-        factionIdInput: document.getElementById("faction-id-input"),
         refreshPeriodInput: document.getElementById("refresh-period-input"),
         settingsApply: document.getElementById("settings-apply"),
         settingsStatus: document.getElementById("settings-status"),
@@ -146,30 +136,12 @@
         dom.apikeyRememberWrap.classList.add("hidden");
     }
 
-    function setFfApiKeyApplyMode() {
-        dom.ffapikeyInputRow.classList.remove("hidden");
-        dom.ffapikeyDisplayRow.classList.add("hidden");
-        dom.ffapikeyPrompt.classList.add("hidden");
-        dom.ffapikeyRememberWrap.classList.remove("hidden");
-    }
-
-    function setFfApiKeyClearMode() {
-        dom.ffapikeyInput.value = "";
-        dom.ffapikeyInputRow.classList.add("hidden");
-        dom.ffapikeyDisplayRow.classList.remove("hidden");
-        dom.ffapikeyPrompt.classList.remove("hidden");
-        dom.ffapikeyRememberWrap.classList.add("hidden");
-    }
-
     function init() {
         state.loadFromStorage();
         dom.apikeyRemember.checked = state.rememberApiKey;
-        dom.ffapikeyRemember.checked = state.rememberFfApiKey;
         dom.apikeyInput.value = "";
-        dom.ffapikeyInput.value = "";
 
         // settings inputs
-        if (state.factionId) dom.factionIdInput.value = state.factionId;
         if (state.refreshPeriodSeconds) dom.refreshPeriodInput.value = state.refreshPeriodSeconds;
 
         if (dom.metadataLastRun && state.metadataTimestamp) {
@@ -208,12 +180,6 @@
             // no static snapshot usage — leave UI empty until API key provided
         }
 
-        if (state.ffapikey) {
-            validateFfApiKey(true);
-        } else {
-            showNoFfKey();
-        }
-
         dom.apikeyApply.addEventListener("click", () => {
             const key = dom.apikeyInput.value.trim();
             if (!key) {
@@ -228,24 +194,11 @@
             clearApiKeyAndUi();
         });
 
-        dom.ffapikeyApply.addEventListener("click", () => {
-            const key = dom.ffapikeyInput.value.trim();
-            if (!key) {
-                clearFfApiKeyAndUi();
-                return;
-            }
-            state.saveFfApiKey(key, dom.ffapikeyRemember.checked);
-            validateFfApiKey();
-        });
-
         dom.settingsApply.addEventListener("click", () => {
-            const factionVal = dom.factionIdInput.value.trim();
             const refreshVal = dom.refreshPeriodInput.value.trim();
-
-            const faction = factionVal === "" ? null : Number(factionVal);
+            const faction = Number(state.factionId);
             const refreshSec = refreshVal === "" ? 30 : Number(refreshVal);
 
-            state.saveFactionId(faction);
             state.saveRefreshPeriod(refreshSec);
 
             setStatus(dom.settingsStatus, "Settings saved", false, false);
@@ -263,37 +216,16 @@
                         existing.unshift({ id: teamKey, name: `Faction ${faction}`, participants: (state.teamPlayers[teamKey] || []).length });
                         state.teams = existing;
                         state.cacheMetadata(state.user, state.teams);
-                        // If an FFScouter key is configured and valid, fetch BS estimates once now
-                        if (state.ffApiKeyValid && state.ffapikey) {
-                            const playersForBs = state.teamPlayers[teamKey] || [];
-                            try {
-                                await maybeFetchFfScouterStats(playersForBs);
-                                state.cacheTeamPlayers(teamKey, playersForBs);
-                            } catch (err) {
-                                console.warn('FFScouter one-shot fetch failed', err);
-                            }
-                        }
-
                         renderTeams();
                         renderPlayers();
                     } catch (err) {
                         console.warn('Failed to fetch faction members', err);
                     }
                 })();
-            } else {
-                // clear managed faction
-                state.saveSelectedTeamId(null);
-                state.saveFactionId(null);
-                if (dom.playersTitle) dom.playersTitle.textContent = 'Faction Players';
-                renderPlayers();
             }
         });
 
         // when settings are applied we will handle faction ID refresh behavior
-
-        dom.ffapikeyClear.addEventListener("click", () => {
-            clearFfApiKeyAndUi();
-        });
 
         attachFilterListeners();
         attachSortListeners();
@@ -363,71 +295,6 @@
     }
 
     // static snapshot loading removed — caching now only in localStorage via state.*
-
-    function showNoFfKey() {
-        state.ffApiKeyValid = false;
-        state.clearFfApiKey();
-        setFfApiKeyApplyMode();
-        dom.ffapikeyInput.value = "";
-        setStatus(dom.ffapikeyStatus, "Not configured", true, false);
-    }
-
-    async function validateFfApiKey(isInit = false) {
-        const key = state.ffapikey;
-        if (!key) {
-            showNoFfKey();
-            return;
-        }
-
-        setStatus(dom.ffapikeyStatus, "Validating...", false, false);
-
-        const data = await api.checkFfKey(key);
-        const valid = data && !data.error && (data.valid === true || data.success === true || data.status === "ok" || data.ok === true || data.authorized === true || (!("valid" in data) && !("success" in data) && !data.status));
-
-        if (!valid) {
-            state.ffApiKeyValid = false;
-            state.clearFfApiKey();
-            dom.ffapikeyRemember.checked = false;
-            setStatus(dom.ffapikeyStatus, data && data.error ? "FFScouter key invalid" : "FFScouter key rejected", true, false);
-            setFfApiKeyApplyMode();
-            return;
-        }
-
-        state.ffApiKeyValid = true;
-        const label = data && (data.message || data.status_message || data.status) ? (data.message || data.status_message || data.status) : "FFScouter key accepted";
-        setStatus(dom.ffapikeyStatus, label, false, true);
-
-        setFfApiKeyClearMode();
-
-        if (!isInit && state.selectedTeamId) {
-            const teamId = state.selectedTeamId;
-            if (typeof teamId === 'string' && teamId.startsWith('faction:')) {
-                const factionId = teamId.split(':')[1];
-                try {
-                    await fetchAndCacheFactionMembers(factionId, true);
-                    const players = state.teamPlayers[teamId] || [];
-                    try {
-                        await maybeFetchFfScouterStats(players);
-                        state.cacheTeamPlayers(teamId, players);
-                    } catch (err) {
-                        console.warn('FFScouter one-shot fetch failed during key apply', err);
-                    }
-                    renderPlayers();
-                } catch (err) {
-                    console.warn('Failed to refresh faction when applying FF key', err);
-                }
-            }
-        }
-    }
-
-    function clearFfApiKeyAndUi() {
-        state.clearFfApiKey();
-        dom.ffapikeyRemember.checked = false;
-        setFfApiKeyApplyMode();
-        dom.ffapikeyInput.value = "";
-        showNoFfKey();
-        dom.ffapikeyInput.focus();
-    }
 
     async function refreshMetadata(force = false) {
         if (metadataRefreshInFlight) {
@@ -726,64 +593,41 @@
     }
 
     async function maybeFetchFfScouterStats(players) {
-        if (!state.ffApiKeyValid || !state.ffapikey || !players.length) return;
-        const ids = players
-            .map(getPlayerIdentifier)
-            .filter(id => id !== null && id !== undefined);
-        if (!ids.length) return;
+        if (!players.length) return;
+        const statsMap = await getDefaultFfStatsMap();
+        if (!statsMap.size) return;
 
-        const idsCsv = ids.join(",");
+        players.forEach(p => {
+            const playerId = getPlayerIdentifier(p);
+            if (playerId === null || playerId === undefined) return;
 
-        try {
-            const data = await api.getFfStats(state.ffapikey, idsCsv);
-            const statsMap = buildFfStatsMap(data);
-            if (!statsMap.size) {
-                console.warn('FFScouter returned no stats for ids:', idsCsv, data);
+            const numericId = Number(playerId);
+            const val = statsMap.get(numericId);
+            if (val !== undefined) {
+                p.bs_estimate_human = val;
+                p.bs_estimate = deriveBsEstimateNumber(p);
             }
-            players.forEach(p => {
-                const playerId = getPlayerIdentifier(p);
-                if (playerId === null || playerId === undefined) return;
-
-                const numericId = Number(playerId);
-                const val = statsMap.get(numericId);
-                if (val !== undefined) {
-                    p.bs_estimate_human = val;
-                    p.bs_estimate = deriveBsEstimateNumber(p);
-                }
-            });
-        } catch (err) {
-            console.error("Failed to fetch FFScouter stats", err);
-        }
+        });
     }
 
-    function buildFfStatsMap(resp) {
+    let ffDefaultsPromise = null;
+
+    async function getDefaultFfStatsMap() {
+        if (!ffDefaultsPromise) {
+            ffDefaultsPromise = fetch('ffscouter_defaults.json', { cache: "no-store" })
+                .then(resp => resp.ok ? resp.json() : null)
+                .catch(() => null);
+        }
+
+        const payload = await ffDefaultsPromise;
         const map = new Map();
-        if (!resp || resp.error) return map;
-
-        const entries = Array.isArray(resp)
-            ? resp
-            : Array.isArray(resp?.results)
-                ? resp.results
-                : Array.isArray(resp?.data)
-                    ? resp.data
-                    : [];
-
-        entries.forEach(entry => addStatEntryToMap(map, entry));
-
+        const raw = payload && payload.data && typeof payload.data === "object" ? payload.data : {};
+        Object.entries(raw).forEach(([id, val]) => {
+            const num = Number(id);
+            if (!Number.isNaN(num)) map.set(num, val);
+        });
         return map;
     }
-
-    function addStatEntryToMap(map, entry) {
-        if (!entry) return;
-
-        const possibleId = entry.player_id ?? entry.playerId ?? entry.id ?? entry.user_id ?? entry.userId;
-        const id = Number(possibleId);
-        const bs = entry?.bs_estimate_human ?? entry?.bs_estimate ?? entry?.bs;
-        if (Number.isNaN(id) || bs === undefined) return;
-
-        map.set(id, bs);
-    }
-
     function hasMeaningfulBsValue(value) {
         if (value === null || value === undefined) return false;
         if (typeof value === "string") return value.trim() !== "" && value !== "--";
@@ -792,9 +636,9 @@
     }
 
     function preserveCachedBattleStats(teamId, players) {
-        // Preserve previously-cached FFScouter battlestat estimates when refreshing
+        // Preserve previously-cached battlestat estimates when refreshing
         // the player list. Do not remove existing estimates unless replaced by
-        // new values returned by FFScouter.
+        // new values from ffscouter_defaults.json.
         const existing = state.teamPlayers[teamId];
         if (!Array.isArray(existing) || !existing.length) return players;
 
@@ -1085,6 +929,7 @@
             if (cached && Array.isArray(cached.members) && cached.members.length) {
                         let players = cached.members.map(m => ensurePlayerDefaults({ id: (m.player_id ?? m.id), name: m.name, level: m.level, status: m.status || { state: 'Okay' }, last_action: m.last_action || {}, rawData: m }));
                         players = preserveCachedBattleStats(teamKey, players);
+                        await maybeFetchFfScouterStats(players);
                         state.cacheTeamPlayers(teamKey, players);
                 if (dom.playersTitle) {
                     const name = cached.name || `Faction ${factionId}`;
@@ -1123,6 +968,7 @@
 
         // Merge previously cached battlestats so we don't drop them on refresh
         players = preserveCachedBattleStats(teamKey, players);
+        await maybeFetchFfScouterStats(players);
 
         // Cache the faction data with a normalized name field to simplify later reads
         const factionToCache = { ...faction, name: resolvedName };
@@ -1435,6 +1281,23 @@
         return !dom.playerTableBody.closest("section").classList.contains("hidden");
     }
 
+
+    async function loadFfDefaultsConfig() {
+        try {
+            const resp = await fetch('ffscouter_defaults.json', { cache: 'no-store' });
+            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+            const payload = await resp.json();
+            const factionId = Number(payload && payload.faction_id);
+            if (!Number.isNaN(factionId) && factionId > 0) {
+                state.saveFactionId(factionId);
+                const teamKey = `faction:${factionId}`;
+                state.saveSelectedTeamId(teamKey);
+            }
+        } catch (err) {
+            console.warn('Failed to load ffscouter defaults', err);
+        }
+    }
+
     window.app = {
         init,
         simplifyStatus,
@@ -1445,5 +1308,8 @@
         renderPlayers
     };
 
-    init();
+    (async () => {
+        await loadFfDefaultsConfig();
+        init();
+    })();
 })();

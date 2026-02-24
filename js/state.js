@@ -1,9 +1,6 @@
 window.state = {
     apikey: "",
-    ffapikey: "",
-    ffApiKeyValid: false,
     rememberApiKey: false,
-    rememberFfApiKey: false,
     factionId: null,
     refreshPeriodSeconds: 10,
     user: null,
@@ -24,13 +21,9 @@ window.state = {
 
     loadFromStorage() {
         const rememberApiKeyRaw = localStorage.getItem("rememberApiKey");
-        const rememberFfApiKeyRaw = localStorage.getItem("rememberFfApiKey");
-
         this.rememberApiKey = rememberApiKeyRaw === "true";
-        this.rememberFfApiKey = rememberFfApiKeyRaw === "true";
 
         this.apikey = this.rememberApiKey ? (localStorage.getItem("apikey") || "") : "";
-        this.ffapikey = this.rememberFfApiKey ? (localStorage.getItem("ffapikey") || "") : "";
 
         if (!this.apikey) {
             this.clearCachedData();
@@ -53,13 +46,15 @@ window.state = {
             const factionCacheRaw = localStorage.getItem("factionCache");
             this.factionCache = factionCacheRaw ? JSON.parse(factionCacheRaw) : {};
             this.metadataTimestamp = metadataTs ? parseInt(metadataTs, 10) : 0;
-            this.selectedTeamId = selectedTeamRaw ? parseInt(selectedTeamRaw, 10) : null;
+            this.selectedTeamId = selectedTeamRaw || null;
             this.factionId = factionIdRaw ? (Number.isNaN(Number(factionIdRaw)) ? null : parseInt(factionIdRaw, 10)) : null;
             this.refreshPeriodSeconds = refreshSecondsRaw ? parseInt(refreshSecondsRaw, 10) : this.refreshPeriodSeconds;
             // apply refresh period to ms settings
             this.METADATA_REFRESH_MS = (this.refreshPeriodSeconds || 30) * 1000;
             this.TEAM_REFRESH_MS = (this.refreshPeriodSeconds || 30) * 1000;
             localStorage.removeItem("hidePinkPowerTeam");
+            localStorage.removeItem("ffapikey");
+            localStorage.removeItem("rememberFfApiKey");
             this.hidePinkPowerTeam = false;
         } catch (err) {
             console.error("Failed to restore cached state", err);
@@ -111,17 +106,8 @@ window.state = {
         localStorage.removeItem("metadataTimestamp");
         localStorage.removeItem("selectedTeamId");
         localStorage.removeItem("hidePinkPowerTeam");
-    },
-
-    saveFfApiKey(key, rememberKey = false) {
-        this.ffapikey = key;
-        this.rememberFfApiKey = rememberKey;
-        localStorage.setItem("rememberFfApiKey", rememberKey ? "true" : "false");
-        if (rememberKey) {
-            localStorage.setItem("ffapikey", key);
-        } else {
-            localStorage.removeItem("ffapikey");
-        }
+        localStorage.removeItem("ffapikey");
+        localStorage.removeItem("rememberFfApiKey");
     },
 
     clearApiKey() {
@@ -130,15 +116,6 @@ window.state = {
         localStorage.removeItem("apikey");
         localStorage.setItem("rememberApiKey", "false");
     },
-
-    clearFfApiKey() {
-        this.ffapikey = "";
-        this.ffApiKeyValid = false;
-        this.rememberFfApiKey = false;
-        localStorage.removeItem("ffapikey");
-        localStorage.setItem("rememberFfApiKey", "false");
-    },
-
     cacheMetadata(user, teams) {
         this.user = user;
         // If a factionId is set, persist only that single faction as the managed "team"
@@ -169,6 +146,8 @@ window.state = {
     hidePinkPowerPermanently() {
         this.hidePinkPowerTeam = false;
         localStorage.removeItem("hidePinkPowerTeam");
+        localStorage.removeItem("ffapikey");
+        localStorage.removeItem("rememberFfApiKey");
     },
 
     cacheTeamPlayers(teamId, players) {
