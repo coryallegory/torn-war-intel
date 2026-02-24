@@ -14,7 +14,7 @@
 
             <!-- API Key+User Box -->
             <div id="apikey-box">
-                <p class="storage-note">This web app runs entirely on your device and only calls official Torn APIs and FFScouter.
+                <p class="storage-note">This web app runs entirely on your device and only calls official Torn APIs.
 To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
 
                 <div class="apikey-grid">
@@ -39,26 +39,6 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
                         <span id="apikey-status" class="status-text status-error inline-status">No API key loaded</span>
                     </div>
 
-                    <div class="apikey-row">
-                        <div class="apikey-control-group">
-                            <div class="apikey-input-row" id="ffapikey-input-row">
-                                <input type="text" id="ffapikey-input" placeholder="FFScouter API Key">
-                                <button id="ffapikey-apply">Apply</button>
-                            </div>
-                            <div class="apikey-display-row hidden" id="ffapikey-display-row">
-                                <div id="ffapikey-prompt" class="apikey-prompt">FFScouter API Key</div>
-                                <button id="ffapikey-clear" class="clear-button" aria-label="Clear FFScouter API key">&times;</button>
-                            </div>
-                            <div class="apikey-meta-row">
-                                <span class="apikey-subtext">Optional, used for Battle Stat Estimates</span>
-                                <label class="remember-toggle" id="ffapikey-remember-wrap">
-                                    <input type="checkbox" id="ffapikey-remember">
-                                    <span>Remember on this device</span>
-                                </label>
-                            </div>
-                        </div>
-                        <span id="ffapikey-status" class="status-text status-error inline-status">Not configured</span>
-                    </div>
                 </div>
 
                 <div id="userinfo-box" class="userinfo-box hidden">
@@ -69,12 +49,11 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
             <div id="settings-row" class="apikey-row">
                 <div class="apikey-control-group">
                     <div class="apikey-input-row">
-                        <input type="number" id="faction-id-input" placeholder="Faction ID (optional)">
                         <input type="number" id="refresh-period-input" min="10" value="10" style="width:120px;" placeholder="Refresh (s)">
                         <button id="settings-apply">Apply</button>
                     </div>
                     <div class="apikey-meta-row">
-                        <span class="apikey-subtext">Set faction for quick lookups and global refresh period for data polling (seconds).</span>
+                        <span class="apikey-subtext">Faction ID is loaded from ffscouter_defaults.json; set global refresh period for data polling (seconds).</span>
                     </div>
                 </div>
                 <span id="settings-status" class="status-text inline-status hidden">Settings saved</span>
