@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,40 +8,30 @@
 </head>
 <body>
     <main id="app-container">
-        <header>
-            <h1 class="app-title">Torn War Intel</h1>
-        </header>
-        <section id="apikey-section" class="panel">
-            <form id="apikey-form" autocomplete="off">
-                <div class="apikey-row apikey-row-clean">
-                    <div class="apikey-input-group apikey-field">
-                        <label for="apikey-input" class="visually-hidden">Torn API Key (Public)</label>
-                        <input type="text" id="apikey-input" placeholder="Torn API Key (Public)" aria-label="Torn API Key (Public)">
-                        <div class="apikey-subtext-remember">
-                            <span class="apikey-subtext">Required for data updates</span>
-                            <label class="remember-toggle" for="apikey-remember">
-                                <input type="checkbox" id="apikey-remember">
-                                <span>Remember</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="apikey-refresh-group apikey-field">
-                        <label for="refresh-period-input" class="visually-hidden">Refresh period (seconds)</label>
-                        <input type="number" id="refresh-period-input" min="10" value="10" class="refresh-period-input" placeholder="s" aria-label="Refresh period (seconds)">
-                        <span class="refresh-label">Refresh seconds</span>
-                    </div>
-                    <div class="apikey-apply-group apikey-field">
-                        <button id="apikey-apply" class="apikey-apply" type="submit">Apply</button>
-                    </div>
-                </div>
-                <span id="apikey-status" class="status-text status-error inline-status" role="status">No API key loaded</span>
-                <div class="apikey-row" id="settings-row">
-                    <span id="settings-status" class="status-text inline-status hidden">Settings saved</span>
-                </div>
-            </form>
-            <p class="apikey-note">
+        <section id="settings-section" class="panel">
+            <p class="settings-label">
                 This web app runs entirely on your device and only calls official Torn APIs. To avoid rate-limit issues, keep only one tab open with the same API key.
             </p>
+            <form id="settings-form" autocomplete="off">
+                <div class="settings-row settings-row-clean">
+                    <div class="settings-input-group settings-field" id="settings-apikey-input-group">
+                        <div class="settings-input-wrapper" id="settings-apikey-input-wrapper">
+                            <input type="text" id="apikey" class="settings-input" placeholder="Torn API Key (Public)" aria-label="Torn API Key (Public)">
+                            <button type="button" id="apikey-clear" class="settings-clear hidden" aria-label="Clear API Key">✕</button>
+                        </div>
+                        <div id="apikey-status" class="settings-label status-message"></div>
+                    </div>
+                    <div class="settings-refresh-group settings-field">
+                        <label class="settings-label" for="refresh-period">Refresh Period (sec)</label>
+                        <input type="number" id="refresh-period" class="settings-input" min="1" max="3600" value="10" placeholder="s" aria-label="Refresh period (seconds)">
+                    </div>
+                    <div class="settings-apply-group settings-field">
+                        <button id="apikey-apply" class="settings-apply" type="submit">Apply</button>
+                        <span id="refresh-icon" class="refresh-icon hidden"></span>
+                    </div>
+                </div>
+            </form>
+            <span id="settings-status" class="settings-label inline-status hidden">Settings saved</span>
         </section>
         <aside class="refresh-indicator" aria-live="polite">
             <span id="metadata-refresh-icon" class="spinner hidden" aria-hidden="true"></span>
@@ -91,7 +79,8 @@
             </div>
         </section>
     </main>
-    <script src="js/ffscouter_defaults.js"></script>
+    <script src="js/ffscouter_defaults.json"></script>
+    <script src="js/state.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

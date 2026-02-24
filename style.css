@@ -1,3 +1,171 @@
+/* Condensed Settings Section */
+.settings-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: nowrap;
+    margin-bottom: 2px;
+    box-sizing: border-box;
+    padding: 0;
+}
+.settings-row-clean {
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 0;
+}
+.settings-input-group {
+    flex: 2 1 180px;
+    min-width: 120px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-sizing: border-box;
+    padding: 0;
+}
+.settings-refresh-group {
+    flex: 1 1 80px;
+    min-width: 60px;
+    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    box-sizing: border-box;
+    padding: 0;
+}
+.settings-apply-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 60px;
+    padding: 0;
+}
+.settings-apply {
+    flex: 0 0 auto;
+    min-width: 70px;
+    align-self: flex-end;
+    padding: 4px 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    background: #3a7afe;
+    color: #fff;
+    border: none;
+    box-shadow: 0 1px 4px rgba(58,122,254,0.08);
+    transition: background 0.2s;
+    font-weight: 600;
+    height: 32px;
+}
+.settings-apply:hover {
+    background: #265edb;
+}
+.settings-label {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 10px;
+    min-width: 120px;
+}
+.settings-input {
+    font-size: 1rem;
+    padding: 4px 8px;
+    width: 220px;
+    margin-right: 8px;
+}
+.settings-clear {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: -28px;
+    z-index: 2;
+    position: relative;
+    transition: color 0.2s;
+}
+.settings-clear:hover {
+    color: #c00;
+}
+.settings-input-group input[type="text"],
+.settings-refresh-group input[type="number"] {
+    height: 32px;
+    font-size: 15px;
+    padding: 4px 8px;
+    margin-bottom: 0;
+}
+.settings-subtext-remember {
+    margin-top: 0;
+    gap: 6px;
+}
+
+.settings-row .status-error {
+/* removed stray closing brace */
+    color: #ff6666;
+}
+.settings-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media (max-width: 900px) {
+        .settings-row, .settings-row-clean {
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .settings-input-group, .settings-refresh-group, .settings-apply-group {
+            min-width: 0;
+            max-width: 100%;
+            flex: 1 1 100%;
+        }
+    }
+    @media (max-width: 600px) {
+        .settings-row, .settings-row-clean {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+        }
+        .settings-row input,
+        .settings-row button {
+            width: 100%;
+        }
+        .settings-input-group {
+            min-width: 0;
+        }
+        .settings-refresh-group {
+            min-width: 0;
+            max-width: 100%;
+        }
+        .settings-apply-group {
+            min-width: 0;
+            width: 100%;
+        }
+        .settings-apply {
+            min-width: 0;
+            width: 100%;
+        }
+    }
+}
+.settings-apikey-clear {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #ff6666;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    z-index: 2;
+}
+.settings-apikey-clear:hover {
+    color: #fff;
+    opacity: 1;
+}
 /* ========== CLEANED & CONSOLIDATED CSS ========== */
 html, body {
     background: #181a1b;
@@ -12,15 +180,6 @@ html, body {
     max-width: 900px;
     margin: 32px auto 0 auto;
     padding: 0 16px 32px 16px;
-}
-
-.app-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0 0 24px 0;
-    color: #fff;
-    text-align: center;
 }
 
 .panel {
@@ -59,6 +218,7 @@ html, body {
     align-items: center;
     justify-content: flex-end;
     min-width: 90px;
+        font-size: 13px;
 }
 }
 .apikey-input-group {
@@ -71,9 +231,9 @@ html, body {
     box-sizing: border-box;
 }
 .apikey-refresh-group {
-    flex: 1 1 100px;
-    min-width: 100px;
-    max-width: 140px;
+        flex: 1 1 140px;
+        min-width: 120px;
+        max-width: 180px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -82,10 +242,13 @@ html, body {
 }
 .apikey-apply {
     flex: 0 0 auto;
-    min-width: 90px;
-    align-self: flex-end;
-    padding: 8px 20px;
-    font-size: 16px;
+        height: 32px;
+        font-size: 15px;
+        padding: 4px 8px;
+        margin-bottom: 0;
+        width: 100%;
+        min-width: 100px;
+        max-width: 160px;
     border-radius: 6px;
     background: #3a7afe;
     color: #fff;
@@ -161,11 +324,7 @@ button:hover {
 }
 
 /* Status/Error Text */
-.status-text {
-    font-size: 0.98rem;
-    font-weight: 500;
-    margin-top: 2px;
-}
+
 .status-error {
     color: #ff6666;
 }
@@ -175,6 +334,11 @@ button:hover {
 }
 .hidden {
     display: none !important;
+}
+.status-message {
+    color: #c00;
+    font-size: 0.95rem;
+    margin-left: 10px;
 }
 
 /* Table Styles */
@@ -270,7 +434,8 @@ tr:hover td {
     animation: spin 1s linear infinite;
 }
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Color States */
