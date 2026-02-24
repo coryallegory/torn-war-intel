@@ -7,6 +7,7 @@ window.state = {
     teams: [],
     selectedTeamId: null,
     selectedPlayersByTeam: {},
+    claimedPlayersByTeam: {},
 
     hidePinkPowerTeam: false,
 
@@ -20,6 +21,13 @@ window.state = {
     MIN_REFRESH_MS: 10000,
 
     loadFromStorage() {
+        try {
+            const claimedPlayersRaw = localStorage.getItem("claimedPlayersByTeam");
+            this.claimedPlayersByTeam = claimedPlayersRaw ? JSON.parse(claimedPlayersRaw) : {};
+        } catch (err) {
+            this.claimedPlayersByTeam = {};
+        }
+
         const rememberApiKeyRaw = localStorage.getItem("rememberApiKey");
         this.rememberApiKey = rememberApiKeyRaw === "true";
 
@@ -108,6 +116,33 @@ window.state = {
         localStorage.removeItem("hidePinkPowerTeam");
         localStorage.removeItem("ffapikey");
         localStorage.removeItem("rememberFfApiKey");
+    },
+
+    setPlayerClaimed(teamId, playerId, claimed) {
+        if (teamId === null || teamId === undefined || playerId === null || playerId === undefined) return;
+
+        const teamKey = String(teamId);
+        const playerKey = String(playerId);
+        this.claimedPlayersByTeam = this.claimedPlayersByTeam || {};
+        this.claimedPlayersByTeam[teamKey] = this.claimedPlayersByTeam[teamKey] || {};
+
+        if (claimed) {
+            this.claimedPlayersByTeam[teamKey][playerKey] = true;
+        } else if (this.claimedPlayersByTeam[teamKey]) {
+            delete this.claimedPlayersByTeam[teamKey][playerKey];
+            if (Object.keys(this.claimedPlayersByTeam[teamKey]).length === 0) {
+                delete this.claimedPlayersByTeam[teamKey];
+            }
+        }
+
+        localStorage.setItem("claimedPlayersByTeam", JSON.stringify(this.claimedPlayersByTeam));
+    },
+
+    isPlayerClaimed(teamId, playerId) {
+        if (teamId === null || teamId === undefined || playerId === null || playerId === undefined) return false;
+        const teamKey = String(teamId);
+        const playerKey = String(playerId);
+        return Boolean(this.claimedPlayersByTeam?.[teamKey]?.[playerKey]);
     },
 
     clearApiKey() {
