@@ -138,7 +138,7 @@
 
     function init() {
         state.loadFromStorage();
-        dom.apikeyRemember.checked = state.rememberApiKey;
+        if (dom.apikeyRemember) dom.apikeyRemember.checked = state.rememberApiKey;
         dom.apikeyInput.value = "";
 
         // settings inputs
@@ -180,21 +180,21 @@
             // no static snapshot usage — leave UI empty until API key provided
         }
 
-        dom.apikeyApply.addEventListener("click", () => {
+        if (dom.apikeyApply) dom.apikeyApply.addEventListener("click", () => {
             const key = dom.apikeyInput.value.trim();
             if (!key) {
                 showNoKey();
                 return;
             }
-            state.saveApiKey(key, dom.apikeyRemember.checked);
+            state.saveApiKey(key, dom.apikeyRemember ? dom.apikeyRemember.checked : false);
             validateAndStart();
         });
 
-        dom.apikeyClear.addEventListener("click", () => {
+        if (dom.apikeyClear) dom.apikeyClear.addEventListener("click", () => {
             clearApiKeyAndUi();
         });
 
-        dom.settingsApply.addEventListener("click", () => {
+        if (dom.settingsApply) dom.settingsApply.addEventListener("click", () => {
             const refreshVal = dom.refreshPeriodInput.value.trim();
             const faction = Number(state.factionId);
             const refreshSec = refreshVal === "" ? 30 : Number(refreshVal);
@@ -239,7 +239,7 @@
             stopIntervals();
             clearAuthenticatedState();
             state.clearApiKey();
-            dom.apikeyRemember.checked = false;
+            if (dom.apikeyRemember) dom.apikeyRemember.checked = false;
             showNoKey("API key invalid");
             return;
         }
@@ -287,7 +287,7 @@
     function clearApiKeyAndUi() {
         stopIntervals();
         state.clearApiKey();
-        dom.apikeyRemember.checked = false;
+        if (dom.apikeyRemember) dom.apikeyRemember.checked = false;
         clearAuthenticatedState();
         showNoKey();
         dom.apikeyInput.focus();
