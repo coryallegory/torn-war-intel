@@ -197,7 +197,7 @@
         if (dom.settingsApply) dom.settingsApply.addEventListener("click", () => {
             const refreshVal = dom.refreshPeriodInput.value.trim();
             const faction = Number(state.factionId);
-            const refreshSec = refreshVal === "" ? 60 : Number(refreshVal);
+            const refreshSec = refreshVal === "" ? 30 : Number(refreshVal);
 
             state.saveRefreshPeriod(refreshSec);
 
