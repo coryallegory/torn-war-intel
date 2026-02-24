@@ -1217,25 +1217,12 @@
                 }
             }
 
-            // Choose a color for the status dot: prefer explicit `status.color` if present,
-            // otherwise fall back to state-derived colors.
-            let statusDotColor = (p.status && p.status.color) ? p.status.color : null;
-            if (!statusDotColor) {
-                switch (p.status?.state) {
-                    case "Hospital": statusDotColor = "orange"; break;
-                    case "Traveling":
-                    case "Abroad": statusDotColor = "blue"; break;
-                    case "Okay": statusDotColor = "green"; break;
-                    default: statusDotColor = "gray"; break;
-                }
-            }
-
             const isClaimed = state.isPlayerClaimed(teamId, p.id);
             if (isClaimed) row.classList.add("claimed-row");
 
             row.innerHTML = `
                 <td><a href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.id}</a></td>
-                <td><span class="status-dot" style="background:${statusDotColor}"></span>${p.name}</td>
+                <td>${p.name}</td>
                 <td>${p.level}</td>
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
