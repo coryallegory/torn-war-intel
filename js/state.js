@@ -58,8 +58,8 @@ window.state = {
             this.factionId = factionIdRaw ? (Number.isNaN(Number(factionIdRaw)) ? null : parseInt(factionIdRaw, 10)) : null;
             this.refreshPeriodSeconds = refreshSecondsRaw ? parseInt(refreshSecondsRaw, 10) : this.refreshPeriodSeconds;
             // apply refresh period to ms settings
-            this.METADATA_REFRESH_MS = (this.refreshPeriodSeconds || 30) * 1000;
-            this.TEAM_REFRESH_MS = (this.refreshPeriodSeconds || 30) * 1000;
+            this.METADATA_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 30000;
+            this.TEAM_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 10000;
             localStorage.removeItem("hidePinkPowerTeam");
             localStorage.removeItem("ffapikey");
             localStorage.removeItem("rememberFfApiKey");

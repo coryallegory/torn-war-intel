@@ -253,6 +253,7 @@
         dom.userBox.classList.remove("hidden");
 
         renderUserInfo();
+        startMetadataCountdown();
         startTeamCountdown();
         if (state.selectedTeamId) {
             refreshTeamPlayers(true);
