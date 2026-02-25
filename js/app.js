@@ -244,18 +244,50 @@
         contentEl.classList.toggle("is-collapsed", isCollapsed);
     }
 
+    function getSectionStorageKey(contentEl) {
+        if (!contentEl?.id) return null;
+        return `sectionCollapsed:${contentEl.id}`;
+    }
+
+    function loadCollapsedState(contentEl) {
+        const key = getSectionStorageKey(contentEl);
+        if (!key) return null;
+
+        const value = localStorage.getItem(key);
+        if (value === "true") return true;
+        if (value === "false") return false;
+        return null;
+    }
+
+    function saveCollapsedState(contentEl, isCollapsed) {
+        const key = getSectionStorageKey(contentEl);
+        if (!key) return;
+        localStorage.setItem(key, String(Boolean(isCollapsed)));
+    }
+
+    function restoreSectionCollapsedState(toggleBtn, contentEl) {
+        if (!toggleBtn || !contentEl) return;
+        const savedState = loadCollapsedState(contentEl);
+        if (savedState === null) return;
+        setCollapsedState(toggleBtn, contentEl, savedState);
+    }
+
     function attachSectionToggles() {
         if (dom.metaToggle && dom.metaContent) {
+            restoreSectionCollapsedState(dom.metaToggle, dom.metaContent);
             dom.metaToggle.addEventListener("click", () => {
                 const expanded = dom.metaToggle.getAttribute("aria-expanded") === "true";
                 setCollapsedState(dom.metaToggle, dom.metaContent, expanded);
+                saveCollapsedState(dom.metaContent, expanded);
             });
         }
 
         if (dom.filtersToggle && dom.filtersContent) {
+            restoreSectionCollapsedState(dom.filtersToggle, dom.filtersContent);
             dom.filtersToggle.addEventListener("click", () => {
                 const expanded = dom.filtersToggle.getAttribute("aria-expanded") === "true";
                 setCollapsedState(dom.filtersToggle, dom.filtersContent, expanded);
+                saveCollapsedState(dom.filtersContent, expanded);
             });
         }
     }
