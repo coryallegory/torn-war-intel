@@ -11,63 +11,70 @@
     <div id="app-container">
 
         <section id="meta-section" class="panel grouped-panel">
+            <button id="meta-toggle" class="section-toggle" type="button" aria-expanded="true" aria-controls="meta-content">
+                <span>Metadata</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+            </button>
 
-            <!-- API Key+User Box -->
-            <div id="apikey-box">
-                <p class="storage-note">This web app runs entirely on your device and only calls official Torn APIs.
+            <div id="meta-content" class="collapsible-content metadata-content">
+
+                <!-- API Key+User Box -->
+                <div id="apikey-box">
+                    <p class="storage-note">This web app runs entirely on your device and only calls official Torn APIs.
 To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
 
-                <div class="apikey-grid">
-                    <div class="apikey-row">
-                        <div class="apikey-control-group">
-                            <div class="apikey-input-row" id="apikey-input-row">
-                                <input type="text" id="apikey-input" placeholder="Torn API Key (Public)">
-                                <button id="apikey-apply">Apply</button>
+                    <div class="apikey-grid">
+                        <div class="apikey-row">
+                            <div class="apikey-control-group">
+                                <div class="apikey-input-row" id="apikey-input-row">
+                                    <input type="text" id="apikey-input" placeholder="Torn API Key (Public)">
+                                    <button id="apikey-apply">Apply</button>
+                                </div>
+                                <div class="apikey-display-row hidden" id="apikey-display-row">
+                                    <div id="apikey-prompt" class="apikey-prompt">Torn API Key (Public)</div>
+                                    <button id="apikey-clear" class="clear-button" aria-label="Clear Torn API key">&times;</button>
+                                </div>
+                                <div class="apikey-meta-row">
+                                    <span class="apikey-subtext">Required for data updates</span>
+                                    <label class="remember-toggle" id="apikey-remember-wrap">
+                                        <input type="checkbox" id="apikey-remember">
+                                        <span>Remember on this device</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="apikey-display-row hidden" id="apikey-display-row">
-                                <div id="apikey-prompt" class="apikey-prompt">Torn API Key (Public)</div>
-                                <button id="apikey-clear" class="clear-button" aria-label="Clear Torn API key">&times;</button>
-                            </div>
-                            <div class="apikey-meta-row">
-                                <span class="apikey-subtext">Required for data updates</span>
-                                <label class="remember-toggle" id="apikey-remember-wrap">
-                                    <input type="checkbox" id="apikey-remember">
-                                    <span>Remember on this device</span>
-                                </label>
-                            </div>
+                            <span id="apikey-status" class="status-text status-error inline-status">No API key loaded</span>
                         </div>
-                        <span id="apikey-status" class="status-text status-error inline-status">No API key loaded</span>
+
                     </div>
 
-                </div>
-
-                <div id="userinfo-box" class="userinfo-box hidden">
-                    <div id="user-info-content"></div>
-                </div>
-            </div>
-
-            <div id="settings-row" class="apikey-row">
-                <div class="apikey-control-group">
-                    <div class="apikey-input-row">
-                        <input type="number" id="refresh-period-input" min="10" value="10" style="width:120px;" placeholder="Refresh (s)">
-                        <button id="settings-apply">Apply</button>
-                    </div>
-                    <div class="apikey-meta-row">
-                        <span class="apikey-subtext">Faction ID is loaded from ffscouter_defaults.json; set global refresh period for data polling (seconds).</span>
+                    <div id="userinfo-box" class="userinfo-box hidden">
+                        <div id="user-info-content"></div>
                     </div>
                 </div>
-                <span id="settings-status" class="status-text inline-status hidden">Settings saved</span>
-            </div>
 
-            <!-- faction results now appear directly in the Faction/Players tables when a Faction ID is set -->
+                <div id="settings-row" class="apikey-row">
+                    <div class="apikey-control-group">
+                        <div class="apikey-input-row">
+                            <input type="number" id="refresh-period-input" min="10" value="10" style="width:120px;" placeholder="Refresh (s)">
+                            <button id="settings-apply">Apply</button>
+                        </div>
+                        <div class="apikey-meta-row">
+                            <span class="apikey-subtext">Faction ID is loaded from ffscouter_defaults.json; set global refresh period for data polling (seconds).</span>
+                        </div>
+                    </div>
+                    <span id="settings-status" class="status-text inline-status hidden">Settings saved</span>
+                </div>
 
-            <!-- Team list removed — app manages a single Faction only -->
+                <!-- faction results now appear directly in the Faction/Players tables when a Faction ID is set -->
 
-            <!-- Shared metadata refresh indicator -->
-            <div class="refresh-indicator top-right">
-                <span id="metadata-refresh-icon" class="spinner hidden"></span>
-                <div><span id="metadata-refresh-timer">Next refresh: --</span></div>
-                <div><small id="metadata-last-run" class="last-run">Last: --</small></div>
+                <!-- Team list removed — app manages a single Faction only -->
+
+                <!-- Shared metadata refresh indicator -->
+                <div class="refresh-indicator top-right">
+                    <span id="metadata-refresh-icon" class="spinner hidden"></span>
+                    <div><span id="metadata-refresh-timer">Next refresh: --</span></div>
+                    <div><small id="metadata-last-run" class="last-run">Last: --</small></div>
+                </div>
             </div>
         </section>
 
@@ -83,35 +90,42 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
             </div>
 
             <!-- Filters -->
-            <div id="player-filters">
-                <label class="range-label">Level:
-                    <input type="number" id="level-min" class="range-input" value="0">
-                    to
-                    <input type="number" id="level-max" class="range-input" value="100">
-                </label>
+            <button id="filters-toggle" class="section-toggle filters-toggle" type="button" aria-expanded="true" aria-controls="filters-content">
+                <span>Filters</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+            </button>
 
-                <label class="range-label">BStats:
-                    <input type="text" id="bs-min" class="range-input" placeholder="min">
-                    to
-                    <input type="text" id="bs-max" class="range-input" placeholder="max">
-                </label>
+            <div id="filters-content" class="collapsible-content">
+                <div id="player-filters">
+                    <label class="range-label">Level:
+                        <input type="number" id="level-min" class="range-input" value="0">
+                        to
+                        <input type="number" id="level-max" class="range-input" value="100">
+                    </label>
 
-                <label class="range-label">Fair Fight:
-                    <input type="number" id="fair-fight-min" class="range-input" placeholder="min" step="0.01">
-                    to
-                    <input type="number" id="fair-fight-max" class="range-input" placeholder="max" step="0.01">
-                </label>
+                    <label class="range-label">BStats:
+                        <input type="text" id="bs-min" class="range-input" placeholder="min">
+                        to
+                        <input type="text" id="bs-max" class="range-input" placeholder="max">
+                    </label>
 
-                <label>
-                    <input type="checkbox" id="filter-okay-only"> "Okay" only
-                </label>
+                    <label class="range-label">Fair Fight:
+                        <input type="number" id="fair-fight-min" class="range-input" placeholder="min" step="0.01">
+                        to
+                        <input type="number" id="fair-fight-max" class="range-input" placeholder="max" step="0.01">
+                    </label>
 
-                <label>
-                    Location:
-                    <select id="location-filter">
-                        <option value="all">All</option>
-                    </select>
-                </label>
+                    <label>
+                        <input type="checkbox" id="filter-okay-only"> "Okay" only
+                    </label>
+
+                    <label>
+                        Location:
+                        <select id="location-filter">
+                            <option value="all">All</option>
+                        </select>
+                    </label>
+                </div>
             </div>
 
             <div class="table-wrapper">

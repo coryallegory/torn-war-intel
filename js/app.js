@@ -12,6 +12,10 @@
         refreshPeriodInput: document.getElementById("refresh-period-input"),
         settingsApply: document.getElementById("settings-apply"),
         settingsStatus: document.getElementById("settings-status"),
+        metaToggle: document.getElementById("meta-toggle"),
+        metaContent: document.getElementById("meta-content"),
+        filtersToggle: document.getElementById("filters-toggle"),
+        filtersContent: document.getElementById("filters-content"),
         
         userBox: document.getElementById("userinfo-box"),
         userInfoContent: document.getElementById("user-info-content"),
@@ -231,6 +235,29 @@
 
         attachFilterListeners();
         attachSortListeners();
+        attachSectionToggles();
+    }
+
+    function setCollapsedState(toggleBtn, contentEl, isCollapsed) {
+        if (!toggleBtn || !contentEl) return;
+        toggleBtn.setAttribute("aria-expanded", String(!isCollapsed));
+        contentEl.classList.toggle("is-collapsed", isCollapsed);
+    }
+
+    function attachSectionToggles() {
+        if (dom.metaToggle && dom.metaContent) {
+            dom.metaToggle.addEventListener("click", () => {
+                const expanded = dom.metaToggle.getAttribute("aria-expanded") === "true";
+                setCollapsedState(dom.metaToggle, dom.metaContent, expanded);
+            });
+        }
+
+        if (dom.filtersToggle && dom.filtersContent) {
+            dom.filtersToggle.addEventListener("click", () => {
+                const expanded = dom.filtersToggle.getAttribute("aria-expanded") === "true";
+                setCollapsedState(dom.filtersToggle, dom.filtersContent, expanded);
+            });
+        }
     }
 
     async function validateAndStart() {
