@@ -13,9 +13,9 @@
         settingsApply: document.getElementById("settings-apply"),
         settingsStatus: document.getElementById("settings-status"),
         metaToggle: document.getElementById("meta-toggle"),
-        metaContent: document.getElementById("meta-content"),
+        metaContent: document.getElementById("meta-content-body"),
         filtersToggle: document.getElementById("filters-toggle"),
-        filtersContent: document.getElementById("filters-content"),
+        filtersContent: document.getElementById("filters-content-body"),
         
         userBox: document.getElementById("userinfo-box"),
         userInfoContent: document.getElementById("user-info-content"),

@@ -28,8 +28,8 @@ h2, h3 {
 
 .grouped-panel {
     position: relative;
-    padding-top: 24px;
-    border: 1px solid #666;
+    border: 0;
+    padding: 12px;
 }
 
 .section-toggle {
@@ -46,8 +46,19 @@ h2, h3 {
     text-align: left;
 }
 
+.collapsible-content {
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 10px;
+    background: #2f2f2f;
+}
+
+.collapsible-body.is-collapsed {
+    display: none;
+}
+
 .filters-toggle {
-    margin-top: 6px;
+    margin-top: 0;
 }
 
 .toggle-icon::before {
@@ -59,11 +70,11 @@ h2, h3 {
     content: "▸";
 }
 
-.collapsible-content.is-collapsed {
-    display: none;
+.metadata-content {
+    position: relative;
 }
 
-.metadata-content {
+#meta-content-body {
     position: relative;
     padding-right: 220px;
     min-height: 56px;
@@ -344,6 +355,10 @@ tr.selected-row {
     border: 1px solid #666;
 }
 
+#filters-content {
+    margin-bottom: 10px;
+}
+
 #player-filters {
     margin-bottom: 10px;
     padding: 10px;
@@ -414,7 +429,7 @@ tr.selected-row {
         margin-right: 0;
     }
 
-    .metadata-content {
+    #meta-content-body {
         padding-right: 0;
         padding-top: 44px;
     }
