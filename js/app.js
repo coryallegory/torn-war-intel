@@ -183,9 +183,7 @@
             validateAndStart();
         } else {
             showNoKey();
-            ensureValidSelectedTeam();
-            renderTeams();
-            renderPlayers();
+            // no static snapshot usage — leave UI empty until API key provided
         }
 
         if (dom.apikeyApply) dom.apikeyApply.addEventListener("click", () => {
@@ -1435,49 +1433,10 @@
             if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
             const payload = await resp.json();
             const factionId = Number(payload && payload.faction_id);
-            const fallbackFactionName = payload?.faction_name || null;
-
             if (!Number.isNaN(factionId) && factionId > 0) {
                 state.saveFactionId(factionId);
                 const teamKey = `faction:${factionId}`;
                 state.saveSelectedTeamId(teamKey);
-
-                const defaultPlayers = Array.isArray(payload?.data)
-                    ? payload.data
-                        .map(entry => {
-                            const id = Number(entry?.player_id ?? entry?.playerId ?? entry?.id ?? entry?.user_id ?? entry?.userId);
-                            if (Number.isNaN(id)) return null;
-                            return ensurePlayerDefaults({
-                                id,
-                                name: entry?.name || `Player ${id}`,
-                                level: entry?.level || "--",
-                                status: entry?.status || { state: "--", description: "--" },
-                                last_action: entry?.last_action || {},
-                                bs_estimate_human: entry?.bs_estimate_human ?? entry?.bs_estimate ?? "--",
-                                bs_estimate: entry?.bs_estimate,
-                                fair_fight: entry?.fair_fight,
-                                rawData: entry || {}
-                            });
-                        })
-                        .filter(Boolean)
-                    : [];
-
-                if (defaultPlayers.length) {
-                    const factionName = fallbackFactionName || `Faction ${factionId}`;
-                    state.cacheTeamPlayers(teamKey, defaultPlayers);
-                    state.cacheFactionData(factionId, {
-                        name: factionName,
-                        members: defaultPlayers.map(player => ({
-                            id: player.id,
-                            player_id: player.id,
-                            name: player.name,
-                            level: player.level,
-                            status: player.status,
-                            last_action: player.last_action
-                        }))
-                    });
-                    state.teams = [{ id: teamKey, name: factionName, participants: defaultPlayers.length }];
-                }
             }
         } catch (err) {
             console.warn('Failed to load ffscouter defaults', err);
