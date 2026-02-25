@@ -1,11 +1,11 @@
 {
   "faction_id": 7074,
   "faction_name": "TNU - Headquarters",
-  "generated_at": 1771960211,
+  "generated_at": 1772061871,
   "data": [
     {
       "player_id": 882264,
-      "fair_fight": 150.87,
+      "fair_fight": 150.38,
       "bs_estimate": 2822769668,
       "bs_estimate_human": "2.82b",
       "bss_public": 104196,
@@ -13,7 +13,7 @@
     },
     {
       "player_id": 1295039,
-      "fair_fight": 165.5,
+      "fair_fight": 164.97,
       "bs_estimate": 3400691309,
       "bs_estimate_human": "3.4b",
       "bss_public": 114366,
@@ -21,7 +21,7 @@
     },
     {
       "player_id": 1877282,
-      "fair_fight": 240.81,
+      "fair_fight": 240.04,
       "bs_estimate": 7227798854,
       "bs_estimate_human": "7.23b",
       "bss_public": 166731,
@@ -29,7 +29,7 @@
     },
     {
       "player_id": 1891501,
-      "fair_fight": 16.92,
+      "fair_fight": 16.87,
       "bs_estimate": 31861674,
       "bs_estimate_human": "31.9m",
       "bss_public": 11070,
@@ -37,7 +37,7 @@
     },
     {
       "player_id": 1918740,
-      "fair_fight": 93.69,
+      "fair_fight": 93.39,
       "bs_estimate": 1079754065,
       "bs_estimate_human": "1.08b",
       "bss_public": 64443,
@@ -45,7 +45,7 @@
     },
     {
       "player_id": 1961575,
-      "fair_fight": 124.07,
+      "fair_fight": 123.67,
       "bs_estimate": 1903555999,
       "bs_estimate_human": "1.9b",
       "bss_public": 85565,
@@ -53,7 +53,7 @@
     },
     {
       "player_id": 2018391,
-      "fair_fight": 12.67,
+      "fair_fight": 12.64,
       "bs_estimate": 17126059,
       "bs_estimate_human": "17.1m",
       "bss_public": 8116,
@@ -61,7 +61,7 @@
     },
     {
       "player_id": 2098850,
-      "fair_fight": 43.65,
+      "fair_fight": 43.51,
       "bs_estimate": 228602687,
       "bs_estimate_human": "229m",
       "bss_public": 29652,
@@ -69,7 +69,7 @@
     },
     {
       "player_id": 2213705,
-      "fair_fight": 38.53,
+      "fair_fight": 38.41,
       "bs_estimate": 177033178,
       "bs_estimate_human": "177m",
       "bss_public": 26094,
@@ -77,7 +77,7 @@
     },
     {
       "player_id": 2307661,
-      "fair_fight": 51.65,
+      "fair_fight": 51.48,
       "bs_estimate": 322351776,
       "bs_estimate_human": "322m",
       "bss_public": 35211,
@@ -85,7 +85,7 @@
     },
     {
       "player_id": 2407566,
-      "fair_fight": 200.41,
+      "fair_fight": 199.77,
       "bs_estimate": 4997617083,
       "bs_estimate_human": "5b",
       "bss_public": 138642,
@@ -93,7 +93,7 @@
     },
     {
       "player_id": 2433252,
-      "fair_fight": 173.62,
+      "fair_fight": 173.07,
       "bs_estimate": 3745060875,
       "bs_estimate_human": "3.75b",
       "bss_public": 120017,
@@ -101,7 +101,7 @@
     },
     {
       "player_id": 2446170,
-      "fair_fight": 34.55,
+      "fair_fight": 34.44,
       "bs_estimate": 141466592,
       "bs_estimate_human": "141m",
       "bss_public": 23326,
@@ -109,7 +109,7 @@
     },
     {
       "player_id": 2454371,
-      "fair_fight": 72.08,
+      "fair_fight": 71.85,
       "bs_estimate": 635007464,
       "bs_estimate_human": "635m",
       "bss_public": 49420,
@@ -117,7 +117,7 @@
     },
     {
       "player_id": 2512014,
-      "fair_fight": 184.53,
+      "fair_fight": 183.93,
       "bs_estimate": 4232992196,
       "bs_estimate_human": "4.23b",
       "bss_public": 127596,
@@ -125,7 +125,7 @@
     },
     {
       "player_id": 2553072,
-      "fair_fight": 162.37,
+      "fair_fight": 161.85,
       "bs_estimate": 3272514986,
       "bs_estimate_human": "3.27b",
       "bss_public": 112190,
@@ -133,7 +133,7 @@
     },
     {
       "player_id": 2587640,
-      "fair_fight": 78.97,
+      "fair_fight": 78.72,
       "bs_estimate": 764040077,
       "bs_estimate_human": "764m",
       "bss_public": 54209,
@@ -141,7 +141,7 @@
     },
     {
       "player_id": 2683796,
-      "fair_fight": 76.62,
+      "fair_fight": 76.38,
       "bs_estimate": 718755982,
       "bs_estimate_human": "719m",
       "bss_public": 52578,
@@ -149,15 +149,15 @@
     },
     {
       "player_id": 2690944,
-      "fair_fight": 48.28,
-      "bs_estimate": 280879410,
-      "bs_estimate_human": "281m",
-      "bss_public": 32868,
-      "last_updated": 1771142333
+      "fair_fight": 50.53,
+      "bs_estimate": 310362650,
+      "bs_estimate_human": "310m",
+      "bss_public": 34550,
+      "last_updated": 1771972956
     },
     {
       "player_id": 2697728,
-      "fair_fight": 98.24,
+      "fair_fight": 97.93,
       "bs_estimate": 1188348522,
       "bs_estimate_human": "1.19b",
       "bss_public": 67606,
@@ -165,7 +165,7 @@
     },
     {
       "player_id": 2709894,
-      "fair_fight": 5.58,
+      "fair_fight": 5.57,
       "bs_estimate": 2637499,
       "bs_estimate_human": "2.64m",
       "bss_public": 3185,
@@ -173,7 +173,7 @@
     },
     {
       "player_id": 2759902,
-      "fair_fight": 5.55,
+      "fair_fight": 5.53,
       "bs_estimate": 2601188,
       "bs_estimate_human": "2.6m",
       "bss_public": 3163,
@@ -181,7 +181,7 @@
     },
     {
       "player_id": 2804195,
-      "fair_fight": 70.95,
+      "fair_fight": 70.72,
       "bs_estimate": 614943859,
       "bs_estimate_human": "615m",
       "bss_public": 48633,
@@ -189,7 +189,7 @@
     },
     {
       "player_id": 2817631,
-      "fair_fight": 112.17,
+      "fair_fight": 111.81,
       "bs_estimate": 1553093086,
       "bs_estimate_human": "1.55b",
       "bss_public": 77288,
@@ -197,7 +197,7 @@
     },
     {
       "player_id": 2818120,
-      "fair_fight": 26.02,
+      "fair_fight": 25.94,
       "bs_estimate": 78681412,
       "bs_estimate_human": "78.7m",
       "bss_public": 17396,
@@ -205,7 +205,7 @@
     },
     {
       "player_id": 2818838,
-      "fair_fight": 38.53,
+      "fair_fight": 38.41,
       "bs_estimate": 177033178,
       "bs_estimate_human": "177m",
       "bss_public": 26094,
@@ -213,7 +213,7 @@
     },
     {
       "player_id": 2818874,
-      "fair_fight": 36.6,
+      "fair_fight": 36.48,
       "bs_estimate": 159266250,
       "bs_estimate_human": "159m",
       "bss_public": 24750,
@@ -221,7 +221,7 @@
     },
     {
       "player_id": 2883957,
-      "fair_fight": 35.12,
+      "fair_fight": 35.01,
       "bs_estimate": 146310654,
       "bs_estimate_human": "146m",
       "bss_public": 23722,
@@ -229,7 +229,7 @@
     },
     {
       "player_id": 2900072,
-      "fair_fight": 6.24,
+      "fair_fight": 6.23,
       "bs_estimate": 3456262,
       "bs_estimate_human": "3.46m",
       "bss_public": 3646,
@@ -237,7 +237,7 @@
     },
     {
       "player_id": 2924953,
-      "fair_fight": 154.84,
+      "fair_fight": 154.34,
       "bs_estimate": 2974181110,
       "bs_estimate_human": "2.97b",
       "bss_public": 106954,
@@ -245,7 +245,7 @@
     },
     {
       "player_id": 2995427,
-      "fair_fight": 107.91,
+      "fair_fight": 107.56,
       "bs_estimate": 1436370762,
       "bs_estimate_human": "1.44b",
       "bss_public": 74327,
@@ -253,7 +253,7 @@
     },
     {
       "player_id": 3030458,
-      "fair_fight": 19.63,
+      "fair_fight": 19.57,
       "bs_estimate": 43602650,
       "bs_estimate_human": "43.6m",
       "bss_public": 12950,
@@ -261,7 +261,7 @@
     },
     {
       "player_id": 3125490,
-      "fair_fight": 2.33,
+      "fair_fight": 2.32,
       "bs_estimate": 221982,
       "bs_estimate_human": "222k",
       "bss_public": 924,
@@ -277,7 +277,7 @@
     },
     {
       "player_id": 3138892,
-      "fair_fight": 2.15,
+      "fair_fight": 2.14,
       "bs_estimate": 165154,
       "bs_estimate_human": "165k",
       "bss_public": 797,
@@ -285,7 +285,7 @@
     },
     {
       "player_id": 3204874,
-      "fair_fight": 12.34,
+      "fair_fight": 12.3,
       "bs_estimate": 16160939,
       "bs_estimate_human": "16.2m",
       "bss_public": 7884,
@@ -293,7 +293,7 @@
     },
     {
       "player_id": 3228868,
-      "fair_fight": 15.22,
+      "fair_fight": 15.17,
       "bs_estimate": 25400299,
       "bs_estimate_human": "25.4m",
       "bss_public": 9884,
@@ -301,23 +301,23 @@
     },
     {
       "player_id": 3322244,
-      "fair_fight": 43.77,
-      "bs_estimate": 229853335,
-      "bs_estimate_human": "230m",
-      "bss_public": 29733,
-      "last_updated": 1771633735
+      "fair_fight": 44.48,
+      "bs_estimate": 239129002,
+      "bs_estimate_human": "239m",
+      "bss_public": 30327,
+      "last_updated": 1772053438
     },
     {
       "player_id": 3391856,
-      "fair_fight": 7.11,
-      "bs_estimate": 4689622,
-      "bs_estimate_human": "4.69m",
-      "bss_public": 4247,
-      "last_updated": 1771626850
+      "fair_fight": 7.18,
+      "bs_estimate": 4825305,
+      "bs_estimate_human": "4.83m",
+      "bss_public": 4308,
+      "last_updated": 1771973506
     },
     {
       "player_id": 3435672,
-      "fair_fight": 4.75,
+      "fair_fight": 4.74,
       "bs_estimate": 1769789,
       "bs_estimate_human": "1.77m",
       "bss_public": 2609,
@@ -325,7 +325,7 @@
     },
     {
       "player_id": 3471213,
-      "fair_fight": 15.8,
+      "fair_fight": 15.75,
       "bs_estimate": 27535217,
       "bs_estimate_human": "27.5m",
       "bss_public": 10291,
@@ -333,7 +333,7 @@
     },
     {
       "player_id": 3494921,
-      "fair_fight": 8.74,
+      "fair_fight": 8.71,
       "bs_estimate": 7525544,
       "bs_estimate_human": "7.53m",
       "bss_public": 5380,
@@ -341,7 +341,7 @@
     },
     {
       "player_id": 3519171,
-      "fair_fight": 4.12,
+      "fair_fight": 4.11,
       "bs_estimate": 1224314,
       "bs_estimate_human": "1.22m",
       "bss_public": 2170,
@@ -349,23 +349,23 @@
     },
     {
       "player_id": 3610054,
-      "fair_fight": 3.09,
-      "bs_estimate": 548159,
-      "bs_estimate_human": "548k",
-      "bss_public": 1452,
-      "last_updated": 1771839512
+      "fair_fight": 3.07,
+      "bs_estimate": 540635,
+      "bs_estimate_human": "541k",
+      "bss_public": 1442,
+      "last_updated": 1772022824
     },
     {
       "player_id": 3616245,
-      "fair_fight": 2.14,
-      "bs_estimate": 163501,
-      "bs_estimate_human": "164k",
-      "bss_public": 793,
-      "last_updated": 1771475822
+      "fair_fight": 2.16,
+      "bs_estimate": 171430,
+      "bs_estimate_human": "171k",
+      "bss_public": 812,
+      "last_updated": 1771984072
     },
     {
       "player_id": 3638931,
-      "fair_fight": 2.99,
+      "fair_fight": 2.98,
       "bs_estimate": 498019,
       "bs_estimate_human": "498k",
       "bss_public": 1384,
@@ -381,7 +381,7 @@
     },
     {
       "player_id": 3657339,
-      "fair_fight": 3.84,
+      "fair_fight": 3.83,
       "bs_estimate": 1016218,
       "bs_estimate_human": "1.02m",
       "bss_public": 1977,
@@ -389,7 +389,7 @@
     },
     {
       "player_id": 3694853,
-      "fair_fight": 3.92,
+      "fair_fight": 3.91,
       "bs_estimate": 1071434,
       "bs_estimate_human": "1.07m",
       "bss_public": 2030,
@@ -397,7 +397,7 @@
     },
     {
       "player_id": 3711908,
-      "fair_fight": 2.86,
+      "fair_fight": 2.85,
       "bs_estimate": 434681,
       "bs_estimate_human": "435k",
       "bss_public": 1293,
@@ -405,7 +405,7 @@
     },
     {
       "player_id": 3734598,
-      "fair_fight": 4.36,
+      "fair_fight": 4.35,
       "bs_estimate": 1422440,
       "bs_estimate_human": "1.42m",
       "bss_public": 2339,
@@ -413,7 +413,7 @@
     },
     {
       "player_id": 3737335,
-      "fair_fight": 4.28,
+      "fair_fight": 4.27,
       "bs_estimate": 1351584,
       "bs_estimate_human": "1.35m",
       "bss_public": 2280,
@@ -421,7 +421,7 @@
     },
     {
       "player_id": 3737562,
-      "fair_fight": 4.41,
+      "fair_fight": 4.4,
       "bs_estimate": 1462860,
       "bs_estimate_human": "1.46m",
       "bss_public": 2372,
@@ -429,7 +429,7 @@
     },
     {
       "player_id": 3739348,
-      "fair_fight": 4.01,
+      "fair_fight": 4,
       "bs_estimate": 1141147,
       "bs_estimate_human": "1.14m",
       "bss_public": 2095,
@@ -437,7 +437,7 @@
     },
     {
       "player_id": 3787999,
-      "fair_fight": 3.92,
+      "fair_fight": 3.91,
       "bs_estimate": 1073546,
       "bs_estimate_human": "1.07m",
       "bss_public": 2032,
@@ -445,11 +445,11 @@
     },
     {
       "player_id": 3794229,
-      "fair_fight": 4.17,
-      "bs_estimate": 1264127,
-      "bs_estimate_human": "1.26m",
-      "bss_public": 2205,
-      "last_updated": 1771874021
+      "fair_fight": 4.3,
+      "bs_estimate": 1380188,
+      "bs_estimate_human": "1.38m",
+      "bss_public": 2304,
+      "last_updated": 1772008973
     },
     {
       "player_id": 3813324,
@@ -461,15 +461,15 @@
     },
     {
       "player_id": 3831816,
-      "fair_fight": 10.27,
-      "bs_estimate": 10809943,
-      "bs_estimate_human": "10.8m",
-      "bss_public": 6448,
-      "last_updated": 1771383855
+      "fair_fight": 10.6,
+      "bs_estimate": 11664433,
+      "bs_estimate_human": "11.7m",
+      "bss_public": 6698,
+      "last_updated": 1771976865
     },
     {
       "player_id": 3834065,
-      "fair_fight": 4.27,
+      "fair_fight": 4.26,
       "bs_estimate": 1344480,
       "bs_estimate_human": "1.34m",
       "bss_public": 2274,
@@ -485,7 +485,7 @@
     },
     {
       "player_id": 3842395,
-      "fair_fight": 2.89,
+      "fair_fight": 2.88,
       "bs_estimate": 446868,
       "bs_estimate_human": "447k",
       "bss_public": 1311,
@@ -493,7 +493,7 @@
     },
     {
       "player_id": 3891455,
-      "fair_fight": 3.59,
+      "fair_fight": 3.58,
       "bs_estimate": 842400,
       "bs_estimate_human": "842k",
       "bss_public": 1800,
