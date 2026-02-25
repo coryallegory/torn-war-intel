@@ -910,6 +910,26 @@
         return null;
     }
 
+    function getBattlestatsFairFightColorClass(fairFightValue) {
+        if (fairFightValue === null || fairFightValue === undefined || Number.isNaN(fairFightValue)) {
+            return "";
+        }
+
+        if (fairFightValue >= 0 && fairFightValue < 2.5) {
+            return "state-blue";
+        }
+
+        if (fairFightValue >= 2.5 && fairFightValue < 3.6) {
+            return "state-green";
+        }
+
+        if (fairFightValue >= 3.6) {
+            return "state-red";
+        }
+
+        return "";
+    }
+
     function compareValues(a, b, direction) {
         const multiplier = direction === "asc" ? 1 : -1;
 
@@ -1279,6 +1299,9 @@
             const isClaimed = state.isPlayerClaimed(teamId, p.id);
             if (isClaimed) row.classList.add("claimed-row");
 
+            const fairFightValue = parseFairFightValue(p.fair_fight);
+            const battlestatsColorClass = getBattlestatsFairFightColorClass(fairFightValue);
+
             row.innerHTML = `
                 <td><a href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.id}</a></td>
                 <td>${p.name}</td>
@@ -1286,7 +1309,7 @@
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
                 <td>${p.fair_fight ?? "--"}</td>
-                <td><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"}</a></td>
+                <td class="${battlestatsColorClass}"><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"}</a></td>
                 <td class="claimed-cell"><input type="checkbox" class="claimed-checkbox" ${isClaimed ? "checked" : ""} aria-label="Mark ${p.name} as claimed"></td>
             `;
 
