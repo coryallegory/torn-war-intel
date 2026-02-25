@@ -28,8 +28,8 @@ h2, h3 {
 
 .grouped-panel {
     position: relative;
-    border: 0;
-    padding: 12px;
+    padding-top: 24px;
+    border: 1px solid #666;
 }
 
 .section-toggle {
@@ -46,19 +46,8 @@ h2, h3 {
     text-align: left;
 }
 
-.collapsible-content {
-    border: 1px solid #666;
-    border-radius: 6px;
-    padding: 10px;
-    background: #2f2f2f;
-}
-
-.collapsible-body.is-collapsed {
-    display: none;
-}
-
 .filters-toggle {
-    margin-top: 0;
+    margin-top: 6px;
 }
 
 .toggle-icon::before {
@@ -70,11 +59,11 @@ h2, h3 {
     content: "▸";
 }
 
-.metadata-content {
-    position: relative;
+.collapsible-content.is-collapsed {
+    display: none;
 }
 
-#meta-content-body {
+.metadata-content {
     position: relative;
     padding-right: 220px;
     min-height: 56px;
@@ -355,10 +344,6 @@ tr.selected-row {
     border: 1px solid #666;
 }
 
-#filters-content {
-    margin-bottom: 10px;
-}
-
 #player-filters {
     margin-bottom: 10px;
     padding: 10px;
@@ -429,7 +414,7 @@ tr.selected-row {
         margin-right: 0;
     }
 
-    #meta-content-body {
+    .metadata-content {
         padding-right: 0;
         padding-top: 44px;
     }
