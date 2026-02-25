@@ -65,7 +65,7 @@
     const teamRefreshStart = new Map();
     const sortState = {
         team: { column: null, direction: "asc" },
-        player: { column: null, direction: "asc" }
+        player: { column: "fair_fight", direction: "asc" }
     };
     let metadataRefreshInFlight = null;
     let metadataRefreshStart = 0;
