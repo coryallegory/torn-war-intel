@@ -1304,7 +1304,7 @@
 
             row.innerHTML = `
                 <td><a href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.id}</a></td>
-                <td>${p.name}</td>
+                <td><a href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.name}</a></td>
                 <td>${p.level}</td>
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
