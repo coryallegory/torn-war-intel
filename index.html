@@ -11,13 +11,12 @@
     <div id="app-container">
 
         <section id="meta-section" class="panel grouped-panel">
-            <div id="meta-content" class="collapsible-content metadata-content">
-                <button id="meta-toggle" class="section-toggle" type="button" aria-expanded="true" aria-controls="meta-content-body">
-                    <span>Metadata</span>
-                    <span class="toggle-icon" aria-hidden="true"></span>
-                </button>
+            <button id="meta-toggle" class="section-toggle" type="button" aria-expanded="true" aria-controls="meta-content">
+                <span>Metadata</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+            </button>
 
-                <div id="meta-content-body" class="collapsible-body">
+            <div id="meta-content" class="collapsible-content metadata-content">
 
                 <!-- API Key+User Box -->
                 <div id="apikey-box">
@@ -71,11 +70,10 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
                 <!-- Team list removed — app manages a single Faction only -->
 
                 <!-- Shared metadata refresh indicator -->
-                    <div class="refresh-indicator top-right">
-                        <span id="metadata-refresh-icon" class="spinner hidden"></span>
-                        <div><span id="metadata-refresh-timer">Next refresh: --</span></div>
-                        <div><small id="metadata-last-run" class="last-run">Last: --</small></div>
-                    </div>
+                <div class="refresh-indicator top-right">
+                    <span id="metadata-refresh-icon" class="spinner hidden"></span>
+                    <div><span id="metadata-refresh-timer">Next refresh: --</span></div>
+                    <div><small id="metadata-last-run" class="last-run">Last: --</small></div>
                 </div>
             </div>
         </section>
@@ -91,44 +89,42 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
                 <div><small id="team-last-run" class="last-run">Last: --</small></div>
             </div>
 
+            <!-- Filters -->
+            <button id="filters-toggle" class="section-toggle filters-toggle" type="button" aria-expanded="true" aria-controls="filters-content">
+                <span>Filters</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+            </button>
+
             <div id="filters-content" class="collapsible-content">
-                <!-- Filters -->
-                <button id="filters-toggle" class="section-toggle filters-toggle" type="button" aria-expanded="true" aria-controls="filters-content-body">
-                    <span>Filters</span>
-                    <span class="toggle-icon" aria-hidden="true"></span>
-                </button>
+                <div id="player-filters">
+                    <label class="range-label">Level:
+                        <input type="number" id="level-min" class="range-input" value="0">
+                        to
+                        <input type="number" id="level-max" class="range-input" value="100">
+                    </label>
 
-                <div id="filters-content-body" class="collapsible-body">
-                    <div id="player-filters">
-                        <label class="range-label">Level:
-                            <input type="number" id="level-min" class="range-input" value="0">
-                            to
-                            <input type="number" id="level-max" class="range-input" value="100">
-                        </label>
+                    <label class="range-label">BStats:
+                        <input type="text" id="bs-min" class="range-input" placeholder="min">
+                        to
+                        <input type="text" id="bs-max" class="range-input" placeholder="max">
+                    </label>
 
-                        <label class="range-label">BStats:
-                            <input type="text" id="bs-min" class="range-input" placeholder="min">
-                            to
-                            <input type="text" id="bs-max" class="range-input" placeholder="max">
-                        </label>
+                    <label class="range-label">Fair Fight:
+                        <input type="number" id="fair-fight-min" class="range-input" placeholder="min" step="0.01">
+                        to
+                        <input type="number" id="fair-fight-max" class="range-input" placeholder="max" step="0.01">
+                    </label>
 
-                        <label class="range-label">Fair Fight:
-                            <input type="number" id="fair-fight-min" class="range-input" placeholder="min" step="0.01">
-                            to
-                            <input type="number" id="fair-fight-max" class="range-input" placeholder="max" step="0.01">
-                        </label>
+                    <label>
+                        <input type="checkbox" id="filter-okay-only"> "Okay" only
+                    </label>
 
-                        <label>
-                            <input type="checkbox" id="filter-okay-only"> "Okay" only
-                        </label>
-
-                        <label>
-                            Location:
-                            <select id="location-filter">
-                                <option value="all">All</option>
-                            </select>
-                        </label>
-                    </div>
+                    <label>
+                        Location:
+                        <select id="location-filter">
+                            <option value="all">All</option>
+                        </select>
+                    </label>
                 </div>
             </div>
 
