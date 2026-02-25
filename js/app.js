@@ -1286,7 +1286,7 @@
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
                 <td>${p.fair_fight ?? "--"}</td>
-                <td><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"}</a></td>
+                <td><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"} ⚔</a></td>
                 <td class="claimed-cell"><input type="checkbox" class="claimed-checkbox" ${isClaimed ? "checked" : ""} aria-label="Mark ${p.name} as claimed"></td>
             `;
 
