@@ -31,6 +31,8 @@
         bsMaxInput: document.getElementById("bs-max"),
         fairFightMinInput: document.getElementById("fair-fight-min"),
         fairFightMaxInput: document.getElementById("fair-fight-max"),
+        lastActionMinInput: document.getElementById("last-action-min"),
+        lastActionMaxInput: document.getElementById("last-action-max"),
         filterOkayOnly: document.getElementById("filter-okay-only"),
         locationFilter: document.getElementById("location-filter"),
         metadataTimerLabel: document.getElementById("metadata-refresh-timer"),
@@ -1129,6 +1131,10 @@
         const fairFightMaxInputVal = dom.fairFightMaxInput.value.trim();
         const fairFightMin = parseFairFightValue(fairFightMinInputVal);
         const fairFightMax = parseFairFightValue(fairFightMaxInputVal);
+        const lastActionMinInputVal = dom.lastActionMinInput.value.trim();
+        const lastActionMaxInputVal = dom.lastActionMaxInput.value.trim();
+        const lastActionMin = Number(lastActionMinInputVal);
+        const lastActionMax = Number(lastActionMaxInputVal);
         const okayOnly = dom.filterOkayOnly.checked;
         const locationSelection = dom.locationFilter.value;
 
@@ -1136,6 +1142,8 @@
         const hasBsMax = bsMaxInputVal !== "" && typeof bsMax === "number" && !Number.isNaN(bsMax);
         const hasFairFightMin = fairFightMinInputVal !== "" && typeof fairFightMin === "number" && !Number.isNaN(fairFightMin);
         const hasFairFightMax = fairFightMaxInputVal !== "" && typeof fairFightMax === "number" && !Number.isNaN(fairFightMax);
+        const hasLastActionMin = lastActionMinInputVal !== "" && !Number.isNaN(lastActionMin) && lastActionMin >= 0;
+        const hasLastActionMax = lastActionMaxInputVal !== "" && !Number.isNaN(lastActionMax) && lastActionMax >= 0;
 
         return players.filter(p => {
             const statusText = simplifyStatus(p.status);
@@ -1149,6 +1157,13 @@
             const fairFightIsNumber = typeof fairFightValue === "number" && !Number.isNaN(fairFightValue);
             if (hasFairFightMin && (!fairFightIsNumber || fairFightValue < fairFightMin)) return false;
             if (hasFairFightMax && (!fairFightIsNumber || fairFightValue > fairFightMax)) return false;
+            const lastActionTimestamp = Number(p.last_action?.timestamp);
+            const hasLastActionTimestamp = !Number.isNaN(lastActionTimestamp) && lastActionTimestamp > 0;
+            const minutesSinceLastAction = hasLastActionTimestamp
+                ? Math.max(0, (Date.now() / 1000 - lastActionTimestamp) / 60)
+                : null;
+            if (hasLastActionMin && (minutesSinceLastAction === null || minutesSinceLastAction < lastActionMin)) return false;
+            if (hasLastActionMax && (minutesSinceLastAction === null || minutesSinceLastAction > lastActionMax)) return false;
             if (okayOnly) {
                 const isOkayStatus = statusText === "Okay" || statusText.startsWith("In ");
                 const isHospital = p.status?.state === "Hospital";
@@ -1394,6 +1409,8 @@
         dom.bsMaxInput.addEventListener("input", renderPlayers);
         dom.fairFightMinInput.addEventListener("input", renderPlayers);
         dom.fairFightMaxInput.addEventListener("input", renderPlayers);
+        dom.lastActionMinInput.addEventListener("input", renderPlayers);
+        dom.lastActionMaxInput.addEventListener("input", renderPlayers);
         dom.filterOkayOnly.addEventListener("change", renderPlayers);
         dom.locationFilter.addEventListener("change", renderPlayers);
     }
