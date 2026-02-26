@@ -115,6 +115,12 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
                         <input type="number" id="fair-fight-max" class="range-input" placeholder="max" step="0.01">
                     </label>
 
+                    <label class="range-label">Last Action (minutes):
+                        <input type="number" id="last-action-min" class="range-input" placeholder="min" min="0" step="1">
+                        to
+                        <input type="number" id="last-action-max" class="range-input" placeholder="max" min="0" step="1">
+                    </label>
+
                     <label>
                         <input type="checkbox" id="filter-okay-only"> "Okay" only
                     </label>
