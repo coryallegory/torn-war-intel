@@ -1400,24 +1400,17 @@
         dom.locationFilter.addEventListener("change", renderPlayers);
     }
 
-    function formatPayloadTimestamp(timestamp) {
-        if (!timestamp) return "Unknown";
-        try {
-            return new Date(timestamp).toLocaleTimeString();
-        } catch (err) {
-            return String(timestamp);
-        }
-    }
-
     function buildPlayerPayloadPopoverText(teamId, playerId, playerName) {
-        const history = state.getPlayerPayloadHistory(teamId, playerId);
-        if (!history.length) return `${playerName}: no payload history available yet.`;
+        const players = state.teamPlayers?.[teamId] || [];
+        const player = players.find(p => String(p?.id) === String(playerId));
+        const payload = player?.rawData || null;
+        if (!payload) return `${playerName}: no payload available yet.`;
 
-        return history.map((entry, idx) => {
-            const header = `#${idx + 1} @ ${formatPayloadTimestamp(entry.timestamp)}`;
-            const payload = JSON.stringify(entry.payload || {}, null, 2);
-            return `${header}\n${payload}`;
-        }).join("\n\n");
+        const ts = state.teamPlayersTimestamp?.[teamId];
+        const tsLabel = ts ? new Date(ts).toLocaleTimeString() : "unknown";
+        return `Latest refresh: ${tsLabel}
+
+${JSON.stringify(payload, null, 2)}`;
     }
 
     function createPlayerPayloadPopover() {
@@ -1469,6 +1462,14 @@
             if (toElement && fromLink.contains(toElement)) return;
             popover.classList.add("hidden");
         });
+
+        dom.playerTableBody.addEventListener("mouseleave", () => {
+            popover.classList.add("hidden");
+        });
+
+        window.addEventListener("scroll", () => {
+            popover.classList.add("hidden");
+        }, true);
     }
 
     function startTeamCountdown() {
