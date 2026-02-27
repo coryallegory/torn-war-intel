@@ -1346,9 +1346,11 @@
 
                 if (remaining <= 0) {
                     if (cell) {
-                        cell.textContent = "Okay";
-                        cell.className = "status-cell state-green";
+                        // Do not optimistically flip to "Okay" based on local countdown.
+                        // The API refresh is the source of truth for recovery state.
+                        cell.className = "status-cell state-red";
                     }
+                    el.textContent = "0s";
                     el.removeAttribute("data-until");
                     return;
                 }
