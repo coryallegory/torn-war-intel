@@ -639,9 +639,10 @@
         return null;
     }
 
-    async function maybeFetchFfScouterStats(players) {
+    async function maybeFetchFfScouterStats(players, options = {}) {
+        const { forceRefresh = false } = options;
         if (!players.length) return;
-        const statsMap = await getDefaultFfStatsMap();
+        const statsMap = await getDefaultFfStatsMap({ forceRefresh });
         if (!statsMap.size) return;
 
         players.forEach(p => {
@@ -664,19 +665,38 @@
     }
 
     let ffDefaultsPromise = null;
+    let ffDefaultsLookupByPlayerId = new Map();
 
-    async function getDefaultFfPayload() {
-        if (!ffDefaultsPromise) {
+    function setDefaultFfPayloadCache(payload) {
+        const lookup = new Map();
+        const entries = Array.isArray(payload?.data) ? payload.data : [];
+
+        entries.forEach(entry => {
+            const id = Number(entry?.player_id ?? entry?.playerId ?? entry?.id ?? entry?.user_id ?? entry?.userId);
+            if (Number.isNaN(id)) return;
+            lookup.set(id, entry);
+        });
+
+        ffDefaultsLookupByPlayerId = lookup;
+        return payload;
+    }
+
+    async function getDefaultFfPayload(options = {}) {
+        const { forceRefresh = false } = options;
+
+        if (!ffDefaultsPromise || forceRefresh) {
             ffDefaultsPromise = fetch('ffscouter_defaults.json', { cache: "no-store" })
                 .then(resp => resp.ok ? resp.json() : null)
+                .then(payload => setDefaultFfPayloadCache(payload))
                 .catch(() => null);
         }
 
         return ffDefaultsPromise;
     }
 
-    async function getDefaultFfStatsMap() {
-        const payload = await getDefaultFfPayload();
+    async function getDefaultFfStatsMap(options = {}) {
+        const { forceRefresh = false } = options;
+        const payload = await getDefaultFfPayload({ forceRefresh });
         const map = new Map();
         const raw = payload && payload.data;
 
@@ -704,6 +724,12 @@
             map.set(num, { bs_estimate_human: String(val), fair_fight: undefined });
         });
         return map;
+    }
+
+    function getDefaultFfEntryByPlayerId(playerId) {
+        const numericId = Number(playerId);
+        if (Number.isNaN(numericId)) return null;
+        return ffDefaultsLookupByPlayerId.get(numericId) || null;
     }
     function hasMeaningfulBsValue(value) {
         if (value === null || value === undefined) return false;
@@ -1074,7 +1100,7 @@
 
             // Merge previously cached battlestats so we don't drop them on refresh
             players = preserveCachedBattleStats(teamKey, players);
-            await maybeFetchFfScouterStats(players);
+            await maybeFetchFfScouterStats(players, { forceRefresh: true });
 
             // Cache the faction data with a normalized name field to simplify later reads
             const factionToCache = { ...faction, name: resolvedName };
@@ -1403,14 +1429,22 @@
     function buildPlayerPayloadPopoverText(teamId, playerId, playerName) {
         const players = state.teamPlayers?.[teamId] || [];
         const player = players.find(p => String(p?.id) === String(playerId));
-        const payload = player?.rawData || null;
-        if (!payload) return `${playerName}: no payload available yet.`;
+        if (!player) return `${playerName}: no payload available yet.`;
+
+        const tornPayload = (player.rawData && typeof player.rawData === "object" && (player.rawData.status || player.rawData.last_action || player.rawData.name))
+            ? player.rawData
+            : null;
+        const defaultsPayload = getDefaultFfEntryByPlayerId(playerId);
 
         const ts = state.teamPlayersTimestamp?.[teamId];
         const tsLabel = ts ? new Date(ts).toLocaleTimeString() : "unknown";
         return `Latest refresh: ${tsLabel}
 
-${JSON.stringify(payload, null, 2)}`;
+Torn API payload:
+${tornPayload ? JSON.stringify(tornPayload, null, 2) : "No Torn API payload cached for this player."}
+
+FFscouter defaults payload:
+${defaultsPayload ? JSON.stringify(defaultsPayload, null, 2) : "No FFscouter defaults payload found for this player."}`;
     }
 
     function createPlayerPayloadPopover() {
