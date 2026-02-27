@@ -9,8 +9,10 @@
         apikeyClear: document.getElementById("apikey-clear"),
         apikeyPrompt: document.getElementById("apikey-prompt"),
         apikeyDisplayRow: document.getElementById("apikey-display-row"),
-        refreshPeriodInput: document.getElementById("refresh-period-input"),
-        settingsApply: document.getElementById("settings-apply"),
+        metadataRefreshPeriodInput: document.getElementById("metadata-refresh-period-input"),
+        metadataSettingsApply: document.getElementById("metadata-settings-apply"),
+        teamRefreshPeriodInput: document.getElementById("team-refresh-period-input"),
+        teamSettingsApply: document.getElementById("team-settings-apply"),
         settingsStatus: document.getElementById("settings-status"),
         metaToggle: document.getElementById("meta-toggle"),
         metaContent: document.getElementById("meta-content"),
@@ -150,7 +152,8 @@
         dom.apikeyInput.value = "";
 
         // settings inputs
-        if (state.refreshPeriodSeconds) dom.refreshPeriodInput.value = state.refreshPeriodSeconds;
+        if (state.metadataRefreshPeriodSeconds) dom.metadataRefreshPeriodInput.value = state.metadataRefreshPeriodSeconds;
+        if (state.teamRefreshPeriodSeconds) dom.teamRefreshPeriodInput.value = state.teamRefreshPeriodSeconds;
 
         if (dom.metadataLastRun && state.metadataTimestamp) {
             try { dom.metadataLastRun.textContent = `Last: ${new Date(state.metadataTimestamp).toLocaleTimeString()}`; } catch (e) {}
@@ -202,14 +205,22 @@
             clearApiKeyAndUi();
         });
 
-        if (dom.settingsApply) dom.settingsApply.addEventListener("click", () => {
-            const refreshVal = dom.refreshPeriodInput.value.trim();
+        if (dom.metadataSettingsApply) dom.metadataSettingsApply.addEventListener("click", () => {
+            const refreshVal = dom.metadataRefreshPeriodInput.value.trim();
+            const refreshSec = refreshVal === "" ? 30 : Number(refreshVal);
+            state.saveMetadataRefreshPeriod(refreshSec);
+            setStatus(dom.settingsStatus, "Metadata refresh saved", false, false);
+            setTimeout(() => setStatus(dom.settingsStatus, "", false, true), 2000);
+        });
+
+        if (dom.teamSettingsApply) dom.teamSettingsApply.addEventListener("click", () => {
+            const refreshVal = dom.teamRefreshPeriodInput.value.trim();
             const faction = Number(state.factionId);
             const refreshSec = refreshVal === "" ? 10 : Number(refreshVal);
 
-            state.saveRefreshPeriod(refreshSec);
+            state.saveTeamRefreshPeriod(refreshSec);
 
-            setStatus(dom.settingsStatus, "Settings saved", false, false);
+            setStatus(dom.settingsStatus, "Team refresh saved", false, false);
             setTimeout(() => setStatus(dom.settingsStatus, "", false, true), 2000);
             // If a faction ID is supplied, immediately fetch and show its members as the main list
             if (faction) {
@@ -368,7 +379,7 @@
 
         const now = Date.now();
         if (!force && !state.shouldRefreshMetadata(now)) return;
-        if (now - metadataRefreshStart < state.MIN_REFRESH_MS) return;
+        if (now - metadataRefreshStart < state.MIN_METADATA_REFRESH_MS) return;
 
         metadataRefreshStart = now;
         dom.metadataIcon.classList.remove("hidden");
@@ -1066,7 +1077,7 @@
         if (!factionId) return;
         const teamKey = `faction:${factionId}`;
 
-        const ttl = state.TEAM_REFRESH_MS || (state.refreshPeriodSeconds || 30) * 1000;
+        const ttl = state.TEAM_REFRESH_MS || (state.teamRefreshPeriodSeconds || 30) * 1000;
         if (!force) {
             const cached = state.getCachedFaction(factionId, ttl);
             if (cached && Array.isArray(cached.members) && cached.members.length) {
