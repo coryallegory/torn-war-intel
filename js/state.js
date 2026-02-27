@@ -13,7 +13,9 @@ window.state = {
 
     teamPlayers: {},
     teamPlayersTimestamp: {},
+    playerPayloadHistoryByTeam: {},
     factionCache: {},
+    PLAYER_PAYLOAD_HISTORY_LIMIT: 5,
 
     TEAM_REFRESH_MS: 10000,
     MIN_TEAM_REFRESH_MS: 1000,
@@ -54,6 +56,8 @@ window.state = {
             this.teams = teamsRaw ? JSON.parse(teamsRaw) : [];
             this.teamPlayers = playersRaw ? JSON.parse(playersRaw) : {};
             this.teamPlayersTimestamp = playerTimestampsRaw ? JSON.parse(playerTimestampsRaw) : {};
+            const payloadHistoryRaw = localStorage.getItem("playerPayloadHistoryByTeam");
+            this.playerPayloadHistoryByTeam = payloadHistoryRaw ? JSON.parse(payloadHistoryRaw) : {};
             const factionCacheRaw = localStorage.getItem("factionCache");
             this.factionCache = factionCacheRaw ? JSON.parse(factionCacheRaw) : {};
             this.selectedTeamId = selectedTeamRaw || null;
@@ -111,6 +115,7 @@ window.state = {
         this.teams = [];
         this.teamPlayers = {};
         this.teamPlayersTimestamp = {};
+        this.playerPayloadHistoryByTeam = {};
         this.selectedTeamId = null;
         this.hidePinkPowerTeam = false;
 
@@ -118,6 +123,7 @@ window.state = {
         localStorage.removeItem("teams");
         localStorage.removeItem("teamPlayers");
         localStorage.removeItem("teamPlayersTimestamp");
+        localStorage.removeItem("playerPayloadHistoryByTeam");
         localStorage.removeItem("selectedTeamId");
         localStorage.removeItem("hidePinkPowerTeam");
         localStorage.removeItem("ffapikey");
@@ -190,17 +196,46 @@ window.state = {
     },
 
     cacheTeamPlayers(teamId, players) {
+        const ts = Date.now();
+        const normalizedTeamId = String(teamId);
+        const historyLimit = this.PLAYER_PAYLOAD_HISTORY_LIMIT || 5;
+
+        this.playerPayloadHistoryByTeam = this.playerPayloadHistoryByTeam || {};
+        this.playerPayloadHistoryByTeam[normalizedTeamId] = this.playerPayloadHistoryByTeam[normalizedTeamId] || {};
+
+        (Array.isArray(players) ? players : []).forEach(player => {
+            const playerId = player?.id;
+            if (playerId === null || playerId === undefined) return;
+
+            const normalizedPlayerId = String(playerId);
+            const payloadHistory = this.playerPayloadHistoryByTeam[normalizedTeamId][normalizedPlayerId] || [];
+            payloadHistory.unshift({
+                timestamp: ts,
+                payload: player.rawData || player
+            });
+
+            this.playerPayloadHistoryByTeam[normalizedTeamId][normalizedPlayerId] = payloadHistory.slice(0, historyLimit);
+        });
+
         this.teamPlayers[teamId] = players;
-        this.teamPlayersTimestamp[teamId] = Date.now();
+        this.teamPlayersTimestamp[teamId] = ts;
 
         try {
             // Persist the full player objects (including rawData) so the original
             // faction/member payload is available for inspection and debugging.
             localStorage.setItem("teamPlayers", JSON.stringify(this.teamPlayers));
             localStorage.setItem("teamPlayersTimestamp", JSON.stringify(this.teamPlayersTimestamp));
+            localStorage.setItem("playerPayloadHistoryByTeam", JSON.stringify(this.playerPayloadHistoryByTeam));
         } catch (err) {
             console.warn("Failed to persist team players", err);
         }
+    },
+
+    getPlayerPayloadHistory(teamId, playerId) {
+        if (teamId === null || teamId === undefined || playerId === null || playerId === undefined) return [];
+        const normalizedTeamId = String(teamId);
+        const normalizedPlayerId = String(playerId);
+        return this.playerPayloadHistoryByTeam?.[normalizedTeamId]?.[normalizedPlayerId] || [];
     },
 
     cacheFactionData(factionId, data) {
