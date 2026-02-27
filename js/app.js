@@ -229,6 +229,7 @@
         attachFilterListeners();
         attachSortListeners();
         attachSectionToggles();
+        attachPlayerPayloadPopover();
     }
 
     function setCollapsedState(toggleBtn, contentEl, isCollapsed) {
@@ -1301,7 +1302,7 @@
 
             row.innerHTML = `
                 <td><a href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.id}</a></td>
-                <td><a href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.name}</a></td>
+                <td><a class="player-name-link" data-team-id="${teamId}" data-player-id="${p.id}" href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.name}</a></td>
                 <td>${p.level}</td>
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
@@ -1397,6 +1398,77 @@
         dom.lastActionMaxInput.addEventListener("input", renderPlayers);
         dom.filterOkayOnly.addEventListener("change", renderPlayers);
         dom.locationFilter.addEventListener("change", renderPlayers);
+    }
+
+    function formatPayloadTimestamp(timestamp) {
+        if (!timestamp) return "Unknown";
+        try {
+            return new Date(timestamp).toLocaleTimeString();
+        } catch (err) {
+            return String(timestamp);
+        }
+    }
+
+    function buildPlayerPayloadPopoverText(teamId, playerId, playerName) {
+        const history = state.getPlayerPayloadHistory(teamId, playerId);
+        if (!history.length) return `${playerName}: no payload history available yet.`;
+
+        return history.map((entry, idx) => {
+            const header = `#${idx + 1} @ ${formatPayloadTimestamp(entry.timestamp)}`;
+            const payload = JSON.stringify(entry.payload || {}, null, 2);
+            return `${header}\n${payload}`;
+        }).join("\n\n");
+    }
+
+    function createPlayerPayloadPopover() {
+        let popover = document.getElementById("player-payload-popover");
+        if (popover) return popover;
+
+        popover = document.createElement("div");
+        popover.id = "player-payload-popover";
+        popover.className = "payload-popover hidden";
+        document.body.appendChild(popover);
+        return popover;
+    }
+
+    function positionPopover(popover, event) {
+        const offset = 14;
+        const maxLeft = window.innerWidth - popover.offsetWidth - 8;
+        const maxTop = window.innerHeight - popover.offsetHeight - 8;
+        const left = Math.min(event.clientX + offset, Math.max(8, maxLeft));
+        const top = Math.min(event.clientY + offset, Math.max(8, maxTop));
+        popover.style.left = `${left}px`;
+        popover.style.top = `${top}px`;
+    }
+
+    function attachPlayerPayloadPopover() {
+        const popover = createPlayerPayloadPopover();
+
+        dom.playerTableBody.addEventListener("mouseover", event => {
+            const nameLink = event.target.closest(".player-name-link");
+            if (!nameLink) return;
+
+            const teamId = nameLink.dataset.teamId;
+            const playerId = nameLink.dataset.playerId;
+            const playerName = nameLink.textContent || "Player";
+            popover.textContent = buildPlayerPayloadPopoverText(teamId, playerId, playerName);
+            popover.classList.remove("hidden");
+            positionPopover(popover, event);
+        });
+
+        dom.playerTableBody.addEventListener("mousemove", event => {
+            if (popover.classList.contains("hidden")) return;
+            positionPopover(popover, event);
+        });
+
+        dom.playerTableBody.addEventListener("mouseout", event => {
+            const fromLink = event.target.closest(".player-name-link");
+            if (!fromLink) return;
+
+            const toElement = event.relatedTarget;
+            if (toElement && fromLink.contains(toElement)) return;
+            popover.classList.add("hidden");
+        });
     }
 
     function startTeamCountdown() {
