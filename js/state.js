@@ -18,6 +18,12 @@ window.state = {
     TEAM_REFRESH_MS: 10000,
     MIN_TEAM_REFRESH_MS: 1000,
 
+    normalizeTeamRefreshPeriod(seconds) {
+        const parsed = Number(seconds);
+        if (!Number.isFinite(parsed) || parsed <= 0) return 10;
+        return Math.max(1, Math.round(parsed));
+    },
+
     loadFromStorage() {
         try {
             const claimedPlayersRaw = localStorage.getItem("claimedPlayersByTeam");
@@ -52,7 +58,9 @@ window.state = {
             this.factionCache = factionCacheRaw ? JSON.parse(factionCacheRaw) : {};
             this.selectedTeamId = selectedTeamRaw || null;
             this.factionId = factionIdRaw ? (Number.isNaN(Number(factionIdRaw)) ? null : parseInt(factionIdRaw, 10)) : null;
-            this.teamRefreshPeriodSeconds = teamRefreshSecondsRaw ? parseInt(teamRefreshSecondsRaw, 10) : this.teamRefreshPeriodSeconds;
+            this.teamRefreshPeriodSeconds = this.normalizeTeamRefreshPeriod(
+                teamRefreshSecondsRaw ?? this.teamRefreshPeriodSeconds
+            );
             // apply refresh period to ms settings
             this.TEAM_REFRESH_MS = this.teamRefreshPeriodSeconds * 1000;
             this.MIN_TEAM_REFRESH_MS = 1000;
@@ -89,12 +97,13 @@ window.state = {
     },
 
     saveTeamRefreshPeriod(seconds) {
-        const parsed = Number(seconds);
-        const sec = Number.isFinite(parsed) && parsed > 0 ? parsed : 10;
+        const sec = this.normalizeTeamRefreshPeriod(seconds);
         this.teamRefreshPeriodSeconds = sec;
         localStorage.setItem("teamRefreshPeriodSeconds", String(sec));
+        localStorage.removeItem("refreshPeriodSeconds");
         this.TEAM_REFRESH_MS = sec * 1000;
         this.MIN_TEAM_REFRESH_MS = 1000;
+        return sec;
     },
 
     clearCachedData() {
