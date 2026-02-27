@@ -1077,69 +1077,66 @@
         if (!factionId) return;
         const teamKey = `faction:${factionId}`;
 
-        const ttl = state.TEAM_REFRESH_MS || (state.teamRefreshPeriodSeconds || 30) * 1000;
-        if (!force) {
-            const cached = state.getCachedFaction(factionId, ttl);
-            if (cached && Array.isArray(cached.members) && cached.members.length) {
-                        let players = cached.members.map(m => ensurePlayerDefaults({ id: (m.player_id ?? m.id), name: m.name, level: m.level, status: m.status || { state: 'Okay' }, last_action: m.last_action || {}, rawData: m }));
-                        players = preserveCachedBattleStats(teamKey, players);
-                        await maybeFetchFfScouterStats(players);
-                        state.cacheTeamPlayers(teamKey, players);
-                if (dom.playersTitle) {
-                    const name = cached.name || `Faction ${factionId}`;
-                    dom.playersTitle.textContent = `${name} [${factionId}]`;
-                }
-                if (dom.teamLastRun) {
-                    const ts = state.teamPlayersTimestamp[teamKey];
-                    if (ts) {
-                        try { dom.teamLastRun.textContent = `Last: ${new Date(ts).toLocaleTimeString()}`; } catch (e) {}
-                    }
-                }
-                return;
-            }
-        }
-
-        if (!state.apikey) return;
-
-        const data = await api.getFaction(factionId, state.apikey);
-        if (data.error) {
-            console.error('Faction lookup error', data.error);
+        const inFlight = teamFetchInFlight.get(teamKey);
+        if (inFlight) {
+            await inFlight;
             return;
         }
 
-        const faction = data.faction || data || {};
+        const refreshPromise = (async () => {
+            const now = Date.now();
+            if (!force && now - (teamRefreshStart.get(teamKey) || 0) < state.MIN_TEAM_REFRESH_MS) return;
+            teamRefreshStart.set(teamKey, now);
 
-        // Faction name can appear in several shapes depending on the API response.
-        const resolvedName = faction.name || faction.basic?.name || data.name || data.basic?.name || `Faction ${factionId}`;
+            if (!state.apikey) return;
 
-        const membersRaw = Array.isArray(faction.members)
-            ? faction.members
-            : Array.isArray(faction?.members?.members)
-                ? faction.members.members
-                : Array.isArray(data.members) ? data.members : [];
-
-        let players = (membersRaw || []).map(m => ensurePlayerDefaults({ id: (m.player_id ?? m.id), name: m.name, level: m.level, status: m.status || { state: 'Okay' }, last_action: m.last_action || {}, rawData: m }));
-
-        // Merge previously cached battlestats so we don't drop them on refresh
-        players = preserveCachedBattleStats(teamKey, players);
-        await maybeFetchFfScouterStats(players);
-
-        // Cache the faction data with a normalized name field to simplify later reads
-        const factionToCache = { ...faction, name: resolvedName };
-        state.cacheFactionData(factionId, factionToCache);
-        state.cacheTeamPlayers(teamKey, players);
-
-        if (dom.teamLastRun) {
-            const ts = state.teamPlayersTimestamp[teamKey];
-            if (ts) {
-                try { dom.teamLastRun.textContent = `Last: ${new Date(ts).toLocaleTimeString()}`; } catch (e) {}
+            const data = await api.getFaction(factionId, state.apikey);
+            if (data.error) {
+                console.error('Faction lookup error', data.error);
+                return;
             }
-        }
 
-        // Replace any existing teams metadata with only this faction (app manages a single faction)
-        state.teams = [{ id: teamKey, name: resolvedName, participants: players.length }];
-        state.cacheMetadata(state.user, state.teams);
-        if (dom.playersTitle) dom.playersTitle.textContent = `${resolvedName} [${factionId}]`;
+            const faction = data.faction || data || {};
+
+            // Faction name can appear in several shapes depending on the API response.
+            const resolvedName = faction.name || faction.basic?.name || data.name || data.basic?.name || `Faction ${factionId}`;
+
+            const membersRaw = Array.isArray(faction.members)
+                ? faction.members
+                : Array.isArray(faction?.members?.members)
+                    ? faction.members.members
+                    : Array.isArray(data.members) ? data.members : [];
+
+            let players = (membersRaw || []).map(m => ensurePlayerDefaults({ id: (m.player_id ?? m.id), name: m.name, level: m.level, status: m.status || { state: 'Okay' }, last_action: m.last_action || {}, rawData: m }));
+
+            // Merge previously cached battlestats so we don't drop them on refresh
+            players = preserveCachedBattleStats(teamKey, players);
+            await maybeFetchFfScouterStats(players);
+
+            // Cache the faction data with a normalized name field to simplify later reads
+            const factionToCache = { ...faction, name: resolvedName };
+            state.cacheFactionData(factionId, factionToCache);
+            state.cacheTeamPlayers(teamKey, players);
+
+            if (dom.teamLastRun) {
+                const ts = state.teamPlayersTimestamp[teamKey];
+                if (ts) {
+                    try { dom.teamLastRun.textContent = `Last: ${new Date(ts).toLocaleTimeString()}`; } catch (e) {}
+                }
+            }
+
+            // Replace any existing teams metadata with only this faction (app manages a single faction)
+            state.teams = [{ id: teamKey, name: resolvedName, participants: players.length }];
+            state.cacheMetadata(state.user, state.teams);
+            if (dom.playersTitle) dom.playersTitle.textContent = `${resolvedName} [${factionId}]`;
+        })();
+
+        teamFetchInFlight.set(teamKey, refreshPromise);
+        try {
+            await refreshPromise;
+        } finally {
+            teamFetchInFlight.delete(teamKey);
+        }
     }
 
     function applyFilters(players) {

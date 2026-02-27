@@ -20,7 +20,7 @@ window.state = {
     METADATA_REFRESH_MS: 30000,
     TEAM_REFRESH_MS: 10000,
     MIN_METADATA_REFRESH_MS: 30000,
-    MIN_TEAM_REFRESH_MS: 10000,
+    MIN_TEAM_REFRESH_MS: 1000,
 
     loadFromStorage() {
         try {
@@ -66,7 +66,7 @@ window.state = {
             this.METADATA_REFRESH_MS = this.metadataRefreshPeriodSeconds * 1000;
             this.TEAM_REFRESH_MS = this.teamRefreshPeriodSeconds * 1000;
             this.MIN_METADATA_REFRESH_MS = this.METADATA_REFRESH_MS;
-            this.MIN_TEAM_REFRESH_MS = this.TEAM_REFRESH_MS;
+            this.MIN_TEAM_REFRESH_MS = 1000;
             localStorage.removeItem("hidePinkPowerTeam");
             localStorage.removeItem("ffapikey");
             localStorage.removeItem("rememberFfApiKey");
@@ -112,7 +112,7 @@ window.state = {
         this.teamRefreshPeriodSeconds = sec;
         localStorage.setItem("teamRefreshPeriodSeconds", String(sec));
         this.TEAM_REFRESH_MS = sec * 1000;
-        this.MIN_TEAM_REFRESH_MS = sec * 1000;
+        this.MIN_TEAM_REFRESH_MS = 1000;
     },
 
     clearCachedData() {
