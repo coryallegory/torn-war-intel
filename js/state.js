@@ -2,7 +2,6 @@ window.state = {
     apikey: "",
     rememberApiKey: false,
     factionId: null,
-    metadataRefreshPeriodSeconds: 30,
     teamRefreshPeriodSeconds: 10,
     user: null,
     teams: [],
@@ -14,12 +13,9 @@ window.state = {
 
     teamPlayers: {},
     teamPlayersTimestamp: {},
-    metadataTimestamp: 0,
     factionCache: {},
 
-    METADATA_REFRESH_MS: 30000,
     TEAM_REFRESH_MS: 10000,
-    MIN_METADATA_REFRESH_MS: 30000,
     MIN_TEAM_REFRESH_MS: 1000,
 
     loadFromStorage() {
@@ -44,12 +40,9 @@ window.state = {
             const teamsRaw = localStorage.getItem("teams");
             const playersRaw = localStorage.getItem("teamPlayers");
             const playerTimestampsRaw = localStorage.getItem("teamPlayersTimestamp");
-            const metadataTs = localStorage.getItem("metadataTimestamp");
             const selectedTeamRaw = localStorage.getItem("selectedTeamId");
             const factionIdRaw = localStorage.getItem("factionId");
-            const legacyRefreshSecondsRaw = localStorage.getItem("refreshPeriodSeconds");
-            const metadataRefreshSecondsRaw = localStorage.getItem("metadataRefreshPeriodSeconds") || legacyRefreshSecondsRaw;
-            const teamRefreshSecondsRaw = localStorage.getItem("teamRefreshPeriodSeconds") || legacyRefreshSecondsRaw;
+            const teamRefreshSecondsRaw = localStorage.getItem("teamRefreshPeriodSeconds") || localStorage.getItem("refreshPeriodSeconds");
 
             this.user = userRaw ? JSON.parse(userRaw) : null;
             this.teams = teamsRaw ? JSON.parse(teamsRaw) : [];
@@ -57,19 +50,17 @@ window.state = {
             this.teamPlayersTimestamp = playerTimestampsRaw ? JSON.parse(playerTimestampsRaw) : {};
             const factionCacheRaw = localStorage.getItem("factionCache");
             this.factionCache = factionCacheRaw ? JSON.parse(factionCacheRaw) : {};
-            this.metadataTimestamp = metadataTs ? parseInt(metadataTs, 10) : 0;
             this.selectedTeamId = selectedTeamRaw || null;
             this.factionId = factionIdRaw ? (Number.isNaN(Number(factionIdRaw)) ? null : parseInt(factionIdRaw, 10)) : null;
-            this.metadataRefreshPeriodSeconds = metadataRefreshSecondsRaw ? parseInt(metadataRefreshSecondsRaw, 10) : this.metadataRefreshPeriodSeconds;
             this.teamRefreshPeriodSeconds = teamRefreshSecondsRaw ? parseInt(teamRefreshSecondsRaw, 10) : this.teamRefreshPeriodSeconds;
             // apply refresh period to ms settings
-            this.METADATA_REFRESH_MS = this.metadataRefreshPeriodSeconds * 1000;
             this.TEAM_REFRESH_MS = this.teamRefreshPeriodSeconds * 1000;
-            this.MIN_METADATA_REFRESH_MS = this.METADATA_REFRESH_MS;
             this.MIN_TEAM_REFRESH_MS = 1000;
             localStorage.removeItem("hidePinkPowerTeam");
             localStorage.removeItem("ffapikey");
             localStorage.removeItem("rememberFfApiKey");
+            localStorage.removeItem("metadataRefreshPeriodSeconds");
+            localStorage.removeItem("metadataTimestamp");
             this.hidePinkPowerTeam = false;
         } catch (err) {
             console.error("Failed to restore cached state", err);
@@ -97,15 +88,6 @@ window.state = {
         }
     },
 
-    saveMetadataRefreshPeriod(seconds) {
-        const parsed = Number(seconds);
-        const sec = Number.isFinite(parsed) && parsed > 0 ? parsed : 30;
-        this.metadataRefreshPeriodSeconds = sec;
-        localStorage.setItem("metadataRefreshPeriodSeconds", String(sec));
-        this.METADATA_REFRESH_MS = sec * 1000;
-        this.MIN_METADATA_REFRESH_MS = sec * 1000;
-    },
-
     saveTeamRefreshPeriod(seconds) {
         const parsed = Number(seconds);
         const sec = Number.isFinite(parsed) && parsed > 0 ? parsed : 10;
@@ -120,7 +102,6 @@ window.state = {
         this.teams = [];
         this.teamPlayers = {};
         this.teamPlayersTimestamp = {};
-        this.metadataTimestamp = 0;
         this.selectedTeamId = null;
         this.hidePinkPowerTeam = false;
 
@@ -128,7 +109,6 @@ window.state = {
         localStorage.removeItem("teams");
         localStorage.removeItem("teamPlayers");
         localStorage.removeItem("teamPlayersTimestamp");
-        localStorage.removeItem("metadataTimestamp");
         localStorage.removeItem("selectedTeamId");
         localStorage.removeItem("hidePinkPowerTeam");
         localStorage.removeItem("ffapikey");
@@ -180,8 +160,6 @@ window.state = {
             this.teams = teams;
         }
 
-        this.metadataTimestamp = Date.now();
-        localStorage.setItem("metadataTimestamp", this.metadataTimestamp.toString());
         localStorage.setItem("user", JSON.stringify(user || null));
         localStorage.setItem("teams", JSON.stringify(this.teams || []));
     },
@@ -237,11 +215,6 @@ window.state = {
         } catch (err) {
             return null;
         }
-    },
-
-    shouldRefreshMetadata(now = Date.now()) {
-        if (now - this.metadataTimestamp < this.MIN_METADATA_REFRESH_MS) return false;
-        return now - this.metadataTimestamp >= this.METADATA_REFRESH_MS;
     },
 
     shouldRefreshTeam(teamId, now = Date.now()) {

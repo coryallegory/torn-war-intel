@@ -55,15 +55,11 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
                 <div id="settings-row" class="apikey-row">
                     <div class="apikey-control-group">
                         <div class="apikey-input-row">
-                            <input type="number" id="metadata-refresh-period-input" min="1" value="30" style="width:120px;" placeholder="Metadata refresh (s)">
-                            <button id="metadata-settings-apply">Apply Metadata</button>
-                        </div>
-                        <div class="apikey-input-row">
                             <input type="number" id="team-refresh-period-input" min="1" value="10" style="width:120px;" placeholder="Team refresh (s)">
                             <button id="team-settings-apply">Apply Team</button>
                         </div>
                         <div class="apikey-meta-row">
-                            <span class="apikey-subtext">Faction ID is loaded from ffscouter_defaults.json; metadata and team refresh periods are configured independently (seconds).</span>
+                            <span class="apikey-subtext">Faction ID is loaded from ffscouter_defaults.json; team refresh period is configured in seconds.</span>
                         </div>
                     </div>
                     <span id="settings-status" class="status-text inline-status hidden">Settings saved</span>
@@ -73,12 +69,6 @@ To avoid rate-limit issues, keep only one tab open with the same API keys.</p>
 
                 <!-- Team list removed — app manages a single Faction only -->
 
-                <!-- Shared metadata refresh indicator -->
-                <div class="refresh-indicator top-right">
-                    <span id="metadata-refresh-icon" class="spinner hidden"></span>
-                    <div><span id="metadata-refresh-timer">Next refresh: --</span></div>
-                    <div><small id="metadata-last-run" class="last-run">Last: --</small></div>
-                </div>
             </div>
         </section>
 
