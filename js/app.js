@@ -1405,7 +1405,12 @@
         const player = players.find(p => String(p?.id) === String(playerId));
         const payload = player?.rawData || null;
         if (!payload) return `${playerName}: no payload available yet.`;
-        return JSON.stringify(payload, null, 2);
+
+        const ts = state.teamPlayersTimestamp?.[teamId];
+        const tsLabel = ts ? new Date(ts).toLocaleTimeString() : "unknown";
+        return `Latest refresh: ${tsLabel}
+
+${JSON.stringify(payload, null, 2)}`;
     }
 
     function createPlayerPayloadPopover() {
@@ -1457,6 +1462,14 @@
             if (toElement && fromLink.contains(toElement)) return;
             popover.classList.add("hidden");
         });
+
+        dom.playerTableBody.addEventListener("mouseleave", () => {
+            popover.classList.add("hidden");
+        });
+
+        window.addEventListener("scroll", () => {
+            popover.classList.add("hidden");
+        }, true);
     }
 
     function startTeamCountdown() {
