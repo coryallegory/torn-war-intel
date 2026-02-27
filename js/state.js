@@ -2,7 +2,8 @@ window.state = {
     apikey: "",
     rememberApiKey: false,
     factionId: null,
-    refreshPeriodSeconds: 10,
+    metadataRefreshPeriodSeconds: 30,
+    teamRefreshPeriodSeconds: 10,
     user: null,
     teams: [],
     selectedTeamId: null,
@@ -18,7 +19,8 @@ window.state = {
 
     METADATA_REFRESH_MS: 30000,
     TEAM_REFRESH_MS: 10000,
-    MIN_REFRESH_MS: 10000,
+    MIN_METADATA_REFRESH_MS: 30000,
+    MIN_TEAM_REFRESH_MS: 10000,
 
     loadFromStorage() {
         try {
@@ -45,7 +47,9 @@ window.state = {
             const metadataTs = localStorage.getItem("metadataTimestamp");
             const selectedTeamRaw = localStorage.getItem("selectedTeamId");
             const factionIdRaw = localStorage.getItem("factionId");
-            const refreshSecondsRaw = localStorage.getItem("refreshPeriodSeconds");
+            const legacyRefreshSecondsRaw = localStorage.getItem("refreshPeriodSeconds");
+            const metadataRefreshSecondsRaw = localStorage.getItem("metadataRefreshPeriodSeconds") || legacyRefreshSecondsRaw;
+            const teamRefreshSecondsRaw = localStorage.getItem("teamRefreshPeriodSeconds") || legacyRefreshSecondsRaw;
 
             this.user = userRaw ? JSON.parse(userRaw) : null;
             this.teams = teamsRaw ? JSON.parse(teamsRaw) : [];
@@ -56,11 +60,13 @@ window.state = {
             this.metadataTimestamp = metadataTs ? parseInt(metadataTs, 10) : 0;
             this.selectedTeamId = selectedTeamRaw || null;
             this.factionId = factionIdRaw ? (Number.isNaN(Number(factionIdRaw)) ? null : parseInt(factionIdRaw, 10)) : null;
-            this.refreshPeriodSeconds = refreshSecondsRaw ? parseInt(refreshSecondsRaw, 10) : this.refreshPeriodSeconds;
+            this.metadataRefreshPeriodSeconds = metadataRefreshSecondsRaw ? parseInt(metadataRefreshSecondsRaw, 10) : this.metadataRefreshPeriodSeconds;
+            this.teamRefreshPeriodSeconds = teamRefreshSecondsRaw ? parseInt(teamRefreshSecondsRaw, 10) : this.teamRefreshPeriodSeconds;
             // apply refresh period to ms settings
-            this.METADATA_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 10000;
-            this.TEAM_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 10000;
-            this.MIN_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 10000;
+            this.METADATA_REFRESH_MS = this.metadataRefreshPeriodSeconds * 1000;
+            this.TEAM_REFRESH_MS = this.teamRefreshPeriodSeconds * 1000;
+            this.MIN_METADATA_REFRESH_MS = this.METADATA_REFRESH_MS;
+            this.MIN_TEAM_REFRESH_MS = this.TEAM_REFRESH_MS;
             localStorage.removeItem("hidePinkPowerTeam");
             localStorage.removeItem("ffapikey");
             localStorage.removeItem("rememberFfApiKey");
@@ -91,14 +97,22 @@ window.state = {
         }
     },
 
-    saveRefreshPeriod(seconds) {
+    saveMetadataRefreshPeriod(seconds) {
+        const parsed = Number(seconds);
+        const sec = Number.isFinite(parsed) && parsed > 0 ? parsed : 30;
+        this.metadataRefreshPeriodSeconds = sec;
+        localStorage.setItem("metadataRefreshPeriodSeconds", String(sec));
+        this.METADATA_REFRESH_MS = sec * 1000;
+        this.MIN_METADATA_REFRESH_MS = sec * 1000;
+    },
+
+    saveTeamRefreshPeriod(seconds) {
         const parsed = Number(seconds);
         const sec = Number.isFinite(parsed) && parsed > 0 ? parsed : 10;
-        this.refreshPeriodSeconds = sec;
-        localStorage.setItem("refreshPeriodSeconds", String(sec));
-        this.METADATA_REFRESH_MS = sec * 1000;
+        this.teamRefreshPeriodSeconds = sec;
+        localStorage.setItem("teamRefreshPeriodSeconds", String(sec));
         this.TEAM_REFRESH_MS = sec * 1000;
-        this.MIN_REFRESH_MS = sec * 1000;
+        this.MIN_TEAM_REFRESH_MS = sec * 1000;
     },
 
     clearCachedData() {
@@ -226,13 +240,13 @@ window.state = {
     },
 
     shouldRefreshMetadata(now = Date.now()) {
-        if (now - this.metadataTimestamp < this.MIN_REFRESH_MS) return false;
+        if (now - this.metadataTimestamp < this.MIN_METADATA_REFRESH_MS) return false;
         return now - this.metadataTimestamp >= this.METADATA_REFRESH_MS;
     },
 
     shouldRefreshTeam(teamId, now = Date.now()) {
         const last = this.teamPlayersTimestamp[teamId] || 0;
-        if (now - last < this.MIN_REFRESH_MS) return false;
+        if (now - last < this.MIN_TEAM_REFRESH_MS) return false;
         return now - last >= this.TEAM_REFRESH_MS;
     }
 };
