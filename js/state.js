@@ -58,8 +58,9 @@ window.state = {
             this.factionId = factionIdRaw ? (Number.isNaN(Number(factionIdRaw)) ? null : parseInt(factionIdRaw, 10)) : null;
             this.refreshPeriodSeconds = refreshSecondsRaw ? parseInt(refreshSecondsRaw, 10) : this.refreshPeriodSeconds;
             // apply refresh period to ms settings
-            this.METADATA_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 30000;
+            this.METADATA_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 10000;
             this.TEAM_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 10000;
+            this.MIN_REFRESH_MS = refreshSecondsRaw ? this.refreshPeriodSeconds * 1000 : 10000;
             localStorage.removeItem("hidePinkPowerTeam");
             localStorage.removeItem("ffapikey");
             localStorage.removeItem("rememberFfApiKey");
@@ -91,11 +92,13 @@ window.state = {
     },
 
     saveRefreshPeriod(seconds) {
-        const sec = Number(seconds) || 30;
+        const parsed = Number(seconds);
+        const sec = Number.isFinite(parsed) && parsed > 0 ? parsed : 10;
         this.refreshPeriodSeconds = sec;
         localStorage.setItem("refreshPeriodSeconds", String(sec));
         this.METADATA_REFRESH_MS = sec * 1000;
         this.TEAM_REFRESH_MS = sec * 1000;
+        this.MIN_REFRESH_MS = sec * 1000;
     },
 
     clearCachedData() {
