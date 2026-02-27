@@ -497,16 +497,22 @@
     }
 
     function extractHospitalLocation(statusObj) {
-        if (!statusObj || !statusObj.description) return "Torn";
-        const desc = statusObj.description.trim();
+        if (!statusObj) return "Torn";
 
-        // Try patterns like: In a Hawaiian hospital...
-        const match = desc.match(/In\s+(?:a|an)?\s*([A-Za-z]+)\s+hospital/i);
+        const details = statusObj.details || {};
+        const detailLocation = details.country || details.location || details.from || details.destination;
+        if (detailLocation) return detailLocation;
+
+        const desc = (statusObj.description || "").trim();
+        if (!desc) return "Torn";
+
+        // Try patterns like: In a Hawaiian hospital..., In a South African hospital..., etc.
+        const match = desc.match(/In\s+(?:a|an)?\s*([A-Za-z\s]+?)\s+hospital/i);
         if (match && match[1]) {
-            return match[1];
+            return match[1].trim();
         }
 
-        // Default if no city is named
+        // Default if no location is named.
         return "Torn";
     }
 
@@ -1148,6 +1154,7 @@
         return players.filter(p => {
             const statusText = simplifyStatus(p.status);
             const playerLocation = p.location;
+            const playerState = p.status?.state;
             if (p.level < levelMin || p.level > levelMax) return false;
             const bsValue = typeof p.bs_estimate === "number" ? p.bs_estimate : parseBattlestatValue(p.bs_estimate);
             const bsIsNumber = typeof bsValue === "number" && !Number.isNaN(bsValue);
@@ -1172,7 +1179,7 @@
             if (locationSelection === "all") return true;
 
             if (locationSelection === "torn") {
-                return playerLocation === LOCATION.TORN || (!playerLocation && st !== "Traveling" && st !== "Abroad");
+                return playerLocation === LOCATION.TORN || (!playerLocation && playerState !== "Traveling" && playerState !== "Abroad");
             }
 
             if (locationSelection === "abroad") {
@@ -1281,7 +1288,7 @@
                 const remaining = hospitalUntil - nowSec;
                 const countdownText = formatHMS(Math.max(0, remaining));
                 statusClass = getHospitalCountdownClass(remaining);
-                const loc = extractHospitalLocation(p.status);
+                const loc = resolveHospitalLocation(p.status);
                 statusCellContent = `In hospital (${loc}) for <span class="countdown" data-until="${hospitalUntil}">${countdownText}</span>`;
             }
 
