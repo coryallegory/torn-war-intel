@@ -197,11 +197,10 @@
         if (dom.teamSettingsApply) dom.teamSettingsApply.addEventListener("click", () => {
             const refreshVal = dom.teamRefreshPeriodInput.value.trim();
             const faction = Number(state.factionId);
-            const refreshSec = refreshVal === "" ? 10 : Number(refreshVal);
+            const appliedRefreshSeconds = state.saveTeamRefreshPeriod(refreshVal === "" ? 10 : refreshVal);
+            dom.teamRefreshPeriodInput.value = appliedRefreshSeconds;
 
-            state.saveTeamRefreshPeriod(refreshSec);
-
-            setStatus(dom.settingsStatus, "Team refresh saved", false, false);
+            setStatus(dom.settingsStatus, `Team refresh saved (${appliedRefreshSeconds}s)`, false, false);
             setTimeout(() => setStatus(dom.settingsStatus, "", false, true), 2000);
             // If a faction ID is supplied, immediately fetch and show its members as the main list
             if (faction) {
