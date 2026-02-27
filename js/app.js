@@ -9,8 +9,6 @@
         apikeyClear: document.getElementById("apikey-clear"),
         apikeyPrompt: document.getElementById("apikey-prompt"),
         apikeyDisplayRow: document.getElementById("apikey-display-row"),
-        metadataRefreshPeriodInput: document.getElementById("metadata-refresh-period-input"),
-        metadataSettingsApply: document.getElementById("metadata-settings-apply"),
         teamRefreshPeriodInput: document.getElementById("team-refresh-period-input"),
         teamSettingsApply: document.getElementById("team-settings-apply"),
         settingsStatus: document.getElementById("settings-status"),
@@ -37,9 +35,6 @@
         lastActionMaxInput: document.getElementById("last-action-max"),
         filterOkayOnly: document.getElementById("filter-okay-only"),
         locationFilter: document.getElementById("location-filter"),
-        metadataTimerLabel: document.getElementById("metadata-refresh-timer"),
-        metadataIcon: document.getElementById("metadata-refresh-icon"),
-        metadataLastRun: document.getElementById("metadata-last-run"),
         teamTimerLabel: document.getElementById("team-refresh-timer"),
         teamIcon: document.getElementById("team-refresh-icon")
         ,teamLastRun: document.getElementById("team-last-run")
@@ -62,7 +57,7 @@
 
     const LOCATION_SYNONYMS = buildLocationSynonymMap();
 
-    const intervals = { metadata: null, team: null, countdown: null };
+    const intervals = { team: null, countdown: null };
     let offlineTeamLookup = null;
     let offlineTeamLookupPromise = null;
     const teamFetchInFlight = new Map();
@@ -72,7 +67,6 @@
         player: { column: "fair_fight", direction: "asc" }
     };
     let metadataRefreshInFlight = null;
-    let metadataRefreshStart = 0;
 
     function isPinkPowerTeam(teamLike) {
         if (!teamLike) return false;
@@ -151,13 +145,7 @@
         if (dom.apikeyRemember) dom.apikeyRemember.checked = state.rememberApiKey;
         dom.apikeyInput.value = "";
 
-        // settings inputs
-        if (state.metadataRefreshPeriodSeconds) dom.metadataRefreshPeriodInput.value = state.metadataRefreshPeriodSeconds;
         if (state.teamRefreshPeriodSeconds) dom.teamRefreshPeriodInput.value = state.teamRefreshPeriodSeconds;
-
-        if (dom.metadataLastRun && state.metadataTimestamp) {
-            try { dom.metadataLastRun.textContent = `Last: ${new Date(state.metadataTimestamp).toLocaleTimeString()}`; } catch (e) {}
-        }
 
         if (dom.teamLastRun && state.selectedTeamId) {
             const ts = state.teamPlayersTimestamp[state.selectedTeamId];
@@ -188,13 +176,14 @@
             validateAndStart();
         } else {
             showNoKey();
-            // no static snapshot usage — leave UI empty until API key provided
+            renderDefaultPlayersFromDefaults();
         }
 
         if (dom.apikeyApply) dom.apikeyApply.addEventListener("click", () => {
             const key = dom.apikeyInput.value.trim();
             if (!key) {
                 showNoKey();
+                renderDefaultPlayersFromDefaults();
                 return;
             }
             state.saveApiKey(key, dom.apikeyRemember ? dom.apikeyRemember.checked : false);
@@ -203,14 +192,6 @@
 
         if (dom.apikeyClear) dom.apikeyClear.addEventListener("click", () => {
             clearApiKeyAndUi();
-        });
-
-        if (dom.metadataSettingsApply) dom.metadataSettingsApply.addEventListener("click", () => {
-            const refreshVal = dom.metadataRefreshPeriodInput.value.trim();
-            const refreshSec = refreshVal === "" ? 30 : Number(refreshVal);
-            state.saveMetadataRefreshPeriod(refreshSec);
-            setStatus(dom.settingsStatus, "Metadata refresh saved", false, false);
-            setTimeout(() => setStatus(dom.settingsStatus, "", false, true), 2000);
         });
 
         if (dom.teamSettingsApply) dom.teamSettingsApply.addEventListener("click", () => {
@@ -315,6 +296,7 @@
             state.clearApiKey();
             if (dom.apikeyRemember) dom.apikeyRemember.checked = false;
             showNoKey("API key invalid");
+            renderDefaultPlayersFromDefaults();
             return;
         }
 
@@ -325,18 +307,17 @@
         dom.userBox.classList.remove("hidden");
 
         renderUserInfo();
-        startMetadataCountdown();
+        await refreshMetadataOnce();
         startTeamCountdown();
-        if (state.selectedTeamId) {
-            refreshTeamPlayers(true);
+        if (state.factionId) {
+            await refreshTeamPlayers(true);
         }
     }
 
     function stopIntervals() {
-        if (intervals.metadata) clearInterval(intervals.metadata);
         if (intervals.team) clearInterval(intervals.team);
         if (intervals.countdown) clearInterval(intervals.countdown);
-        intervals.metadata = intervals.team = intervals.countdown = null;
+        intervals.team = intervals.countdown = null;
     }
 
     function showNoKey(message = "No API key loaded") {
@@ -350,9 +331,7 @@
         state.clearCachedData();
         dom.userInfoContent.innerHTML = "";
         dom.userBox.classList.add("hidden");
-        dom.metadataTimerLabel.textContent = "Next refresh: --";
         dom.teamTimerLabel.textContent = "Next refresh: --";
-        dom.metadataIcon.classList.add("hidden");
         dom.teamIcon.classList.add("hidden");
 
         renderTeams();
@@ -365,24 +344,18 @@
         if (dom.apikeyRemember) dom.apikeyRemember.checked = false;
         clearAuthenticatedState();
         showNoKey();
+        renderDefaultPlayersFromDefaults();
         dom.apikeyInput.focus();
         // static snapshot removed; nothing to load
     }
 
     // static snapshot loading removed — caching now only in localStorage via state.*
 
-    async function refreshMetadata(force = false) {
+    async function refreshMetadata() {
         if (metadataRefreshInFlight) {
             await metadataRefreshInFlight;
             return;
         }
-
-        const now = Date.now();
-        if (!force && !state.shouldRefreshMetadata(now)) return;
-        if (now - metadataRefreshStart < state.MIN_METADATA_REFRESH_MS) return;
-
-        metadataRefreshStart = now;
-        dom.metadataIcon.classList.remove("hidden");
 
         const refreshPromise = (async () => {
             const userData = await api.getUser(state.apikey);
@@ -393,16 +366,8 @@
                 renderUserInfo();
             }
 
-            // This app now manages a single faction only. Team member refreshes are
-            // handled by the team refresh loop to avoid race conditions between two
-            // independent pollers mutating state.teamPlayers.
             if (state.factionId) {
-                const teamKey = `faction:${state.factionId}`;
                 try {
-                    // Bootstrap members once if none are cached yet.
-                    if (!Array.isArray(state.teamPlayers[teamKey]) || !state.teamPlayers[teamKey].length) {
-                        await fetchAndCacheFactionMembers(state.factionId, true);
-                    }
                     ensureValidSelectedTeam();
                     renderTeams();
                 } catch (err) {
@@ -415,14 +380,6 @@
             }
 
             state.cacheMetadata(state.user, state.teams);
-            dom.metadataIcon.classList.add("hidden");
-            if (dom.metadataLastRun) {
-                try {
-                    dom.metadataLastRun.textContent = `Last: ${new Date(state.metadataTimestamp).toLocaleTimeString()}`;
-                } catch (e) {
-                    /* ignore */
-                }
-            }
         })();
 
         metadataRefreshInFlight = refreshPromise;
@@ -433,17 +390,19 @@
         }
     }
 
+    async function refreshMetadataOnce() {
+        await refreshMetadata();
+    }
+
     // Faction import and rendering removed — faction members are shown directly in the main players table
 
     function renderUserInfo() {
         const u = state.user;
         if (!u) return;
 
-        const stateColor = mapStateColor(u.status.state);
-        const statusText = simplifyStatus(u.status);
         dom.userInfoContent.innerHTML = `
-            <div><strong>${u.name}</strong> [${u.level}]</div>
-            <div class="${stateColor}">${statusText}</div>
+            <div><strong>${u.name}</strong></div>
+            <div>ID: ${u.id}</div>
         `;
     }
 
@@ -706,14 +665,18 @@
 
     let ffDefaultsPromise = null;
 
-    async function getDefaultFfStatsMap() {
+    async function getDefaultFfPayload() {
         if (!ffDefaultsPromise) {
             ffDefaultsPromise = fetch('ffscouter_defaults.json', { cache: "no-store" })
                 .then(resp => resp.ok ? resp.json() : null)
                 .catch(() => null);
         }
 
-        const payload = await ffDefaultsPromise;
+        return ffDefaultsPromise;
+    }
+
+    async function getDefaultFfStatsMap() {
+        const payload = await getDefaultFfPayload();
         const map = new Map();
         const raw = payload && payload.data;
 
@@ -1435,15 +1398,6 @@
         dom.locationFilter.addEventListener("change", renderPlayers);
     }
 
-    function startMetadataCountdown() {
-        if (intervals.metadata) clearInterval(intervals.metadata);
-        intervals.metadata = setInterval(() => {
-            const remaining = state.METADATA_REFRESH_MS - (Date.now() - state.metadataTimestamp);
-            dom.metadataTimerLabel.textContent = `Next refresh: ${Math.max(0, Math.floor(remaining / 1000))}s`;
-            if (remaining <= 0) refreshMetadata();
-        }, 1000);
-    }
-
     function startTeamCountdown() {
         if (intervals.team) clearInterval(intervals.team);
         intervals.team = setInterval(() => {
@@ -1477,6 +1431,42 @@
             }
         } catch (err) {
             console.warn('Failed to load ffscouter defaults', err);
+        }
+    }
+
+    async function renderDefaultPlayersFromDefaults() {
+        try {
+            const payload = await getDefaultFfPayload();
+            const defaults = Array.isArray(payload?.data) ? payload.data : [];
+            const fallbackFactionId = Number(payload?.faction_id);
+            const factionId = state.factionId || (!Number.isNaN(fallbackFactionId) && fallbackFactionId > 0 ? fallbackFactionId : null);
+            const teamId = factionId ? `faction:${factionId}` : "defaults";
+
+            const players = defaults.map(entry => ensurePlayerDefaults({
+                id: entry.player_id,
+                name: `Player ${entry.player_id}`,
+                level: 0,
+                status: { state: "--", description: "--" },
+                last_action: {},
+                fair_fight: entry.fair_fight,
+                bs_estimate: entry.bs_estimate,
+                bs_estimate_human: entry.bs_estimate_human,
+                rawData: entry
+            }));
+
+            state.teamPlayers = { [teamId]: players };
+            state.selectedTeamId = teamId;
+            state.teams = [{ id: teamId, name: payload?.faction_name || "Default Data", participants: players.length }];
+
+            if (dom.playersTitle) {
+                const name = payload?.faction_name || "Faction Players";
+                dom.playersTitle.textContent = factionId ? `${name} [${factionId}]` : name;
+            }
+
+            renderTeams();
+            renderPlayers();
+        } catch (err) {
+            console.warn("Failed to render default player data", err);
         }
     }
 
