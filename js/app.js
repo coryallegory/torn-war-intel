@@ -382,11 +382,16 @@
                 renderUserInfo();
             }
 
-            // This app now manages a single faction only. If a factionId is configured,
-            // refresh its members and metadata; otherwise clear teams metadata.
+            // This app now manages a single faction only. Team member refreshes are
+            // handled by the team refresh loop to avoid race conditions between two
+            // independent pollers mutating state.teamPlayers.
             if (state.factionId) {
+                const teamKey = `faction:${state.factionId}`;
                 try {
-                    await fetchAndCacheFactionMembers(state.factionId, true);
+                    // Bootstrap members once if none are cached yet.
+                    if (!Array.isArray(state.teamPlayers[teamKey]) || !state.teamPlayers[teamKey].length) {
+                        await fetchAndCacheFactionMembers(state.factionId, true);
+                    }
                     ensureValidSelectedTeam();
                     renderTeams();
                 } catch (err) {
