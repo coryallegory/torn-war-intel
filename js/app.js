@@ -1300,10 +1300,10 @@
                 const countdownText = formatHMS(Math.max(0, remaining));
                 statusClass = getHospitalCountdownClass(remaining);
                 const loc = resolveHospitalLocation(p.status);
-                statusCellContent = `&#127973; (${loc}) for <span class="countdown" data-until="${hospitalUntil}">${countdownText}</span>`;
+                statusCellContent = `<span title="Hospitalized">&#127973;</span> (${loc}) for <span class="countdown" data-until="${hospitalUntil}">${countdownText}</span>`;
 
                 if (hasEarlyDischarge(p)) {
-                    statusCellContent += " &#129399;";
+                    statusCellContent += ' <span title="Early Discharge Available">&#129399;</span>';
                 }
             }
 
