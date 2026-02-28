@@ -1327,7 +1327,7 @@
             const battlestatsColorClass = getBattlestatsFairFightColorClass(fairFightValue);
 
             row.innerHTML = `
-                <td><a href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.id}</a></td>
+                <td><span class="player-id-popover-trigger" data-team-id="${teamId}" data-player-id="${p.id}" data-player-name="${p.name}">${p.id}</span></td>
                 <td><a class="player-name-link" data-team-id="${teamId}" data-player-id="${p.id}" href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.name}</a></td>
                 <td>${p.level}</td>
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
@@ -1472,12 +1472,12 @@ ${defaultsPayload ? JSON.stringify(defaultsPayload, null, 2) : "No FFscouter def
         const popover = createPlayerPayloadPopover();
 
         dom.playerTableBody.addEventListener("mouseover", event => {
-            const nameLink = event.target.closest(".player-name-link");
-            if (!nameLink) return;
+            const idCellTrigger = event.target.closest(".player-id-popover-trigger");
+            if (!idCellTrigger) return;
 
-            const teamId = nameLink.dataset.teamId;
-            const playerId = nameLink.dataset.playerId;
-            const playerName = nameLink.textContent || "Player";
+            const teamId = idCellTrigger.dataset.teamId;
+            const playerId = idCellTrigger.dataset.playerId;
+            const playerName = idCellTrigger.dataset.playerName || "Player";
             popover.textContent = buildPlayerPayloadPopoverText(teamId, playerId, playerName);
             popover.classList.remove("hidden");
             positionPopover(popover, event);
@@ -1489,11 +1489,11 @@ ${defaultsPayload ? JSON.stringify(defaultsPayload, null, 2) : "No FFscouter def
         });
 
         dom.playerTableBody.addEventListener("mouseout", event => {
-            const fromLink = event.target.closest(".player-name-link");
-            if (!fromLink) return;
+            const fromIdTrigger = event.target.closest(".player-id-popover-trigger");
+            if (!fromIdTrigger) return;
 
             const toElement = event.relatedTarget;
-            if (toElement && fromLink.contains(toElement)) return;
+            if (toElement && fromIdTrigger.contains(toElement)) return;
             popover.classList.add("hidden");
         });
 
