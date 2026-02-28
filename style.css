@@ -349,6 +349,21 @@ tr.selected-row {
 .state-orange { color: #ff9900; }
 .state-red { color: #ff3333; }
 .state-blue { color: #33aaff; }
+.state-gray { color: #9b9b9b; }
+
+.last-action-status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+    background: #666;
+}
+
+.last-action-status-indicator.state-green { background: #00cc44; }
+.last-action-status-indicator.state-yellow { background: #ffdf00; }
+.last-action-status-indicator.state-gray { background: #9b9b9b; }
 
 /* Box grouping user + team list */
 #meta-section {
