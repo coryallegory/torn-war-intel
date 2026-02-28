@@ -420,10 +420,11 @@
         if (!statusObj) return "Unknown";
         const desc = statusObj.description || statusObj.state;
         if (desc.startsWith("Traveling to")) {
-            return desc.replace("Traveling to", "Traveling (") + ")";
+            const place = desc.replace("Traveling to ", "");
+            return `&#9992;&#65039; to ${place}`;
         } else if (desc.startsWith("Returning to Torn from")) {
             const place = desc.replace("Returning to Torn from ", "");
-            return `Returning from ${place}`;
+            return `&#9992;&#65039; from ${place}`;
         }
         return desc;
     }
