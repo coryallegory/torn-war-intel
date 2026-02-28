@@ -1322,21 +1322,14 @@
 
             const attackUrl = `https://www.torn.com/loader.php?sid=attack&user2ID=${p.id}`;
 
-            // Render last action as minutes:seconds, include hours when > 60 minutes,
-            // and color-code the text: green (<15m), red (>1h), default otherwise.
+            // Render last action as H:MM:SS and color-code the text:
+            // green (<15m), red (>1h), default otherwise.
             let lastActionDisplayText = p.last_action?.relative ?? "--";
             let lastActionClass = "";
             const lastActionStatusClass = mapLastActionStatusColor(p.last_action?.status);
             if (p.last_action && p.last_action.timestamp) {
                 const delta = Math.max(0, nowSec - Number(p.last_action.timestamp));
-                const hours = Math.floor(delta / 3600);
-                const mins = Math.floor((delta % 3600) / 60);
-                const secs = delta % 60;
-                if (hours > 0) {
-                    lastActionDisplayText = `${hours}h ${mins}m ${secs}s`;
-                } else {
-                    lastActionDisplayText = `${mins}m ${secs}s`;
-                }
+                lastActionDisplayText = formatHMS(delta);
 
                 if (delta < 15 * 60) {
                     lastActionClass = "state-green";
@@ -1406,7 +1399,7 @@
                         // The API refresh is the source of truth for recovery state.
                         cell.className = "status-cell state-red";
                     }
-                    el.textContent = "0s";
+                    el.textContent = formatHMS(0);
                     el.removeAttribute("data-until");
                     return;
                 }
@@ -1419,12 +1412,11 @@
     }
 
     function formatHMS(sec) {
-        const h = Math.floor(sec / 3600);
-        const m = Math.floor((sec % 3600) / 60);
-        const s = sec % 60;
-        if (h > 0) return `${h}h ${m}m ${s}s`;
-        if (m > 0) return `${m}m ${s}s`;
-        return `${s}s`;
+        const totalSeconds = Math.max(0, Math.floor(Number(sec) || 0));
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+        return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
     }
 
     function getHospitalCountdownClass(remaining) {
@@ -1546,7 +1538,7 @@ ${defaultsPayload ? JSON.stringify(defaultsPayload, null, 2) : "No FFscouter def
             }
             const last = state.teamPlayersTimestamp[teamId] || 0;
             const remaining = state.TEAM_REFRESH_MS - (Date.now() - last);
-            dom.teamTimerLabel.textContent = `Next refresh: ${Math.max(0, Math.floor(remaining / 1000))}s`;
+            dom.teamTimerLabel.textContent = `Next refresh: ${formatHMS(Math.max(0, Math.floor(remaining / 1000)))}`;
             if (remaining <= 0 && isTeamSectionVisible()) refreshTeamPlayers();
         }, 1000);
     }
