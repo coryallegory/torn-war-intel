@@ -1348,13 +1348,13 @@
 
             row.innerHTML = `
                 <td><span class="player-id-popover-trigger" data-team-id="${teamId}" data-player-id="${p.id}" data-player-name="${p.name}">${p.id}</span></td>
-                <td><a class="player-name-link" data-team-id="${teamId}" data-player-id="${p.id}" href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.name}</a></td>
                 <td>${p.level}</td>
-                <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td>
                     <span class="last-action-status-indicator ${lastActionStatusClass}" title="${p.last_action?.status ?? "Unknown"}"></span>
                     <span class="${lastActionClass}">${lastActionDisplayText}</span>
                 </td>
+                <td><a class="player-name-link" data-team-id="${teamId}" data-player-id="${p.id}" href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.name}</a></td>
+                <td class="status-cell ${statusClass}">${statusCellContent}</td>
                 <td>${p.fair_fight ?? "--"}</td>
                 <td class="${battlestatsColorClass}"><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"} ⚔</a></td>
                 <td class="claimed-cell"><input type="checkbox" class="claimed-checkbox" ${isClaimed ? "checked" : ""} aria-label="Mark ${p.name} as claimed"></td>
