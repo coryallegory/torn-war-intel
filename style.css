@@ -349,6 +349,18 @@ tr.selected-row {
 .state-orange { color: #ff9900; }
 .state-red { color: #ff3333; }
 .state-blue { color: #33aaff; }
+.state-gray { color: #9b9b9b; }
+
+.last-action-status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+    background: currentColor;
+    color: #666;
+}
 
 /* Box grouping user + team list */
 #meta-section {

@@ -437,6 +437,19 @@
         );
     }
 
+    function mapLastActionStatusColor(status) {
+        switch ((status || "").toLowerCase()) {
+            case "online":
+                return "state-green";
+            case "offline":
+                return "state-gray";
+            case "idle":
+                return "state-yellow";
+            default:
+                return "";
+        }
+    }
+
     function buildLocationSynonymMap() {
         const map = new Map();
         Object.values(LOCATION).forEach(loc => map.set(loc.toLowerCase(), loc));
@@ -1313,6 +1326,7 @@
             // and color-code the text: green (<15m), red (>1h), default otherwise.
             let lastActionDisplayText = p.last_action?.relative ?? "--";
             let lastActionClass = "";
+            const lastActionStatusClass = mapLastActionStatusColor(p.last_action?.status);
             if (p.last_action && p.last_action.timestamp) {
                 const delta = Math.max(0, nowSec - Number(p.last_action.timestamp));
                 const hours = Math.floor(delta / 3600);
@@ -1344,7 +1358,10 @@
                 <td><a class="player-name-link" data-team-id="${teamId}" data-player-id="${p.id}" href="https://www.torn.com/profiles.php?XID=${p.id}" target="_blank" rel="noopener noreferrer">${p.name}</a></td>
                 <td>${p.level}</td>
                 <td class="status-cell ${statusClass}">${statusCellContent}</td>
-                <td><span class="${lastActionClass}">${lastActionDisplayText}</span></td>
+                <td>
+                    <span class="last-action-status-indicator ${lastActionStatusClass}" title="${p.last_action?.status ?? "Unknown"}"></span>
+                    <span class="${lastActionClass}">${lastActionDisplayText}</span>
+                </td>
                 <td>${p.fair_fight ?? "--"}</td>
                 <td class="${battlestatsColorClass}"><a href="${attackUrl}" target="_blank" rel="noopener noreferrer">${p.bs_estimate_human || "--"} ⚔</a></td>
                 <td class="claimed-cell"><input type="checkbox" class="claimed-checkbox" ${isClaimed ? "checked" : ""} aria-label="Mark ${p.name} as claimed"></td>
