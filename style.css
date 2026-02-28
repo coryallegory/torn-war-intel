@@ -358,9 +358,12 @@ tr.selected-row {
     border-radius: 50%;
     margin-right: 6px;
     vertical-align: middle;
-    background: currentColor;
-    color: #666;
+    background: #666;
 }
+
+.last-action-status-indicator.state-green { background: #00cc44; }
+.last-action-status-indicator.state-yellow { background: #ffdf00; }
+.last-action-status-indicator.state-gray { background: #9b9b9b; }
 
 /* Box grouping user + team list */
 #meta-section {
