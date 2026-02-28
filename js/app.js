@@ -428,6 +428,15 @@
         return desc;
     }
 
+    function hasEarlyDischarge(player) {
+        return Boolean(
+            player?.has_early_discharge
+            || player?.status?.has_early_discharge
+            || player?.status?.details?.has_early_discharge
+            || player?.rawData?.has_early_discharge
+        );
+    }
+
     function buildLocationSynonymMap() {
         const map = new Map();
         Object.values(LOCATION).forEach(loc => map.set(loc.toLowerCase(), loc));
@@ -1292,6 +1301,10 @@
                 statusClass = getHospitalCountdownClass(remaining);
                 const loc = resolveHospitalLocation(p.status);
                 statusCellContent = `In hospital (${loc}) for <span class="countdown" data-until="${hospitalUntil}">${countdownText}</span>`;
+
+                if (hasEarlyDischarge(p)) {
+                    statusCellContent += " &#129399;";
+                }
             }
 
             const attackUrl = `https://www.torn.com/loader.php?sid=attack&user2ID=${p.id}`;
