@@ -1,3 +1,5 @@
+https://coryallegory.github.io/torn-war-intel/
+
 # Torn Ranked War Assistant
 
 Small browser-run web app focused on monitoring a single Torn Faction during ranked-war events. The app runs entirely client-side, uses the official Torn API for live faction/player data, and uses local `ffscouter_defaults.json` values for battlestat estimates.
