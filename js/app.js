@@ -1321,7 +1321,7 @@
                 }
             }
 
-            const attackUrl = `https://www.torn.com/loader.php?sid=attack&user2ID=${p.id}`;
+            const attackUrl = `https://www.torn.com/page.php?sid=attack&user2ID=${p.id}`;
 
             // Render last action as H:MM:SS and color-code the text:
             // green (<15m), red (>1h), default otherwise.
