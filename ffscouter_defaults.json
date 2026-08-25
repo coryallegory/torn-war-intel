@@ -1,465 +1,117 @@
 {
-  "faction_id": 16335,
-  "faction_name": "SMTH - November Chopin",
-  "generated_at": 1787170267,
+  "faction_id": 13665,
+  "faction_name": "PT-Painguins",
+  "generated_at": 1787666333,
   "data": [
     {
-      "player_id": 1513571,
-      "fair_fight": 272.3,
-      "bs_estimate": 49607093840,
-      "bs_estimate_human": "49.6b",
-      "bss_public": 379069,
-      "last_updated": 1778029583,
-      "source": "spies",
+      "player_id": 27478,
+      "fair_fight": 137.72,
+      "bs_estimate": 10015391175,
+      "bs_estimate_human": "10b",
+      "bss_public": 196267,
+      "last_updated": 1757653897,
+      "source": "bss",
       "distribution": null,
-      "spies": [
-        {
-          "strength": 4032766836,
-          "speed": 3996328497,
-          "defense": 3180483908,
-          "dexterity": 38397514599,
-          "total": 49607093840,
-          "last_updated": 1778029583,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
+      "spies": [],
       "available_estimates": {
         "bss": {
-          "bss_public": 314857,
-          "bs_estimate": 25775081917,
-          "bs_estimate_human": "25.8b",
-          "last_updated": 1786829777,
-          "fair_fight": 226.34
+          "bss_public": 196267,
+          "bs_estimate": 10015391175,
+          "bs_estimate_human": "10b",
+          "last_updated": 1757653897,
+          "fair_fight": 137.72
         },
         "premium": null,
-        "spies": {
-          "bs_estimate": 49607093840,
-          "bs_estimate_human": "49.6b",
-          "last_updated": 1778029583,
-          "source": "tornstats",
-          "fair_fight": 272.3
-        }
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 35198,
+      "fair_fight": 134.31,
+      "bs_estimate": 9521843994,
+      "bs_estimate_human": "9.52b",
+      "bss_public": 191370,
+      "last_updated": 1764970768,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 191370,
+          "bs_estimate": 9521843994,
+          "bs_estimate_human": "9.52b",
+          "last_updated": 1764970768,
+          "fair_fight": 134.31
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 42648,
+      "fair_fight": 135.68,
+      "bs_estimate": 9718188711,
+      "bs_estimate_human": "9.72b",
+      "bss_public": 193333,
+      "last_updated": 1786725901,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 193333,
+          "bs_estimate": 9718188711,
+          "bs_estimate_human": "9.72b",
+          "last_updated": 1786725901,
+          "fair_fight": 135.68
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 60666,
+      "fair_fight": 216.04,
+      "bs_estimate": 24775595225,
+      "bs_estimate_human": "24.8b",
+      "bss_public": 308692,
+      "last_updated": 1783000063,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 308692,
+          "bs_estimate": 24775595225,
+          "bs_estimate_human": "24.8b",
+          "last_updated": 1783000063,
+          "fair_fight": 216.04
+        },
+        "premium": null,
+        "spies": null
       },
       "premium_insights_available": true
     },
     {
-      "player_id": 1544409,
-      "fair_fight": 209.02,
-      "bs_estimate": 22872443785,
-      "bs_estimate_human": "22.9b",
-      "bss_public": 290649,
-      "last_updated": 1778029317,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 6309875690,
-          "speed": 3743069540,
-          "defense": 2213570872,
-          "dexterity": 10605927683,
-          "total": 22872443785,
-          "last_updated": 1778029317,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 290158,
-          "bs_estimate": 21889832891,
-          "bs_estimate_human": "21.9b",
-          "last_updated": 1778044208,
-          "fair_fight": 208.66
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 22872443785,
-          "bs_estimate_human": "22.9b",
-          "last_updated": 1778029317,
-          "source": "tornstats",
-          "fair_fight": 209.02
-        }
-      },
-      "premium_insights_available": true
-    },
-    {
-      "player_id": 1663189,
-      "fair_fight": 200.49,
-      "bs_estimate": 21990799254,
-      "bs_estimate_human": "22b",
-      "bss_public": 278739,
-      "last_updated": 1778029226,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 3031152673,
-          "speed": 3031082628,
-          "defense": 12896241683,
-          "dexterity": 3032322270,
-          "total": 21990799254,
-          "last_updated": 1778029226,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 284250,
-          "bs_estimate": 21007496250,
-          "bs_estimate_human": "21b",
-          "last_updated": 1785375315,
-          "fair_fight": 204.44
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 21990799254,
-          "bs_estimate_human": "22b",
-          "last_updated": 1778029226,
-          "source": "tornstats",
-          "fair_fight": 200.49
-        }
-      },
-      "premium_insights_available": true
-    },
-    {
-      "player_id": 1711541,
-      "fair_fight": 165.31,
-      "bs_estimate": 13704768934,
-      "bs_estimate_human": "13.7b",
-      "bss_public": 229588,
-      "last_updated": 1782798098,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 3075750251,
-          "speed": 3116153316,
-          "defense": 3042989531,
-          "dexterity": 4183295836,
-          "total": 13418188934,
-          "last_updated": 1778029424,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 229588,
-          "bs_estimate": 13704768934,
-          "bs_estimate_human": "13.7b",
-          "last_updated": 1782798098,
-          "fair_fight": 165.31
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 13418188934,
-          "bs_estimate_human": "13.4b",
-          "last_updated": 1778029424,
-          "source": "tornstats",
-          "fair_fight": 166.41
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 1757366,
-      "fair_fight": 186.86,
-      "bs_estimate": 17534383065,
-      "bs_estimate_human": "17.5b",
-      "bss_public": 259692,
-      "last_updated": 1787122667,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 3016018869,
-          "speed": 3032702970,
-          "defense": 6419756804,
-          "dexterity": 4066351166,
-          "total": 16534829809,
-          "last_updated": 1778029316,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 259692,
-          "bs_estimate": 17534383065,
-          "bs_estimate_human": "17.5b",
-          "last_updated": 1787122667,
-          "fair_fight": 186.86
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 16534829809,
-          "bs_estimate_human": "16.5b",
-          "last_updated": 1778029316,
-          "source": "tornstats",
-          "fair_fight": 182.7
-        }
-      },
-      "premium_insights_available": true
-    },
-    {
-      "player_id": 1769499,
-      "fair_fight": 132.31,
-      "bs_estimate": 9450008108,
-      "bs_estimate_human": "9.45b",
-      "bss_public": 183468,
-      "last_updated": 1778029395,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1302506280,
-          "speed": 1472322140,
-          "defense": 5425718235,
-          "dexterity": 1249461453,
-          "total": 9450008108,
-          "last_updated": 1778029395,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 181060,
-          "bs_estimate": 8523508136,
-          "bs_estimate_human": "8.52b",
-          "last_updated": 1776322827,
-          "fair_fight": 130.58
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 9450008108,
-          "bs_estimate_human": "9.45b",
-          "last_updated": 1778029395,
-          "source": "tornstats",
-          "fair_fight": 132.31
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 1863032,
-      "fair_fight": 125.64,
-      "bs_estimate": 7885337850,
-      "bs_estimate_human": "7.89b",
-      "bss_public": 174150,
-      "last_updated": 1787120257,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1615600023,
-          "speed": 1492341486,
-          "defense": 1737290595,
-          "dexterity": 2208025266,
-          "total": 7053257370,
-          "last_updated": 1778029700,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 174150,
-          "bs_estimate": 7885337850,
-          "bs_estimate_human": "7.89b",
-          "last_updated": 1787120257,
-          "fair_fight": 125.64
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 7053257370,
-          "bs_estimate_human": "7.05b",
-          "last_updated": 1778029700,
-          "source": "tornstats",
-          "fair_fight": 120.88
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2152944,
-      "fair_fight": 118.28,
-      "bs_estimate": 6982133634,
-      "bs_estimate_human": "6.98b",
-      "bss_public": 163873,
-      "last_updated": 1786676803,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1792903139,
-          "speed": 2163557298,
-          "defense": 1456628570,
-          "dexterity": 1298198155,
-          "total": 6711287162,
-          "last_updated": 1778029707,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 163873,
-          "bs_estimate": 6982133634,
-          "bs_estimate_human": "6.98b",
-          "last_updated": 1786676803,
-          "fair_fight": 118.28
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6711287162,
-          "bs_estimate_human": "6.71b",
-          "last_updated": 1778029707,
-          "source": "tornstats",
-          "fair_fight": 117.7
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2427958,
-      "fair_fight": 93.58,
-      "bs_estimate": 4916726527,
-      "bs_estimate_human": "4.92b",
-      "bss_public": 129362,
-      "last_updated": 1778029473,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1951883632,
-          "speed": 1899868600,
-          "defense": 116612044,
-          "dexterity": 948362251,
-          "total": 4916726527,
-          "last_updated": 1778029473,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 131845,
-          "bs_estimate": 4519607047,
-          "bs_estimate_human": "4.52b",
-          "last_updated": 1783616920,
-          "fair_fight": 95.36
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4916726527,
-          "bs_estimate_human": "4.92b",
-          "last_updated": 1778029473,
-          "source": "tornstats",
-          "fair_fight": 93.58
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2430413,
-      "fair_fight": 141.83,
-      "bs_estimate": 10067918110,
-      "bs_estimate_human": "10.1b",
-      "bss_public": 196781,
-      "last_updated": 1784207788,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 3001036531,
-          "speed": 3200185131,
-          "defense": 1909336845,
-          "dexterity": 1281230836,
-          "total": 9391789343,
-          "last_updated": 1778029532,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 196781,
-          "bs_estimate": 10067918110,
-          "bs_estimate_human": "10.1b",
-          "last_updated": 1784207788,
-          "fair_fight": 141.83
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 9391789343,
-          "bs_estimate_human": "9.39b",
-          "last_updated": 1778029532,
-          "source": "tornstats",
-          "fair_fight": 137.58
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2483370,
-      "fair_fight": 125.73,
-      "bs_estimate": 8004860381,
-      "bs_estimate_human": "8b",
-      "bss_public": 174280,
-      "last_updated": 1778029538,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 2000363378,
-          "speed": 1500413095,
-          "defense": 1000211590,
-          "dexterity": 3503872318,
-          "total": 8004860381,
-          "last_updated": 1778029538,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 161787,
-          "bs_estimate": 6805508676,
-          "bs_estimate_human": "6.81b",
-          "last_updated": 1761907041,
-          "fair_fight": 116.79
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 8004860381,
-          "bs_estimate_human": "8b",
-          "last_updated": 1778029538,
-          "source": "tornstats",
-          "fair_fight": 125.73
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2515101,
-      "fair_fight": 115.23,
-      "bs_estimate": 6623093572,
-      "bs_estimate_human": "6.62b",
-      "bss_public": 159604,
-      "last_updated": 1777173012,
+      "player_id": 121433,
+      "fair_fight": 183.23,
+      "bs_estimate": 17791761333,
+      "bs_estimate_human": "17.8b",
+      "bss_public": 261591,
+      "last_updated": 1785598556,
       "source": "bss",
       "distribution": null,
       "spies": [],
       "available_estimates": {
         "bss": {
-          "bss_public": 159604,
-          "bs_estimate": 6623093572,
-          "bs_estimate_human": "6.62b",
-          "last_updated": 1777173012,
-          "fair_fight": 115.23
+          "bss_public": 261591,
+          "bs_estimate": 17791761333,
+          "bs_estimate_human": "17.8b",
+          "last_updated": 1785598556,
+          "fair_fight": 183.23
         },
         "premium": null,
         "spies": null
@@ -467,2875 +119,68 @@
       "premium_insights_available": false
     },
     {
-      "player_id": 2549133,
-      "fair_fight": 84.4,
-      "bs_estimate": 3530784423,
-      "bs_estimate_human": "3.53b",
-      "bss_public": 116533,
-      "last_updated": 1786631906,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1089956408,
-          "speed": 1055447017,
-          "defense": 860284024,
-          "dexterity": 294984325,
-          "total": 3300671774,
-          "last_updated": 1778029719,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 116533,
-          "bs_estimate": 3530784423,
-          "bs_estimate_human": "3.53b",
-          "last_updated": 1786631906,
-          "fair_fight": 84.4
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3300671774,
-          "bs_estimate_human": "3.3b",
-          "last_updated": 1778029719,
-          "source": "tornstats",
-          "fair_fight": 81.16
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2578485,
-      "fair_fight": 107.95,
-      "bs_estimate": 5806012999,
-      "bs_estimate_human": "5.81b",
-      "bss_public": 149435,
-      "last_updated": 1785689243,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1009018410,
-          "speed": 1000489196,
-          "defense": 2358571407,
-          "dexterity": 1001250428,
-          "total": 5369329441,
-          "last_updated": 1778029669,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 149435,
-          "bs_estimate": 5806012999,
-          "bs_estimate_human": "5.81b",
-          "last_updated": 1785689243,
-          "fair_fight": 107.95
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 5369329441,
-          "bs_estimate_human": "5.37b",
-          "last_updated": 1778029669,
-          "source": "tornstats",
-          "fair_fight": 103.78
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2587304,
-      "fair_fight": 111.35,
-      "bs_estimate": 6181144052,
-      "bs_estimate_human": "6.18b",
-      "bss_public": 154187,
-      "last_updated": 1785571050,
+      "player_id": 174660,
+      "fair_fight": 217.67,
+      "bs_estimate": 25151988364,
+      "bs_estimate_human": "25.2b",
+      "bss_public": 311028,
+      "last_updated": 1787561264,
       "source": "bss",
       "distribution": null,
       "spies": [],
       "available_estimates": {
         "bss": {
-          "bss_public": 154187,
-          "bs_estimate": 6181144052,
-          "bs_estimate_human": "6.18b",
-          "last_updated": 1785571050,
-          "fair_fight": 111.35
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2591403,
-      "fair_fight": 72.83,
-      "bs_estimate": 2619275594,
-      "bs_estimate_human": "2.62b",
-      "bss_public": 100370,
-      "last_updated": 1786639766,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 100370,
-          "bs_estimate": 2619275594,
-          "bs_estimate_human": "2.62b",
-          "last_updated": 1786639766,
-          "fair_fight": 72.83
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2600962,
-      "fair_fight": 124.3,
-      "bs_estimate": 7962823985,
-      "bs_estimate_human": "7.96b",
-      "bss_public": 172282,
-      "last_updated": 1778029527,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 3371754475,
-          "speed": 2579771161,
-          "defense": 1001720104,
-          "dexterity": 1009578245,
-          "total": 7962823985,
-          "last_updated": 1778029527,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 169533,
-          "bs_estimate": 7472773903,
-          "bs_estimate_human": "7.47b",
-          "last_updated": 1776320726,
-          "fair_fight": 122.33
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 7962823985,
-          "bs_estimate_human": "7.96b",
-          "last_updated": 1778029527,
-          "source": "tornstats",
-          "fair_fight": 124.3
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2601348,
-      "fair_fight": 120.92,
-      "bs_estimate": 9339056725,
-      "bs_estimate_human": "9.34b",
-      "bss_public": 167552,
-      "last_updated": 1778029440,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 2836927014,
-          "speed": 2828019454,
-          "defense": 247296,
-          "dexterity": 3673862961,
-          "total": 9339056725,
-          "last_updated": 1778029440,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 169424,
-          "bs_estimate": 7463167862,
-          "bs_estimate_human": "7.46b",
-          "last_updated": 1780082585,
-          "fair_fight": 122.26
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 9339056725,
-          "bs_estimate_human": "9.34b",
-          "last_updated": 1778029440,
-          "source": "tornstats",
-          "fair_fight": 120.92
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2613640,
-      "fair_fight": 99.44,
-      "bs_estimate": 4918485416,
-      "bs_estimate_human": "4.92b",
-      "bss_public": 137540,
-      "last_updated": 1784903570,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1143408200,
-          "speed": 1117165615,
-          "defense": 1087078474,
-          "dexterity": 1104881082,
-          "total": 4452533371,
-          "last_updated": 1778029518,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 137540,
-          "bs_estimate": 4918485416,
-          "bs_estimate_human": "4.92b",
-          "last_updated": 1784903570,
-          "fair_fight": 99.44
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4452533371,
-          "bs_estimate_human": "4.45b",
-          "last_updated": 1778029518,
-          "source": "tornstats",
-          "fair_fight": 96.51
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2634386,
-      "fair_fight": 143.21,
-      "bs_estimate": 10265962681,
-      "bs_estimate_human": "10.3b",
-      "bss_public": 198707,
-      "last_updated": 1779934060,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 2712141054,
-          "speed": 2666476612,
-          "defense": 2744736478,
-          "dexterity": 1302570527,
-          "total": 9425924671,
-          "last_updated": 1778029465,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 198707,
-          "bs_estimate": 10265962681,
-          "bs_estimate_human": "10.3b",
-          "last_updated": 1779934060,
-          "fair_fight": 143.21
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 9425924671,
-          "bs_estimate_human": "9.43b",
-          "last_updated": 1778029465,
-          "source": "tornstats",
-          "fair_fight": 138.55
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2663737,
-      "fair_fight": 109.53,
-      "bs_estimate": 6962898118,
-      "bs_estimate_human": "6.96b",
-      "bss_public": 151638,
-      "last_updated": 1778029717,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1905997841,
-          "speed": 2159146972,
-          "defense": 2828338762,
-          "dexterity": 69414543,
-          "total": 6962898118,
-          "last_updated": 1778029717,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 160122,
-          "bs_estimate": 6666154270,
-          "bs_estimate_human": "6.67b",
-          "last_updated": 1786839228,
-          "fair_fight": 115.6
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6962898118,
-          "bs_estimate_human": "6.96b",
-          "last_updated": 1778029717,
-          "source": "tornstats",
-          "fair_fight": 109.53
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2677189,
-      "fair_fight": 59.4,
-      "bs_estimate": 2270305840,
-      "bs_estimate_human": "2.27b",
-      "bss_public": 81605,
-      "last_updated": 1778029572,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1004790475,
-          "speed": 868456833,
-          "defense": 396790831,
-          "dexterity": 267701,
-          "total": 2270305840,
-          "last_updated": 1778029572,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 81759,
-          "bs_estimate": 1737978861,
-          "bs_estimate_human": "1.74b",
-          "last_updated": 1785709752,
-          "fair_fight": 59.51
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2270305840,
-          "bs_estimate_human": "2.27b",
-          "last_updated": 1778029572,
-          "source": "tornstats",
-          "fair_fight": 59.4
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2679564,
-      "fair_fight": 85.87,
-      "bs_estimate": 3656039588,
-      "bs_estimate_human": "3.66b",
-      "bss_public": 118582,
-      "last_updated": 1785618950,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 118582,
-          "bs_estimate": 3656039588,
-          "bs_estimate_human": "3.66b",
-          "last_updated": 1785618950,
-          "fair_fight": 85.87
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2687065,
-      "fair_fight": 113.83,
-      "bs_estimate": 6690228209,
-      "bs_estimate_human": "6.69b",
-      "bss_public": 157649,
-      "last_updated": 1778029489,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1780943662,
-          "speed": 1775243324,
-          "defense": 2662505278,
-          "dexterity": 471535945,
-          "total": 6690228209,
-          "last_updated": 1778029489,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 156658,
-          "bs_estimate": 6380849531,
-          "bs_estimate_human": "6.38b",
-          "last_updated": 1776312826,
-          "fair_fight": 113.12
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6690228209,
-          "bs_estimate_human": "6.69b",
-          "last_updated": 1778029489,
-          "source": "tornstats",
-          "fair_fight": 113.83
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2687282,
-      "fair_fight": 112.23,
-      "bs_estimate": 6279832148,
-      "bs_estimate_human": "6.28b",
-      "bss_public": 155413,
-      "last_updated": 1784207460,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 155413,
-          "bs_estimate": 6279832148,
-          "bs_estimate_human": "6.28b",
-          "last_updated": 1784207460,
-          "fair_fight": 112.23
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2687856,
-      "fair_fight": 121.98,
-      "bs_estimate": 7429024017,
-      "bs_estimate_human": "7.43b",
-      "bss_public": 169036,
-      "last_updated": 1785597145,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 2316565998,
-          "speed": 1775486862,
-          "defense": 1285876648,
-          "dexterity": 1313251923,
-          "total": 6691181431,
-          "last_updated": 1778029527,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 169036,
-          "bs_estimate": 7429024017,
-          "bs_estimate_human": "7.43b",
-          "last_updated": 1785597145,
-          "fair_fight": 121.98
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6691181431,
-          "bs_estimate_human": "6.69b",
-          "last_updated": 1778029527,
-          "source": "tornstats",
-          "fair_fight": 117.2
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2691854,
-      "fair_fight": 114.04,
-      "bs_estimate": 8418675476,
-      "bs_estimate_human": "8.42b",
-      "bss_public": 157940,
-      "last_updated": 1778029539,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 2556666689,
-          "speed": 2155640303,
-          "defense": 3706363904,
-          "dexterity": 4580,
-          "total": 8418675476,
-          "last_updated": 1778029539,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 165566,
-          "bs_estimate": 7127146093,
-          "bs_estimate_human": "7.13b",
-          "last_updated": 1786630134,
-          "fair_fight": 119.49
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 8418675476,
-          "bs_estimate_human": "8.42b",
-          "last_updated": 1778029539,
-          "source": "tornstats",
-          "fair_fight": 114.04
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2692461,
-      "fair_fight": 107.87,
-      "bs_estimate": 6616615807,
-      "bs_estimate_human": "6.62b",
-      "bss_public": 149323,
-      "last_updated": 1778029517,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1909107069,
-          "speed": 1903136934,
-          "defense": 100016092,
-          "dexterity": 2704355712,
-          "total": 6616615807,
-          "last_updated": 1778029517,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 151317,
-          "bs_estimate": 5953176967,
-          "bs_estimate_human": "5.95b",
-          "last_updated": 1780194182,
-          "fair_fight": 109.3
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6616615807,
-          "bs_estimate_human": "6.62b",
-          "last_updated": 1778029517,
-          "source": "tornstats",
-          "fair_fight": 107.87
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2692545,
-      "fair_fight": 87.03,
-      "bs_estimate": 3756927941,
-      "bs_estimate_human": "3.76b",
-      "bss_public": 120207,
-      "last_updated": 1784540327,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1142094780,
-          "speed": 1052083158,
-          "defense": 1166253756,
-          "dexterity": 48692,
-          "total": 3360480386,
-          "last_updated": 1760593059,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 120207,
-          "bs_estimate": 3756927941,
-          "bs_estimate_human": "3.76b",
-          "last_updated": 1784540327,
-          "fair_fight": 87.03
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3360480386,
-          "bs_estimate_human": "3.36b",
-          "last_updated": 1760593059,
-          "source": "tornstats",
-          "fair_fight": 73
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2695243,
-      "fair_fight": 117.43,
-      "bs_estimate": 6881012612,
-      "bs_estimate_human": "6.88b",
-      "bss_public": 162682,
-      "last_updated": 1766078425,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 162682,
-          "bs_estimate": 6881012612,
-          "bs_estimate_human": "6.88b",
-          "last_updated": 1766078425,
-          "fair_fight": 117.43
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2696369,
-      "fair_fight": 114.9,
-      "bs_estimate": 6584640296,
-      "bs_estimate_human": "6.58b",
-      "bss_public": 159140,
-      "last_updated": 1780536190,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 159140,
-          "bs_estimate": 6584640296,
-          "bs_estimate_human": "6.58b",
-          "last_updated": 1780536190,
-          "fair_fight": 114.9
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2697503,
-      "fair_fight": 109.31,
-      "bs_estimate": 8129021588,
-      "bs_estimate_human": "8.13b",
-      "bss_public": 151341,
-      "last_updated": 1778029527,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1694368612,
-          "speed": 1665564304,
-          "defense": 4768993356,
-          "dexterity": 95316,
-          "total": 8129021588,
-          "last_updated": 1778029527,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 152910,
-          "bs_estimate": 6079181706,
-          "bs_estimate_human": "6.08b",
-          "last_updated": 1780193982,
-          "fair_fight": 110.44
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 8129021588,
-          "bs_estimate_human": "8.13b",
-          "last_updated": 1778029527,
-          "source": "tornstats",
-          "fair_fight": 109.31
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2701121,
-      "fair_fight": 57.63,
-      "bs_estimate": 2557025091,
-      "bs_estimate_human": "2.56b",
-      "bss_public": 79132,
-      "last_updated": 1778029714,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1623633962,
-          "speed": 851472029,
-          "defense": 395799,
-          "dexterity": 81523301,
-          "total": 2557025091,
-          "last_updated": 1778029714,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 81966,
-          "bs_estimate": 1746790541,
-          "bs_estimate_human": "1.75b",
-          "last_updated": 1786648166,
-          "fair_fight": 59.66
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2557025091,
-          "bs_estimate_human": "2.56b",
-          "last_updated": 1778029714,
-          "source": "tornstats",
-          "fair_fight": 57.63
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2703793,
-      "fair_fight": 137.28,
-      "bs_estimate": 9426749734,
-      "bs_estimate_human": "9.43b",
-      "bss_public": 190412,
-      "last_updated": 1785404551,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 2359991414,
-          "speed": 2508459493,
-          "defense": 710718434,
-          "dexterity": 3176792771,
-          "total": 8755962112,
-          "last_updated": 1778029529,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 190412,
-          "bs_estimate": 9426749734,
-          "bs_estimate_human": "9.43b",
-          "last_updated": 1785404551,
-          "fair_fight": 137.28
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 8755962112,
-          "bs_estimate_human": "8.76b",
-          "last_updated": 1778029529,
-          "source": "tornstats",
-          "fair_fight": 131.03
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2718895,
-      "fair_fight": 95.52,
-      "bs_estimate": 4534771373,
-      "bs_estimate_human": "4.53b",
-      "bss_public": 132066,
-      "last_updated": 1786631485,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1535638410,
-          "speed": 1370556684,
-          "defense": 526175207,
-          "dexterity": 771748249,
-          "total": 4204118550,
-          "last_updated": 1778029509,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 132066,
-          "bs_estimate": 4534771373,
-          "bs_estimate_human": "4.53b",
-          "last_updated": 1786631485,
-          "fair_fight": 95.52
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4204118550,
-          "bs_estimate_human": "4.2b",
-          "last_updated": 1778029509,
-          "source": "tornstats",
-          "fair_fight": 91.84
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2721819,
-      "fair_fight": 94.61,
-      "bs_estimate": 4448450450,
-      "bs_estimate_human": "4.45b",
-      "bss_public": 130803,
-      "last_updated": 1786959982,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1595507129,
-          "speed": 1218231541,
-          "defense": 83641284,
-          "dexterity": 2387258,
-          "total": 2899767212,
-          "last_updated": 1738040966,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 130803,
-          "bs_estimate": 4448450450,
-          "bs_estimate_human": "4.45b",
-          "last_updated": 1786959982,
-          "fair_fight": 94.61
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2899767212,
-          "bs_estimate_human": "2.9b",
-          "last_updated": 1738040966,
-          "source": "tornstats",
-          "fair_fight": 62.22
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2730736,
-      "fair_fight": 115.92,
-      "bs_estimate": 7893007216,
-      "bs_estimate_human": "7.89b",
-      "bss_public": 160576,
-      "last_updated": 1778029541,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 2323464763,
-          "speed": 2341358457,
-          "defense": 59174075,
-          "dexterity": 3169009921,
-          "total": 7893007216,
-          "last_updated": 1778029541,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 162822,
-          "bs_estimate": 6892860958,
-          "bs_estimate_human": "6.89b",
-          "last_updated": 1776315951,
-          "fair_fight": 117.53
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 7893007216,
-          "bs_estimate_human": "7.89b",
-          "last_updated": 1778029541,
-          "source": "tornstats",
-          "fair_fight": 115.92
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2732494,
-      "fair_fight": 64.59,
-      "bs_estimate": 2648727750,
-      "bs_estimate_human": "2.65b",
-      "bss_public": 88854,
-      "last_updated": 1765334814,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 739878632,
-          "speed": 732226672,
-          "defense": 1176536850,
-          "dexterity": 85596,
-          "total": 2648727750,
-          "last_updated": 1765334814,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 92257,
-          "bs_estimate": 2212952053,
-          "bs_estimate_human": "2.21b",
-          "last_updated": 1786653434,
-          "fair_fight": 67.03
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2648727750,
-          "bs_estimate_human": "2.65b",
-          "last_updated": 1765334814,
-          "source": "tornstats",
-          "fair_fight": 64.59
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2744574,
-      "fair_fight": 112.96,
-      "bs_estimate": 6362533707,
-      "bs_estimate_human": "6.36b",
-      "bss_public": 156433,
-      "last_updated": 1781186978,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 156433,
-          "bs_estimate": 6362533707,
-          "bs_estimate_human": "6.36b",
-          "last_updated": 1781186978,
-          "fair_fight": 112.96
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2744834,
-      "fair_fight": 81.69,
-      "bs_estimate": 3305090362,
-      "bs_estimate_human": "3.31b",
-      "bss_public": 112747,
-      "last_updated": 1787143400,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 112747,
-          "bs_estimate": 3305090362,
-          "bs_estimate_human": "3.31b",
-          "last_updated": 1787143400,
-          "fair_fight": 81.69
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2745694,
-      "fair_fight": 114.72,
-      "bs_estimate": 6564629345,
-      "bs_estimate_human": "6.56b",
-      "bss_public": 158898,
-      "last_updated": 1783005287,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1790179180,
-          "speed": 1831067884,
-          "defense": 416274239,
-          "dexterity": 2389057663,
-          "total": 6426578966,
-          "last_updated": 1778029552,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 158898,
-          "bs_estimate": 6564629345,
-          "bs_estimate_human": "6.56b",
-          "last_updated": 1783005287,
-          "fair_fight": 114.72
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6426578966,
-          "bs_estimate_human": "6.43b",
-          "last_updated": 1778029552,
-          "source": "tornstats",
-          "fair_fight": 111.49
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2750261,
-      "fair_fight": 116.6,
-      "bs_estimate": 6783652650,
-      "bs_estimate_human": "6.78b",
-      "bss_public": 161527,
-      "last_updated": 1785002122,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1777042865,
-          "speed": 1773392633,
-          "defense": 583103212,
-          "dexterity": 2228709135,
-          "total": 6362247845,
-          "last_updated": 1778029719,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 161527,
-          "bs_estimate": 6783652650,
-          "bs_estimate_human": "6.78b",
-          "last_updated": 1785002122,
-          "fair_fight": 116.6
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6362247845,
-          "bs_estimate_human": "6.36b",
-          "last_updated": 1778029719,
-          "source": "tornstats",
-          "fair_fight": 112.38
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2754627,
-      "fair_fight": 112.51,
-      "bs_estimate": 6312280675,
-      "bs_estimate_human": "6.31b",
-      "bss_public": 155814,
-      "last_updated": 1786722979,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1046919494,
-          "speed": 1247750152,
-          "defense": 701800675,
-          "dexterity": 2867843663,
-          "total": 5864313984,
-          "last_updated": 1778029550,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 155814,
-          "bs_estimate": 6312280675,
-          "bs_estimate_human": "6.31b",
-          "last_updated": 1786722979,
-          "fair_fight": 112.51
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 5864313984,
-          "bs_estimate_human": "5.86b",
-          "last_updated": 1778029550,
-          "source": "tornstats",
-          "fair_fight": 106.72
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2757887,
-      "fair_fight": 107.53,
-      "bs_estimate": 5760876058,
-      "bs_estimate_human": "5.76b",
-      "bss_public": 148853,
-      "last_updated": 1781053233,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1178767121,
-          "speed": 1214116412,
-          "defense": 1030332700,
-          "dexterity": 1841712695,
-          "total": 5264928928,
-          "last_updated": 1778029535,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 148853,
-          "bs_estimate": 5760876058,
-          "bs_estimate_human": "5.76b",
-          "last_updated": 1781053233,
-          "fair_fight": 107.53
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 5264928928,
-          "bs_estimate_human": "5.26b",
-          "last_updated": 1778029535,
-          "source": "tornstats",
-          "fair_fight": 104.2
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2761283,
-      "fair_fight": 115.03,
-      "bs_estimate": 6600041312,
-      "bs_estimate_human": "6.6b",
-      "bss_public": 159326,
-      "last_updated": 1782997397,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1545035718,
-          "speed": 1599232315,
-          "defense": 1954968468,
-          "dexterity": 1000590145,
-          "total": 6099826646,
-          "last_updated": 1778029549,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 159326,
-          "bs_estimate": 6600041312,
-          "bs_estimate_human": "6.6b",
-          "last_updated": 1782997397,
-          "fair_fight": 115.03
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6099826646,
-          "bs_estimate_human": "6.1b",
-          "last_updated": 1778029549,
-          "source": "tornstats",
-          "fair_fight": 112.04
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2763094,
-      "fair_fight": 98.94,
-      "bs_estimate": 4869046366,
-      "bs_estimate_human": "4.87b",
-      "bss_public": 136847,
-      "last_updated": 1786189548,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 136847,
-          "bs_estimate": 4869046366,
-          "bs_estimate_human": "4.87b",
-          "last_updated": 1786189548,
-          "fair_fight": 98.94
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2772643,
-      "fair_fight": 107.28,
-      "bs_estimate": 5733816662,
-      "bs_estimate_human": "5.73b",
-      "bss_public": 148503,
-      "last_updated": 1786802213,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1003169788,
-          "speed": 1175143745,
-          "defense": 1471697642,
-          "dexterity": 1334968401,
-          "total": 4984979576,
-          "last_updated": 1778029630,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 148503,
-          "bs_estimate": 5733816662,
-          "bs_estimate_human": "5.73b",
-          "last_updated": 1786802213,
-          "fair_fight": 107.28
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4984979576,
-          "bs_estimate_human": "4.98b",
-          "last_updated": 1778029630,
-          "source": "tornstats",
-          "fair_fight": 101.81
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2776069,
-      "fair_fight": 114.5,
-      "bs_estimate": 6538792579,
-      "bs_estimate_human": "6.54b",
-      "bss_public": 158585,
-      "last_updated": 1786722623,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1665947819,
-          "speed": 1681829650,
-          "defense": 517725579,
-          "dexterity": 2107683026,
-          "total": 5973186074,
-          "last_updated": 1778045236,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 158585,
-          "bs_estimate": 6538792579,
-          "bs_estimate_human": "6.54b",
-          "last_updated": 1786722623,
-          "fair_fight": 114.5
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 5973186074,
-          "bs_estimate_human": "5.97b",
-          "last_updated": 1778045236,
-          "source": "tornstats",
-          "fair_fight": 108.7
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2786868,
-      "fair_fight": 109.49,
-      "bs_estimate": 5974519654,
-      "bs_estimate_human": "5.97b",
-      "bss_public": 151588,
-      "last_updated": 1786631262,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1250493108,
-          "speed": 1741055008,
-          "defense": 1094248781,
-          "dexterity": 1089317611,
-          "total": 5175114508,
-          "last_updated": 1778029577,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 151588,
-          "bs_estimate": 5974519654,
-          "bs_estimate_human": "5.97b",
-          "last_updated": 1786631262,
-          "fair_fight": 109.49
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 5175114508,
-          "bs_estimate_human": "5.18b",
-          "last_updated": 1778029577,
-          "source": "tornstats",
-          "fair_fight": 103.47
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2803394,
-      "fair_fight": 90.89,
-      "bs_estimate": 4101267047,
-      "bs_estimate_human": "4.1b",
-      "bss_public": 125595,
-      "last_updated": 1786632313,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1019010478,
-          "speed": 1017976744,
-          "defense": 240855349,
-          "dexterity": 1376244362,
-          "total": 3654086933,
-          "last_updated": 1778029572,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 125595,
-          "bs_estimate": 4101267047,
-          "bs_estimate_human": "4.1b",
-          "last_updated": 1786632313,
-          "fair_fight": 90.89
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3654086933,
-          "bs_estimate_human": "3.65b",
-          "last_updated": 1778029572,
-          "source": "tornstats",
-          "fair_fight": 84.34
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2805603,
-      "fair_fight": 92.48,
-      "bs_estimate": 4248000558,
-      "bs_estimate_human": "4.25b",
-      "bss_public": 127822,
-      "last_updated": 1784169648,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 127822,
-          "bs_estimate": 4248000558,
-          "bs_estimate_human": "4.25b",
-          "last_updated": 1784169648,
-          "fair_fight": 92.48
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2807670,
-      "fair_fight": 100.46,
-      "bs_estimate": 5021436364,
-      "bs_estimate_human": "5.02b",
-      "bss_public": 138972,
-      "last_updated": 1783616957,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1402188293,
-          "speed": 1322203160,
-          "defense": 424889523,
-          "dexterity": 1564660376,
-          "total": 4713941352,
-          "last_updated": 1778029555,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 138972,
-          "bs_estimate": 5021436364,
-          "bs_estimate_human": "5.02b",
-          "last_updated": 1783616957,
-          "fair_fight": 100.46
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4713941352,
-          "bs_estimate_human": "4.71b",
-          "last_updated": 1778029555,
-          "source": "tornstats",
-          "fair_fight": 96.89
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2825331,
-      "fair_fight": 86.88,
-      "bs_estimate": 3939850612,
-      "bs_estimate_human": "3.94b",
-      "bss_public": 120001,
-      "last_updated": 1778029603,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1141652594,
-          "speed": 1141404092,
-          "defense": 205364887,
-          "dexterity": 1451429039,
-          "total": 3939850612,
-          "last_updated": 1778029603,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 122469,
-          "bs_estimate": 3899650550,
-          "bs_estimate_human": "3.9b",
-          "last_updated": 1781231345,
-          "fair_fight": 88.65
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3939850612,
-          "bs_estimate_human": "3.94b",
-          "last_updated": 1778029603,
-          "source": "tornstats",
-          "fair_fight": 86.88
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2828195,
-      "fair_fight": 71.78,
-      "bs_estimate": 3282513454,
-      "bs_estimate_human": "3.28b",
-      "bss_public": 98898,
-      "last_updated": 1762930432,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 949596058,
-          "speed": 962553962,
-          "defense": 1529,
-          "dexterity": 1370361905,
-          "total": 3282513454,
-          "last_updated": 1762930432,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 111169,
-          "bs_estimate": 3213222106,
-          "bs_estimate_human": "3.21b",
-          "last_updated": 1786644403,
-          "fair_fight": 80.56
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3282513454,
-          "bs_estimate_human": "3.28b",
-          "last_updated": 1762930432,
-          "source": "tornstats",
-          "fair_fight": 71.78
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2849996,
-      "fair_fight": 49.32,
-      "bs_estimate": 1554859791,
-      "bs_estimate_human": "1.55b",
-      "bss_public": 67511,
-      "last_updated": 1778029719,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 739512153,
-          "speed": 518873197,
-          "defense": 296370084,
-          "dexterity": 104357,
-          "total": 1554859791,
-          "last_updated": 1778029719,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 68801,
-          "bs_estimate": 1230730176,
-          "bs_estimate_human": "1.23b",
-          "last_updated": 1786648480,
-          "fair_fight": 50.24
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 1554859791,
-          "bs_estimate_human": "1.55b",
-          "last_updated": 1778029719,
-          "source": "tornstats",
-          "fair_fight": 49.32
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2869348,
-      "fair_fight": 83.19,
-      "bs_estimate": 3429177528,
-      "bs_estimate_human": "3.43b",
-      "bss_public": 114844,
-      "last_updated": 1787047991,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 645452296,
-          "speed": 651410150,
-          "defense": 775758982,
-          "dexterity": 993753752,
-          "total": 3066375180,
-          "last_updated": 1778029668,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 114844,
-          "bs_estimate": 3429177528,
-          "bs_estimate_human": "3.43b",
-          "last_updated": 1787047991,
-          "fair_fight": 83.19
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3066375180,
-          "bs_estimate_human": "3.07b",
-          "last_updated": 1778029668,
-          "source": "tornstats",
-          "fair_fight": 79.94
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2892767,
-      "fair_fight": 89.64,
-      "bs_estimate": 3988544677,
-      "bs_estimate_human": "3.99b",
-      "bss_public": 123857,
-      "last_updated": 1781218997,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1159916982,
-          "speed": 1160589077,
-          "defense": 253624920,
-          "dexterity": 1369177562,
-          "total": 3943308541,
-          "last_updated": 1778029719,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 123857,
-          "bs_estimate": 3988544677,
-          "bs_estimate_human": "3.99b",
-          "last_updated": 1781218997,
-          "fair_fight": 89.64
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3943308541,
-          "bs_estimate_human": "3.94b",
-          "last_updated": 1778029719,
-          "source": "tornstats",
-          "fair_fight": 87.64
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2893242,
-      "fair_fight": 85.87,
-      "bs_estimate": 3656039588,
-      "bs_estimate_human": "3.66b",
-      "bss_public": 118582,
-      "last_updated": 1785619358,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1051245512,
-          "speed": 668656606,
-          "defense": 822527715,
-          "dexterity": 713092579,
-          "total": 3255522412,
-          "last_updated": 1778029599,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 118582,
-          "bs_estimate": 3656039588,
-          "bs_estimate_human": "3.66b",
-          "last_updated": 1785619358,
-          "fair_fight": 85.87
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3255522412,
-          "bs_estimate_human": "3.26b",
-          "last_updated": 1778029599,
-          "source": "tornstats",
-          "fair_fight": 82.35
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2893457,
-      "fair_fight": 62.04,
-      "bs_estimate": 1891073771,
-      "bs_estimate_human": "1.89b",
-      "bss_public": 85284,
-      "last_updated": 1786632265,
-      "source": "bss",
-      "distribution": null,
-      "spies": [],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 85284,
-          "bs_estimate": 1891073771,
-          "bs_estimate_human": "1.89b",
-          "last_updated": 1786632265,
-          "fair_fight": 62.04
-        },
-        "premium": null,
-        "spies": null
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2893458,
-      "fair_fight": 78.29,
-      "bs_estimate": 3032359207,
-      "bs_estimate_human": "3.03b",
-      "bss_public": 107995,
-      "last_updated": 1786653385,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 636899408,
-          "speed": 650260433,
-          "defense": 160182857,
-          "dexterity": 944684119,
-          "total": 2392026817,
-          "last_updated": 1759811051,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 107995,
-          "bs_estimate": 3032359207,
-          "bs_estimate_human": "3.03b",
-          "last_updated": 1786653385,
-          "fair_fight": 78.29
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2392026817,
-          "bs_estimate_human": "2.39b",
-          "last_updated": 1759811051,
-          "source": "tornstats",
-          "fair_fight": 68.37
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2893476,
-      "fair_fight": 101.19,
-      "bs_estimate": 5095781602,
-      "bs_estimate_human": "5.1b",
-      "bss_public": 139997,
-      "last_updated": 1786747548,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1379698038,
-          "speed": 1332395858,
-          "defense": 36595804,
-          "dexterity": 1725413674,
-          "total": 4474103374,
-          "last_updated": 1778029630,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 139997,
-          "bs_estimate": 5095781602,
-          "bs_estimate_human": "5.1b",
-          "last_updated": 1786747548,
-          "fair_fight": 101.19
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4474103374,
-          "bs_estimate_human": "4.47b",
-          "last_updated": 1778029630,
-          "source": "tornstats",
-          "fair_fight": 87.77
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2896648,
-      "fair_fight": 108.6,
-      "bs_estimate": 5876628233,
-      "bs_estimate_human": "5.88b",
-      "bss_public": 150341,
-      "last_updated": 1783997122,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1630118963,
-          "speed": 1629810698,
-          "defense": 237419283,
-          "dexterity": 2159193186,
-          "total": 5656542130,
-          "last_updated": 1778029586,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 150341,
-          "bs_estimate": 5876628233,
-          "bs_estimate_human": "5.88b",
-          "last_updated": 1783997122,
-          "fair_fight": 108.6
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 5656542130,
-          "bs_estimate_human": "5.66b",
-          "last_updated": 1778029586,
-          "source": "tornstats",
-          "fair_fight": 103.07
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2900624,
-      "fair_fight": 85.15,
-      "bs_estimate": 3903033770,
-      "bs_estimate_human": "3.9b",
-      "bss_public": 117581,
-      "last_updated": 1778029605,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1101768533,
-          "speed": 1079551631,
-          "defense": 137617639,
-          "dexterity": 1584095967,
-          "total": 3903033770,
-          "last_updated": 1778029605,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 122304,
-          "bs_estimate": 3889149788,
-          "bs_estimate_human": "3.89b",
-          "last_updated": 1783762077,
-          "fair_fight": 88.53
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3903033770,
-          "bs_estimate_human": "3.9b",
-          "last_updated": 1778029605,
-          "source": "tornstats",
-          "fair_fight": 85.15
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2901143,
-      "fair_fight": 99.42,
-      "bs_estimate": 4917341150,
-      "bs_estimate_human": "4.92b",
-      "bss_public": 137524,
-      "last_updated": 1786631869,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1198931176,
-          "speed": 1318085960,
-          "defense": 360697645,
-          "dexterity": 1497619935,
-          "total": 4375334716,
-          "last_updated": 1778029657,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 137524,
-          "bs_estimate": 4917341150,
-          "bs_estimate_human": "4.92b",
-          "last_updated": 1786631869,
-          "fair_fight": 99.42
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4375334716,
-          "bs_estimate_human": "4.38b",
-          "last_updated": 1778029657,
-          "source": "tornstats",
-          "fair_fight": 93.05
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2901842,
-      "fair_fight": 93.53,
-      "bs_estimate": 4346336761,
-      "bs_estimate_human": "4.35b",
-      "bss_public": 129293,
-      "last_updated": 1783736567,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1192823506,
-          "speed": 1200721552,
-          "defense": 147498,
-          "dexterity": 1619684080,
-          "total": 4013376636,
-          "last_updated": 1762931205,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 129293,
-          "bs_estimate": 4346336761,
-          "bs_estimate_human": "4.35b",
-          "last_updated": 1783736567,
-          "fair_fight": 93.53
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4013376636,
-          "bs_estimate_human": "4.01b",
-          "last_updated": 1762931205,
-          "source": "tornstats",
-          "fair_fight": 79.6
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2915509,
-      "fair_fight": 100.44,
-      "bs_estimate": 6437528880,
-      "bs_estimate_human": "6.44b",
-      "bss_public": 138936,
-      "last_updated": 1778029629,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1905036383,
-          "speed": 1788001047,
-          "defense": 384330,
-          "dexterity": 2744107120,
-          "total": 6437528880,
-          "last_updated": 1778029629,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 126951,
-          "bs_estimate": 4190304664,
-          "bs_estimate_human": "4.19b",
-          "last_updated": 1766777978,
-          "fair_fight": 91.86
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 6437528880,
-          "bs_estimate_human": "6.44b",
-          "last_updated": 1778029629,
-          "source": "tornstats",
-          "fair_fight": 100.44
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2919325,
-      "fair_fight": 85.73,
-      "bs_estimate": 4300525147,
-      "bs_estimate_human": "4.3b",
-      "bss_public": 118387,
-      "last_updated": 1778029641,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1337933447,
-          "speed": 1140304354,
-          "defense": 32955815,
-          "dexterity": 1789331531,
-          "total": 4300525147,
-          "last_updated": 1778029641,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 123752,
-          "bs_estimate": 3981784951,
-          "bs_estimate_human": "3.98b",
-          "last_updated": 1784806110,
-          "fair_fight": 89.57
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 4300525147,
-          "bs_estimate_human": "4.3b",
-          "last_updated": 1778029641,
-          "source": "tornstats",
-          "fair_fight": 85.73
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2934926,
-      "fair_fight": 88.53,
-      "bs_estimate": 3889149788,
-      "bs_estimate_human": "3.89b",
-      "bss_public": 122304,
-      "last_updated": 1783762063,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 713225490,
-          "speed": 762590594,
-          "defense": 1166280885,
-          "dexterity": 811532623,
-          "total": 3453629592,
-          "last_updated": 1778029747,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 122304,
-          "bs_estimate": 3889149788,
-          "bs_estimate_human": "3.89b",
-          "last_updated": 1783762063,
-          "fair_fight": 88.53
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3453629592,
-          "bs_estimate_human": "3.45b",
-          "last_updated": 1778029747,
-          "source": "tornstats",
-          "fair_fight": 84.71
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2946361,
-      "fair_fight": 85.8,
-      "bs_estimate": 3650430441,
-      "bs_estimate_human": "3.65b",
-      "bss_public": 118491,
-      "last_updated": 1785687945,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 874246823,
-          "speed": 1039239407,
-          "defense": 101824647,
-          "dexterity": 1407899494,
-          "total": 3423210371,
-          "last_updated": 1778029642,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 118491,
-          "bs_estimate": 3650430441,
-          "bs_estimate_human": "3.65b",
-          "last_updated": 1785687945,
-          "fair_fight": 85.8
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3423210371,
-          "bs_estimate_human": "3.42b",
-          "last_updated": 1778029642,
-          "source": "tornstats",
-          "fair_fight": 79.31
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2954269,
-      "fair_fight": 52.07,
-      "bs_estimate": 1394595971,
-      "bs_estimate_human": "1.39b",
-      "bss_public": 71360,
-      "last_updated": 1777079430,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 632972475,
-          "speed": 444760368,
-          "defense": 136217456,
-          "dexterity": 180645672,
-          "total": 1394595971,
-          "last_updated": 1777079430,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 71570,
-          "bs_estimate": 1331788874,
-          "bs_estimate_human": "1.33b",
-          "last_updated": 1785701619,
-          "fair_fight": 52.22
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 1394595971,
-          "bs_estimate_human": "1.39b",
-          "last_updated": 1777079430,
-          "source": "tornstats",
-          "fair_fight": 52.07
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2961665,
-      "fair_fight": 73.21,
-      "bs_estimate": 3383582060,
-      "bs_estimate_human": "3.38b",
-      "bss_public": 100896,
-      "last_updated": 1778029610,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1011709920,
-          "speed": 1032059290,
-          "defense": 130582,
-          "dexterity": 1339682268,
-          "total": 3383582060,
-          "last_updated": 1778029610,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 105531,
-          "bs_estimate": 2895565910,
-          "bs_estimate_human": "2.9b",
-          "last_updated": 1783762565,
-          "fair_fight": 76.53
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3383582060,
-          "bs_estimate_human": "3.38b",
-          "last_updated": 1778029610,
-          "source": "tornstats",
-          "fair_fight": 73.21
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 2987216,
-      "fair_fight": 71.93,
-      "bs_estimate": 3340580403,
-      "bs_estimate_human": "3.34b",
-      "bss_public": 99106,
-      "last_updated": 1778067794,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1654613288,
-          "speed": 1000334672,
-          "defense": 388903,
-          "dexterity": 685243540,
-          "total": 3340580403,
-          "last_updated": 1778067794,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 106119,
-          "bs_estimate": 2927922962,
-          "bs_estimate_human": "2.93b",
-          "last_updated": 1786645484,
-          "fair_fight": 76.95
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3340580403,
-          "bs_estimate_human": "3.34b",
-          "last_updated": 1778067794,
-          "source": "tornstats",
-          "fair_fight": 71.93
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3008038,
-      "fair_fight": 69.43,
-      "bs_estimate": 3019160898,
-      "bs_estimate_human": "3.02b",
-      "bss_public": 95615,
-      "last_updated": 1778029638,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 875390525,
-          "speed": 875211229,
-          "defense": 700805,
-          "dexterity": 1267858339,
-          "total": 3019160898,
-          "last_updated": 1778029638,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 104665,
-          "bs_estimate": 2848238179,
-          "bs_estimate_human": "2.85b",
-          "last_updated": 1786722405,
-          "fair_fight": 75.91
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3019160898,
-          "bs_estimate_human": "3.02b",
-          "last_updated": 1778029638,
-          "source": "tornstats",
-          "fair_fight": 69.43
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3111113,
-      "fair_fight": 55.67,
-      "bs_estimate": 1927611462,
-      "bs_estimate_human": "1.93b",
-      "bss_public": 76391,
-      "last_updated": 1778029635,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 550504300,
-          "speed": 550342476,
-          "defense": 524459,
-          "dexterity": 826240227,
-          "total": 1927611462,
-          "last_updated": 1778029635,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 83007,
-          "bs_estimate": 1791442133,
-          "bs_estimate_human": "1.79b",
-          "last_updated": 1785676393,
-          "fair_fight": 60.41
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 1927611462,
-          "bs_estimate_human": "1.93b",
-          "last_updated": 1778029635,
-          "source": "tornstats",
-          "fair_fight": 55.67
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3132600,
-      "fair_fight": 73.06,
-      "bs_estimate": 3374686384,
-      "bs_estimate_human": "3.37b",
-      "bss_public": 100684,
-      "last_updated": 1778029651,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1012005412,
-          "speed": 953607486,
-          "defense": 208834,
-          "dexterity": 1408864652,
-          "total": 3374686384,
-          "last_updated": 1778029651,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 107986,
-          "bs_estimate": 3031853811,
-          "bs_estimate_human": "3.03b",
-          "last_updated": 1785598390,
-          "fair_fight": 78.28
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 3374686384,
-          "bs_estimate_human": "3.37b",
-          "last_updated": 1778029651,
-          "source": "tornstats",
-          "fair_fight": 73.06
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3133224,
-      "fair_fight": 66.74,
-      "bs_estimate": 2758043895,
-      "bs_estimate_human": "2.76b",
-      "bss_public": 91854,
-      "last_updated": 1778035471,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 837779525,
-          "speed": 810560110,
-          "defense": 1314381,
-          "dexterity": 1108389879,
-          "total": 2758043895,
-          "last_updated": 1778035471,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 99627,
-          "bs_estimate": 2580640174,
-          "bs_estimate_human": "2.58b",
-          "last_updated": 1786456035,
-          "fair_fight": 72.3
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2758043895,
-          "bs_estimate_human": "2.76b",
-          "last_updated": 1778035471,
-          "source": "tornstats",
-          "fair_fight": 66.74
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3138805,
-      "fair_fight": 282.13,
-      "bs_estimate": 102814889175,
-      "bs_estimate_human": "103b",
-      "bss_public": 392808,
-      "last_updated": 1778029630,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 1431701099,
-          "speed": 1380675501,
-          "defense": 2512575,
-          "dexterity": 100000000000,
-          "total": 102814889175,
-          "last_updated": 1778029630,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 302746,
-          "bs_estimate": 23830336534,
-          "bs_estimate_human": "23.8b",
-          "last_updated": 1776306430,
+          "bss_public": 311028,
+          "bs_estimate": 25151988364,
+          "bs_estimate_human": "25.2b",
+          "last_updated": 1787561264,
           "fair_fight": 217.67
         },
         "premium": null,
-        "spies": {
-          "bs_estimate": 102814889175,
-          "bs_estimate_human": "103b",
-          "last_updated": 1778029630,
-          "source": "tornstats",
-          "fair_fight": 282.13
-        }
+        "spies": null
       },
       "premium_insights_available": true
     },
     {
-      "player_id": 3139261,
-      "fair_fight": 41.47,
-      "bs_estimate": 1571039969,
-      "bs_estimate_human": "1.57b",
-      "bss_public": 56549,
-      "last_updated": 1778029635,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 742299168,
-          "speed": 828546141,
-          "defense": 7448,
-          "dexterity": 187212,
-          "total": 1571039969,
-          "last_updated": 1778029635,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 59457,
-          "bs_estimate": 919135061,
-          "bs_estimate_human": "919m",
-          "last_updated": 1786647993,
-          "fair_fight": 43.55
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 1571039969,
-          "bs_estimate_human": "1.57b",
-          "last_updated": 1778029635,
-          "source": "tornstats",
-          "fair_fight": 41.47
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3220685,
-      "fair_fight": 79.65,
-      "bs_estimate": 3140168305,
-      "bs_estimate_human": "3.14b",
-      "bss_public": 109898,
-      "last_updated": 1786644146,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 521668613,
-          "speed": 530290056,
-          "defense": 123806786,
-          "dexterity": 939033717,
-          "total": 2114799172,
-          "last_updated": 1762753186,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 109898,
-          "bs_estimate": 3140168305,
-          "bs_estimate_human": "3.14b",
-          "last_updated": 1786644146,
-          "fair_fight": 79.65
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2114799172,
-          "bs_estimate_human": "2.11b",
-          "last_updated": 1762753186,
-          "source": "tornstats",
-          "fair_fight": 63.72
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3225849,
-      "fair_fight": 17.94,
-      "bs_estimate": 279212003,
-      "bs_estimate_human": "279m",
-      "bss_public": 23675,
-      "last_updated": 1741586091,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 132519893,
-          "speed": 146689981,
-          "defense": 2100,
-          "dexterity": 29,
-          "total": 279212003,
-          "last_updated": 1741586091,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 26842,
-          "bs_estimate": 187328171,
-          "bs_estimate_human": "187m",
-          "last_updated": 1787120254,
-          "fair_fight": 20.21
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 279212003,
-          "bs_estimate_human": "279m",
-          "last_updated": 1741586091,
-          "source": "tornstats",
-          "fair_fight": 17.94
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3278085,
-      "fair_fight": 81.93,
-      "bs_estimate": 3324289664,
-      "bs_estimate_human": "3.32b",
-      "bss_public": 113074,
-      "last_updated": 1786644459,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 801478267,
-          "speed": 1017559770,
-          "defense": 691776085,
-          "dexterity": 200029572,
-          "total": 2710843694,
-          "last_updated": 1778029682,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 113074,
-          "bs_estimate": 3324289664,
-          "bs_estimate_human": "3.32b",
-          "last_updated": 1786644459,
-          "fair_fight": 81.93
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2710843694,
-          "bs_estimate_human": "2.71b",
-          "last_updated": 1778029682,
-          "source": "tornstats",
-          "fair_fight": 73.04
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3303968,
-      "fair_fight": 58.37,
-      "bs_estimate": 2127794665,
-      "bs_estimate_human": "2.13b",
-      "bss_public": 80157,
-      "last_updated": 1778029709,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 655833814,
-          "speed": 593762753,
-          "defense": 303504,
-          "dexterity": 877894594,
-          "total": 2127794665,
-          "last_updated": 1778029709,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 89544,
-          "bs_estimate": 2084713264,
-          "bs_estimate_human": "2.08b",
-          "last_updated": 1786653501,
-          "fair_fight": 65.09
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2127794665,
-          "bs_estimate_human": "2.13b",
-          "last_updated": 1778029709,
-          "source": "tornstats",
-          "fair_fight": 58.37
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3323774,
-      "fair_fight": 38.92,
-      "bs_estimate": 977136122,
-      "bs_estimate_human": "977m",
-      "bss_public": 52985,
-      "last_updated": 1778029712,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 439958130,
-          "speed": 407004922,
-          "defense": 188751,
-          "dexterity": 129984319,
-          "total": 977136122,
-          "last_updated": 1778029712,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 57244,
-          "bs_estimate": 851987640,
-          "bs_estimate_human": "852m",
-          "last_updated": 1786647821,
-          "fair_fight": 41.97
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 977136122,
-          "bs_estimate_human": "977m",
-          "last_updated": 1778029712,
-          "source": "tornstats",
-          "fair_fight": 38.92
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3349742,
-      "fair_fight": 58.82,
-      "bs_estimate": 2160847511,
-      "bs_estimate_human": "2.16b",
-      "bss_public": 80790,
-      "last_updated": 1778029698,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 624562891,
-          "speed": 630910060,
-          "defense": 356634,
-          "dexterity": 905017926,
-          "total": 2160847511,
-          "last_updated": 1778029698,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 89570,
-          "bs_estimate": 2085924074,
-          "bs_estimate_human": "2.09b",
-          "last_updated": 1786644320,
-          "fair_fight": 65.1
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 2160847511,
-          "bs_estimate_human": "2.16b",
-          "last_updated": 1778029698,
-          "source": "tornstats",
-          "fair_fight": 58.82
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3353613,
-      "fair_fight": 61.47,
-      "bs_estimate": 1855937758,
-      "bs_estimate_human": "1.86b",
-      "bss_public": 84488,
-      "last_updated": 1786644071,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 556914461,
-          "speed": 555629317,
-          "defense": 555352,
-          "dexterity": 728623405,
-          "total": 1841722535,
-          "last_updated": 1778029707,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 84488,
-          "bs_estimate": 1855937758,
-          "bs_estimate_human": "1.86b",
-          "last_updated": 1786644071,
-          "fair_fight": 61.47
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 1841722535,
-          "bs_estimate_human": "1.84b",
-          "last_updated": 1778029707,
-          "source": "tornstats",
-          "fair_fight": 54.61
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3420636,
-      "fair_fight": 36.96,
-      "bs_estimate": 656281101,
-      "bs_estimate_human": "656m",
-      "bss_public": 50241,
-      "last_updated": 1785701465,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 310855380,
-          "speed": 250984163,
-          "defense": 1041577,
-          "dexterity": 1811514,
-          "total": 564692634,
-          "last_updated": 1761720685,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 50241,
-          "bs_estimate": 656281101,
-          "bs_estimate_human": "656m",
-          "last_updated": 1785701465,
-          "fair_fight": 36.96
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 564692634,
-          "bs_estimate_human": "565m",
-          "last_updated": 1761720685,
-          "source": "tornstats",
-          "fair_fight": 26.65
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3441145,
-      "fair_fight": 49.21,
-      "bs_estimate": 1179716096,
-      "bs_estimate_human": "1.18b",
-      "bss_public": 67360,
-      "last_updated": 1786084657,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 232842069,
-          "speed": 294843827,
-          "defense": 93283,
-          "dexterity": 391704144,
-          "total": 919483323,
-          "last_updated": 1778029736,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 67360,
-          "bs_estimate": 1179716096,
-          "bs_estimate_human": "1.18b",
-          "last_updated": 1786084657,
-          "fair_fight": 49.21
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 919483323,
-          "bs_estimate_human": "919m",
-          "last_updated": 1778029736,
-          "source": "tornstats",
-          "fair_fight": 38.59
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3487338,
-      "fair_fight": 35.97,
-      "bs_estimate": 1174888541,
-      "bs_estimate_human": "1.17b",
-      "bss_public": 48859,
-      "last_updated": 1778029746,
-      "source": "spies",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 568826818,
-          "speed": 605930131,
-          "defense": 1009,
-          "dexterity": 130583,
-          "total": 1174888541,
-          "last_updated": 1778029746,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 54080,
-          "bs_estimate": 760408064,
-          "bs_estimate_human": "760m",
-          "last_updated": 1786647860,
-          "fair_fight": 39.7
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 1174888541,
-          "bs_estimate_human": "1.17b",
-          "last_updated": 1778029746,
-          "source": "tornstats",
-          "fair_fight": 35.97
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3668018,
-      "fair_fight": 49.74,
-      "bs_estimate": 1205636956,
-      "bs_estimate_human": "1.21b",
-      "bss_public": 68096,
-      "last_updated": 1786648874,
+      "player_id": 230223,
+      "fair_fight": 182.77,
+      "bs_estimate": 17702367927,
+      "bs_estimate_human": "17.7b",
+      "bss_public": 260933,
+      "last_updated": 1769122771,
       "source": "bss",
       "distribution": null,
       "spies": [],
       "available_estimates": {
         "bss": {
-          "bss_public": 68096,
-          "bs_estimate": 1205636956,
-          "bs_estimate_human": "1.21b",
-          "last_updated": 1786648874,
-          "fair_fight": 49.74
+          "bss_public": 260933,
+          "bs_estimate": 17702367927,
+          "bs_estimate_human": "17.7b",
+          "last_updated": 1769122771,
+          "fair_fight": 182.77
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": true
+    },
+    {
+      "player_id": 255858,
+      "fair_fight": 132.93,
+      "bs_estimate": 9325730264,
+      "bs_estimate_human": "9.33b",
+      "bss_public": 189389,
+      "last_updated": 1786468742,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 189389,
+          "bs_estimate": 9325730264,
+          "bs_estimate_human": "9.33b",
+          "last_updated": 1786468742,
+          "fair_fight": 132.93
         },
         "premium": null,
         "spies": null
@@ -3343,22 +188,45 @@
       "premium_insights_available": false
     },
     {
-      "player_id": 3768559,
-      "fair_fight": 45.07,
-      "bs_estimate": 985977086,
-      "bs_estimate_human": "986m",
-      "bss_public": 61581,
-      "last_updated": 1786648533,
+      "player_id": 275993,
+      "fair_fight": 217.46,
+      "bs_estimate": 25104299295,
+      "bs_estimate_human": "25.1b",
+      "bss_public": 310733,
+      "last_updated": 1786759751,
       "source": "bss",
       "distribution": null,
       "spies": [],
       "available_estimates": {
         "bss": {
-          "bss_public": 61581,
-          "bs_estimate": 985977086,
-          "bs_estimate_human": "986m",
-          "last_updated": 1786648533,
-          "fair_fight": 45.07
+          "bss_public": 310733,
+          "bs_estimate": 25104299295,
+          "bs_estimate_human": "25.1b",
+          "last_updated": 1786759751,
+          "fair_fight": 217.46
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": true
+    },
+    {
+      "player_id": 433474,
+      "fair_fight": 90.93,
+      "bs_estimate": 4333034947,
+      "bs_estimate_human": "4.33b",
+      "bss_public": 129095,
+      "last_updated": 1787254274,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 129095,
+          "bs_estimate": 4333034947,
+          "bs_estimate_human": "4.33b",
+          "last_updated": 1787254274,
+          "fair_fight": 90.93
         },
         "premium": null,
         "spies": null
@@ -3366,142 +234,22 @@
       "premium_insights_available": false
     },
     {
-      "player_id": 3807274,
-      "fair_fight": 32.47,
-      "bs_estimate": 502742430,
-      "bs_estimate_human": "503m",
-      "bss_public": 43973,
-      "last_updated": 1786652621,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 169300439,
-          "speed": 170966670,
-          "defense": 106334,
-          "dexterity": 7732994,
-          "total": 348106437,
-          "last_updated": 1778029863,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 43973,
-          "bs_estimate": 502742430,
-          "bs_estimate_human": "503m",
-          "last_updated": 1786652621,
-          "fair_fight": 32.47
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 348106437,
-          "bs_estimate_human": "348m",
-          "last_updated": 1778029863,
-          "source": "tornstats",
-          "fair_fight": 21.89
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3818945,
-      "fair_fight": 35.49,
-      "bs_estimate": 603666499,
-      "bs_estimate_human": "604m",
-      "bss_public": 48185,
-      "last_updated": 1786646948,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 119777319,
-          "speed": 105958040,
-          "defense": 144780743,
-          "dexterity": 845113,
-          "total": 371361215,
-          "last_updated": 1778029862,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 48185,
-          "bs_estimate": 603666499,
-          "bs_estimate_human": "604m",
-          "last_updated": 1786646948,
-          "fair_fight": 35.49
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 371361215,
-          "bs_estimate_human": "371m",
-          "last_updated": 1778029862,
-          "source": "tornstats",
-          "fair_fight": 25.47
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3828553,
-      "fair_fight": 27.57,
-      "bs_estimate": 358445594,
-      "bs_estimate_human": "358m",
-      "bss_public": 37130,
-      "last_updated": 1786653216,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 161188483,
-          "speed": 144329413,
-          "defense": 32464,
-          "dexterity": 187608,
-          "total": 305737968,
-          "last_updated": 1778029950,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 37130,
-          "bs_estimate": 358445594,
-          "bs_estimate_human": "358m",
-          "last_updated": 1786653216,
-          "fair_fight": 27.57
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 305737968,
-          "bs_estimate_human": "306m",
-          "last_updated": 1778029950,
-          "source": "tornstats",
-          "fair_fight": 19.12
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3866445,
-      "fair_fight": 26.96,
-      "bs_estimate": 341976775,
-      "bs_estimate_human": "342m",
-      "bss_public": 36267,
-      "last_updated": 1786955340,
+      "player_id": 452500,
+      "fair_fight": 116.27,
+      "bs_estimate": 7119399710,
+      "bs_estimate_human": "7.12b",
+      "bss_public": 165476,
+      "last_updated": 1787252883,
       "source": "bss",
       "distribution": null,
       "spies": [],
       "available_estimates": {
         "bss": {
-          "bss_public": 36267,
-          "bs_estimate": 341976775,
-          "bs_estimate_human": "342m",
-          "last_updated": 1786955340,
-          "fair_fight": 26.96
+          "bss_public": 165476,
+          "bs_estimate": 7119399710,
+          "bs_estimate_human": "7.12b",
+          "last_updated": 1787252883,
+          "fair_fight": 116.27
         },
         "premium": null,
         "spies": null
@@ -3509,102 +257,22 @@
       "premium_insights_available": false
     },
     {
-      "player_id": 3894939,
-      "fair_fight": 27.75,
-      "bs_estimate": 363288744,
-      "bs_estimate_human": "363m",
-      "bss_public": 37380,
-      "last_updated": 1786653050,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 127897093,
-          "speed": 129466498,
-          "defense": 94218,
-          "dexterity": 134834,
-          "total": 257592643,
-          "last_updated": 1778029911,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 37380,
-          "bs_estimate": 363288744,
-          "bs_estimate_human": "363m",
-          "last_updated": 1786653050,
-          "fair_fight": 27.75
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 257592643,
-          "bs_estimate_human": "258m",
-          "last_updated": 1778029911,
-          "source": "tornstats",
-          "fair_fight": 17.72
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3907259,
-      "fair_fight": 26.86,
-      "bs_estimate": 339322848,
-      "bs_estimate_human": "339m",
-      "bss_public": 36126,
-      "last_updated": 1786653396,
-      "source": "bss",
-      "distribution": null,
-      "spies": [
-        {
-          "strength": 22016882,
-          "speed": 60512875,
-          "defense": 2212210,
-          "dexterity": 10232103,
-          "total": 94974070,
-          "last_updated": 1778029943,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
-      "available_estimates": {
-        "bss": {
-          "bss_public": 36126,
-          "bs_estimate": 339322848,
-          "bs_estimate_human": "339m",
-          "last_updated": 1786653396,
-          "fair_fight": 26.86
-        },
-        "premium": null,
-        "spies": {
-          "bs_estimate": 94974070,
-          "bs_estimate_human": "95m",
-          "last_updated": 1778029943,
-          "source": "tornstats",
-          "fair_fight": 13.28
-        }
-      },
-      "premium_insights_available": false
-    },
-    {
-      "player_id": 3959451,
-      "fair_fight": 23.29,
-      "bs_estimate": 252121896,
-      "bs_estimate_human": "252m",
-      "bss_public": 31140,
-      "last_updated": 1786845438,
+      "player_id": 456428,
+      "fair_fight": 160.22,
+      "bs_estimate": 13582315136,
+      "bs_estimate_human": "13.6b",
+      "bss_public": 228560,
+      "last_updated": 1784916847,
       "source": "bss",
       "distribution": null,
       "spies": [],
       "available_estimates": {
         "bss": {
-          "bss_public": 31140,
-          "bs_estimate": 252121896,
-          "bs_estimate_human": "252m",
-          "last_updated": 1786845438,
-          "fair_fight": 23.29
+          "bss_public": 228560,
+          "bs_estimate": 13582315136,
+          "bs_estimate_human": "13.6b",
+          "last_updated": 1784916847,
+          "fair_fight": 160.22
         },
         "premium": null,
         "spies": null
@@ -3612,82 +280,1905 @@
       "premium_insights_available": false
     },
     {
-      "player_id": 3968781,
-      "fair_fight": 22.91,
-      "bs_estimate": 243564997,
-      "bs_estimate_human": "244m",
-      "bss_public": 30607,
-      "last_updated": 1786653466,
+      "player_id": 563108,
+      "fair_fight": 156.22,
+      "bs_estimate": 12909023226,
+      "bs_estimate_human": "12.9b",
+      "bss_public": 222823,
+      "last_updated": 1787255429,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 222823,
+          "bs_estimate": 12909023226,
+          "bs_estimate_human": "12.9b",
+          "last_updated": 1787255429,
+          "fair_fight": 156.22
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 888758,
+      "fair_fight": 203.17,
+      "bs_estimate": 21898584931,
+      "bs_estimate_human": "21.9b",
+      "bss_public": 290216,
+      "last_updated": 1787405365,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 290216,
+          "bs_estimate": 21898584931,
+          "bs_estimate_human": "21.9b",
+          "last_updated": 1787405365,
+          "fair_fight": 203.17
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": true
+    },
+    {
+      "player_id": 946635,
+      "fair_fight": 62.95,
+      "bs_estimate": 2056082946,
+      "bs_estimate_human": "2.06b",
+      "bss_public": 88927,
+      "last_updated": 1787309976,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 88927,
+          "bs_estimate": 2056082946,
+          "bs_estimate_human": "2.06b",
+          "last_updated": 1787309976,
+          "fair_fight": 62.95
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1047758,
+      "fair_fight": 70.64,
+      "bs_estimate": 2598024376,
+      "bs_estimate_human": "2.6b",
+      "bss_public": 99962,
+      "last_updated": 1787277116,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 99962,
+          "bs_estimate": 2598024376,
+          "bs_estimate_human": "2.6b",
+          "last_updated": 1787277116,
+          "fair_fight": 70.64
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1425669,
+      "fair_fight": 149.38,
+      "bs_estimate": 11795829240,
+      "bs_estimate_human": "11.8b",
+      "bss_public": 212999,
+      "last_updated": 1776458341,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 212999,
+          "bs_estimate": 11795829240,
+          "bs_estimate_human": "11.8b",
+          "last_updated": 1776458341,
+          "fair_fight": 149.38
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1461511,
+      "fair_fight": 174.83,
+      "bs_estimate": 16189216946,
+      "bs_estimate_human": "16.2b",
+      "bss_public": 249532,
+      "last_updated": 1786720462,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 249532,
+          "bs_estimate": 16189216946,
+          "bs_estimate_human": "16.2b",
+          "last_updated": 1786720462,
+          "fair_fight": 174.83
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": true
+    },
+    {
+      "player_id": 1544514,
+      "fair_fight": 168.15,
+      "bs_estimate": 14968637705,
+      "bs_estimate_human": "15b",
+      "bss_public": 239941,
+      "last_updated": 1787421440,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 239941,
+          "bs_estimate": 14968637705,
+          "bs_estimate_human": "15b",
+          "last_updated": 1787421440,
+          "fair_fight": 168.15
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1562480,
+      "fair_fight": 123.04,
+      "bs_estimate": 7979343899,
+      "bs_estimate_human": "7.98b",
+      "bss_public": 175185,
+      "last_updated": 1779564157,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 175185,
+          "bs_estimate": 7979343899,
+          "bs_estimate_human": "7.98b",
+          "last_updated": 1779564157,
+          "fair_fight": 123.04
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1579225,
+      "fair_fight": 219.14,
+      "bs_estimate": 25495219997,
+      "bs_estimate_human": "25.5b",
+      "bss_public": 313143,
+      "last_updated": 1787509325,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 313143,
+          "bs_estimate": 25495219997,
+          "bs_estimate_human": "25.5b",
+          "last_updated": 1787509325,
+          "fair_fight": 219.14
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": true
+    },
+    {
+      "player_id": 1633697,
+      "fair_fight": 118.4,
+      "bs_estimate": 7383912766,
+      "bs_estimate_human": "7.38b",
+      "bss_public": 168522,
+      "last_updated": 1786896800,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 168522,
+          "bs_estimate": 7383912766,
+          "bs_estimate_human": "7.38b",
+          "last_updated": 1786896800,
+          "fair_fight": 118.4
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1713015,
+      "fair_fight": 92.8,
+      "bs_estimate": 4515357363,
+      "bs_estimate_human": "4.52b",
+      "bss_public": 131783,
+      "last_updated": 1786725779,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 131783,
+          "bs_estimate": 4515357363,
+          "bs_estimate_human": "4.52b",
+          "last_updated": 1786725779,
+          "fair_fight": 92.8
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1720439,
+      "fair_fight": 60.44,
+      "bs_estimate": 1892714991,
+      "bs_estimate_human": "1.89b",
+      "bss_public": 85321,
+      "last_updated": 1787253592,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 85321,
+          "bs_estimate": 1892714991,
+          "bs_estimate_human": "1.89b",
+          "last_updated": 1787253592,
+          "fair_fight": 60.44
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1786423,
+      "fair_fight": 99.27,
+      "bs_estimate": 5173826899,
+      "bs_estimate_human": "5.17b",
+      "bss_public": 141065,
+      "last_updated": 1786719690,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 141065,
+          "bs_estimate": 5173826899,
+          "bs_estimate_human": "5.17b",
+          "last_updated": 1786719690,
+          "fair_fight": 99.27
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1834771,
+      "fair_fight": 128.64,
+      "bs_estimate": 8728849996,
+      "bs_estimate_human": "8.73b",
+      "bss_public": 183228,
+      "last_updated": 1787252706,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 183228,
+          "bs_estimate": 8728849996,
+          "bs_estimate_human": "8.73b",
+          "last_updated": 1787252706,
+          "fair_fight": 128.64
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1875996,
+      "fair_fight": 111.94,
+      "bs_estimate": 6594325933,
+      "bs_estimate_human": "6.59b",
+      "bss_public": 159257,
+      "last_updated": 1787543753,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 159257,
+          "bs_estimate": 6594325933,
+          "bs_estimate_human": "6.59b",
+          "last_updated": 1787543753,
+          "fair_fight": 111.94
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1889163,
+      "fair_fight": 103.33,
+      "bs_estimate": 5610698600,
+      "bs_estimate_human": "5.61b",
+      "bss_public": 146900,
+      "last_updated": 1786760650,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 146900,
+          "bs_estimate": 5610698600,
+          "bs_estimate_human": "5.61b",
+          "last_updated": 1786760650,
+          "fair_fight": 103.33
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": true
+    },
+    {
+      "player_id": 1964018,
+      "fair_fight": 120.26,
+      "bs_estimate": 7620098308,
+      "bs_estimate_human": "7.62b",
+      "bss_public": 171196,
+      "last_updated": 1786724987,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 171196,
+          "bs_estimate": 7620098308,
+          "bs_estimate_human": "7.62b",
+          "last_updated": 1786724987,
+          "fair_fight": 120.26
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 1970445,
+      "fair_fight": 106.8,
+      "bs_estimate": 5997479967,
+      "bs_estimate_human": "6b",
+      "bss_public": 151879,
+      "last_updated": 1786760306,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 151879,
+          "bs_estimate": 5997479967,
+          "bs_estimate_human": "6b",
+          "last_updated": 1786760306,
+          "fair_fight": 106.8
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2003812,
+      "fair_fight": 154.41,
+      "bs_estimate": 12608378996,
+      "bs_estimate_human": "12.6b",
+      "bss_public": 220213,
+      "last_updated": 1786728224,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 220213,
+          "bs_estimate": 12608378996,
+          "bs_estimate_human": "12.6b",
+          "last_updated": 1786728224,
+          "fair_fight": 154.41
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2086606,
+      "fair_fight": 105.17,
+      "bs_estimate": 5813941736,
+      "bs_estimate_human": "5.81b",
+      "bss_public": 149537,
+      "last_updated": 1787255313,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 149537,
+          "bs_estimate": 5813941736,
+          "bs_estimate_human": "5.81b",
+          "last_updated": 1787255313,
+          "fair_fight": 105.17
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2137705,
+      "fair_fight": 91.25,
+      "bs_estimate": 4363902118,
+      "bs_estimate_human": "4.36b",
+      "bss_public": 129554,
+      "last_updated": 1786726896,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 129554,
+          "bs_estimate": 4363902118,
+          "bs_estimate_human": "4.36b",
+          "last_updated": 1786726896,
+          "fair_fight": 91.25
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2145637,
+      "fair_fight": 121.1,
+      "bs_estimate": 7728554106,
+      "bs_estimate_human": "7.73b",
+      "bss_public": 172410,
+      "last_updated": 1786131823,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 172410,
+          "bs_estimate": 7728554106,
+          "bs_estimate_human": "7.73b",
+          "last_updated": 1786131823,
+          "fair_fight": 121.1
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2169714,
+      "fair_fight": 103.42,
+      "bs_estimate": 5620098258,
+      "bs_estimate_human": "5.62b",
+      "bss_public": 147023,
+      "last_updated": 1786124809,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 147023,
+          "bs_estimate": 5620098258,
+          "bs_estimate_human": "5.62b",
+          "last_updated": 1786124809,
+          "fair_fight": 103.42
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2220531,
+      "fair_fight": 95.24,
+      "bs_estimate": 4758246730,
+      "bs_estimate_human": "4.76b",
+      "bss_public": 135281,
+      "last_updated": 1786760273,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 135281,
+          "bs_estimate": 4758246730,
+          "bs_estimate_human": "4.76b",
+          "last_updated": 1786760273,
+          "fair_fight": 95.24
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2224763,
+      "fair_fight": 122.46,
+      "bs_estimate": 7903641175,
+      "bs_estimate_human": "7.9b",
+      "bss_public": 174352,
+      "last_updated": 1772295320,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 174352,
+          "bs_estimate": 7903641175,
+          "bs_estimate_human": "7.9b",
+          "last_updated": 1772295320,
+          "fair_fight": 122.46
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2226616,
+      "fair_fight": 95.53,
+      "bs_estimate": 4787202905,
+      "bs_estimate_human": "4.79b",
+      "bss_public": 135692,
+      "last_updated": 1787656956,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 135692,
+          "bs_estimate": 4787202905,
+          "bs_estimate_human": "4.79b",
+          "last_updated": 1787656956,
+          "fair_fight": 95.53
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2271465,
+      "fair_fight": 96.4,
+      "bs_estimate": 4875737745,
+      "bs_estimate_human": "4.88b",
+      "bss_public": 136941,
+      "last_updated": 1786760403,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 136941,
+          "bs_estimate": 4875737745,
+          "bs_estimate_human": "4.88b",
+          "last_updated": 1786760403,
+          "fair_fight": 96.4
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2279653,
+      "fair_fight": 120.87,
+      "bs_estimate": 7698281028,
+      "bs_estimate_human": "7.7b",
+      "bss_public": 172072,
+      "last_updated": 1786878850,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 172072,
+          "bs_estimate": 7698281028,
+          "bs_estimate_human": "7.7b",
+          "last_updated": 1786878850,
+          "fair_fight": 120.87
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2321702,
+      "fair_fight": 101.99,
+      "bs_estimate": 5464841326,
+      "bs_estimate_human": "5.46b",
+      "bss_public": 144978,
+      "last_updated": 1787131094,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 144978,
+          "bs_estimate": 5464841326,
+          "bs_estimate_human": "5.46b",
+          "last_updated": 1787131094,
+          "fair_fight": 101.99
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2330491,
+      "fair_fight": 114.12,
+      "bs_estimate": 6855488744,
+      "bs_estimate_human": "6.86b",
+      "bss_public": 162380,
+      "last_updated": 1787345412,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 162380,
+          "bs_estimate": 6855488744,
+          "bs_estimate_human": "6.86b",
+          "last_updated": 1787345412,
+          "fair_fight": 114.12
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2368827,
+      "fair_fight": 117.56,
+      "bs_estimate": 7279477472,
+      "bs_estimate_human": "7.28b",
+      "bss_public": 167326,
+      "last_updated": 1787254155,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 167326,
+          "bs_estimate": 7279477472,
+          "bs_estimate_human": "7.28b",
+          "last_updated": 1787254155,
+          "fair_fight": 117.56
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2369169,
+      "fair_fight": 84.79,
+      "bs_estimate": 3761742571,
+      "bs_estimate_human": "3.76b",
+      "bss_public": 120284,
+      "last_updated": 1786729766,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 120284,
+          "bs_estimate": 3761742571,
+          "bs_estimate_human": "3.76b",
+          "last_updated": 1786729766,
+          "fair_fight": 84.79
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2375264,
+      "fair_fight": 95.17,
+      "bs_estimate": 4750792963,
+      "bs_estimate_human": "4.75b",
+      "bss_public": 135175,
+      "last_updated": 1787253304,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 135175,
+          "bs_estimate": 4750792963,
+          "bs_estimate_human": "4.75b",
+          "last_updated": 1787253304,
+          "fair_fight": 95.17
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2384248,
+      "fair_fight": 52.15,
+      "bs_estimate": 1401758144,
+      "bs_estimate_human": "1.4b",
+      "bss_public": 73426,
+      "last_updated": 1786721450,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 73426,
+          "bs_estimate": 1401758144,
+          "bs_estimate_human": "1.4b",
+          "last_updated": 1786721450,
+          "fair_fight": 52.15
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2411345,
+      "fair_fight": 142.01,
+      "bs_estimate": 10653939486,
+      "bs_estimate_human": "10.7b",
+      "bss_public": 202427,
+      "last_updated": 1786800691,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 202427,
+          "bs_estimate": 10653939486,
+          "bs_estimate_human": "10.7b",
+          "last_updated": 1786800691,
+          "fair_fight": 142.01
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2418928,
+      "fair_fight": 105.65,
+      "bs_estimate": 5867172584,
+      "bs_estimate_human": "5.87b",
+      "bss_public": 150220,
+      "last_updated": 1786760571,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 150220,
+          "bs_estimate": 5867172584,
+          "bs_estimate_human": "5.87b",
+          "last_updated": 1786760571,
+          "fair_fight": 105.65
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2471938,
+      "fair_fight": 128.28,
+      "bs_estimate": 8679755486,
+      "bs_estimate_human": "8.68b",
+      "bss_public": 182712,
+      "last_updated": 1785596655,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 182712,
+          "bs_estimate": 8679755486,
+          "bs_estimate_human": "8.68b",
+          "last_updated": 1785596655,
+          "fair_fight": 128.28
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2476601,
+      "fair_fight": 61.7,
+      "bs_estimate": 1974278696,
+      "bs_estimate_human": "1.97b",
+      "bss_public": 87140,
+      "last_updated": 1786726310,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 87140,
+          "bs_estimate": 1974278696,
+          "bs_estimate_human": "1.97b",
+          "last_updated": 1786726310,
+          "fair_fight": 61.7
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2480891,
+      "fair_fight": 109.41,
+      "bs_estimate": 6297057488,
+      "bs_estimate_human": "6.3b",
+      "bss_public": 155626,
+      "last_updated": 1784911986,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 155626,
+          "bs_estimate": 6297057488,
+          "bs_estimate_human": "6.3b",
+          "last_updated": 1784911986,
+          "fair_fight": 109.41
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2547386,
+      "fair_fight": 93.58,
+      "bs_estimate": 4591742857,
+      "bs_estimate_human": "4.59b",
+      "bss_public": 132893,
+      "last_updated": 1787253134,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 132893,
+          "bs_estimate": 4591742857,
+          "bs_estimate_human": "4.59b",
+          "last_updated": 1787253134,
+          "fair_fight": 93.58
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2567533,
+      "fair_fight": 39.52,
+      "bs_estimate": 795074644,
+      "bs_estimate_human": "795m",
+      "bss_public": 55299,
+      "last_updated": 1787427661,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 55299,
+          "bs_estimate": 795074644,
+          "bs_estimate_human": "795m",
+          "last_updated": 1787427661,
+          "fair_fight": 39.52
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2571044,
+      "fair_fight": 87.8,
+      "bs_estimate": 4036347226,
+      "bs_estimate_human": "4.04b",
+      "bss_public": 124597,
+      "last_updated": 1786720187,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 124597,
+          "bs_estimate": 4036347226,
+          "bs_estimate_human": "4.04b",
+          "last_updated": 1786720187,
+          "fair_fight": 87.8
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2653490,
+      "fair_fight": 14.85,
+      "bs_estimate": 102724734,
+      "bs_estimate_human": "103m",
+      "bss_public": 19877,
+      "last_updated": 1787296860,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 19877,
+          "bs_estimate": 102724734,
+          "bs_estimate_human": "103m",
+          "last_updated": 1787296860,
+          "fair_fight": 14.85
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2659225,
+      "fair_fight": 88.88,
+      "bs_estimate": 4137659448,
+      "bs_estimate_human": "4.14b",
+      "bss_public": 126151,
+      "last_updated": 1786760535,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 126151,
+          "bs_estimate": 4137659448,
+          "bs_estimate_human": "4.14b",
+          "last_updated": 1786760535,
+          "fair_fight": 88.88
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2672536,
+      "fair_fight": 75.28,
+      "bs_estimate": 2956355139,
+      "bs_estimate_human": "2.96b",
+      "bss_public": 106633,
+      "last_updated": 1787288179,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 106633,
+          "bs_estimate": 2956355139,
+          "bs_estimate_human": "2.96b",
+          "last_updated": 1787288179,
+          "fair_fight": 75.28
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": true
+    },
+    {
+      "player_id": 2726436,
+      "fair_fight": 8.47,
+      "bs_estimate": 29873210,
+      "bs_estimate_human": "29.9m",
+      "bss_public": 10719,
+      "last_updated": 1787296023,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 10719,
+          "bs_estimate": 29873210,
+          "bs_estimate_human": "29.9m",
+          "last_updated": 1787296023,
+          "fair_fight": 8.47
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 2900080,
+      "fair_fight": 29.75,
+      "bs_estimate": 442792434,
+      "bs_estimate_human": "443m",
+      "bss_public": 41268,
+      "last_updated": 1787581406,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 41268,
+          "bs_estimate": 442792434,
+          "bs_estimate_human": "443m",
+          "last_updated": 1787581406,
+          "fair_fight": 29.75
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3050985,
+      "fair_fight": 49.4,
+      "bs_estimate": 1255070046,
+      "bs_estimate_human": "1.26b",
+      "bss_public": 69478,
+      "last_updated": 1786721359,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 69478,
+          "bs_estimate": 1255070046,
+          "bs_estimate_human": "1.26b",
+          "last_updated": 1786721359,
+          "fair_fight": 49.4
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3117673,
+      "fair_fight": 30.13,
+      "bs_estimate": 454499786,
+      "bs_estimate_human": "454m",
+      "bss_public": 41810,
+      "last_updated": 1787292862,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 41810,
+          "bs_estimate": 454499786,
+          "bs_estimate_human": "454m",
+          "last_updated": 1787292862,
+          "fair_fight": 30.13
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3141884,
+      "fair_fight": 52.42,
+      "bs_estimate": 1416650099,
+      "bs_estimate_human": "1.42b",
+      "bss_public": 73815,
+      "last_updated": 1787349760,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 73815,
+          "bs_estimate": 1416650099,
+          "bs_estimate_human": "1.42b",
+          "last_updated": 1787349760,
+          "fair_fight": 52.42
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3172559,
+      "fair_fight": 26.01,
+      "bs_estimate": 335071932,
+      "bs_estimate_human": "335m",
+      "bss_public": 35899,
+      "last_updated": 1787275497,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 35899,
+          "bs_estimate": 335071932,
+          "bs_estimate_human": "335m",
+          "last_updated": 1787275497,
+          "fair_fight": 26.01
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3225838,
+      "fair_fight": 6.12,
+      "bs_estimate": 14042028,
+      "bs_estimate_human": "14m",
+      "bss_public": 7349,
+      "last_updated": 1787552270,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 7349,
+          "bs_estimate": 14042028,
+          "bs_estimate_human": "14m",
+          "last_updated": 1787552270,
+          "fair_fight": 6.12
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3292901,
+      "fair_fight": 11.31,
+      "bs_estimate": 56927314,
+      "bs_estimate_human": "56.9m",
+      "bss_public": 14797,
+      "last_updated": 1787417359,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 14797,
+          "bs_estimate": 56927314,
+          "bs_estimate_human": "56.9m",
+          "last_updated": 1787417359,
+          "fair_fight": 11.31
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3298582,
+      "fair_fight": 9.62,
+      "bs_estimate": 39771530,
+      "bs_estimate_human": "39.8m",
+      "bss_public": 12368,
+      "last_updated": 1787296012,
       "source": "bss",
       "distribution": null,
       "spies": [
         {
-          "strength": 9154432,
-          "speed": 12173647,
-          "defense": 1494717,
-          "dexterity": 13904719,
-          "total": 36727515,
-          "last_updated": 1778029958,
+          "strength": 408661,
+          "speed": 363901,
+          "defense": 418833,
+          "dexterity": 439426,
+          "total": 1630821,
+          "last_updated": 1752039817,
           "source": "tornstats",
           "source_faction_id": 41853
         }
       ],
       "available_estimates": {
         "bss": {
-          "bss_public": 30607,
-          "bs_estimate": 243564997,
-          "bs_estimate_human": "244m",
-          "last_updated": 1786653466,
-          "fair_fight": 22.91
+          "bss_public": 12368,
+          "bs_estimate": 39771530,
+          "bs_estimate_human": "39.8m",
+          "last_updated": 1787296012,
+          "fair_fight": 9.62
         },
         "premium": null,
         "spies": {
-          "bs_estimate": 36727515,
-          "bs_estimate_human": "36.7m",
-          "last_updated": 1778029958,
+          "bs_estimate": 1630821,
+          "bs_estimate_human": "1.63m",
+          "last_updated": 1752039817,
           "source": "tornstats",
-          "fair_fight": 9.21
+          "fair_fight": 2.78
         }
       },
       "premium_insights_available": false
     },
     {
-      "player_id": 4172964,
-      "fair_fight": 2.29,
-      "bs_estimate": 838660,
-      "bs_estimate_human": "839k",
-      "bss_public": 1796,
-      "last_updated": 1786871907,
+      "player_id": 3325819,
+      "fair_fight": 30.01,
+      "bs_estimate": 450876257,
+      "bs_estimate_human": "451m",
+      "bss_public": 41643,
+      "last_updated": 1787585763,
       "source": "bss",
       "distribution": null,
-      "spies": [
-        {
-          "strength": 134447,
-          "speed": 114343,
-          "defense": 15,
-          "dexterity": 15,
-          "total": 248820,
-          "last_updated": 1778030078,
-          "source": "tornstats",
-          "source_faction_id": 41853
-        }
-      ],
+      "spies": [],
       "available_estimates": {
         "bss": {
-          "bss_public": 1796,
-          "bs_estimate": 838660,
-          "bs_estimate_human": "839k",
-          "last_updated": 1786871907,
-          "fair_fight": 2.29
+          "bss_public": 41643,
+          "bs_estimate": 450876257,
+          "bs_estimate_human": "451m",
+          "last_updated": 1787585763,
+          "fair_fight": 30.01
         },
         "premium": null,
-        "spies": {
-          "bs_estimate": 248820,
-          "bs_estimate_human": "249k",
-          "last_updated": 1778030078,
-          "source": "tornstats",
-          "fair_fight": 1.51
-        }
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3380018,
+      "fair_fight": 34.12,
+      "bs_estimate": 587761750,
+      "bs_estimate_human": "588m",
+      "bss_public": 47546,
+      "last_updated": 1787574541,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 47546,
+          "bs_estimate": 587761750,
+          "bs_estimate_human": "588m",
+          "last_updated": 1787574541,
+          "fair_fight": 34.12
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3395132,
+      "fair_fight": 35.94,
+      "bs_estimate": 653958007,
+      "bs_estimate_human": "654m",
+      "bss_public": 50152,
+      "last_updated": 1786740982,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 50152,
+          "bs_estimate": 653958007,
+          "bs_estimate_human": "654m",
+          "last_updated": 1786740982,
+          "fair_fight": 35.94
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3397491,
+      "fair_fight": 18.71,
+      "bs_estimate": 168032302,
+      "bs_estimate_human": "168m",
+      "bss_public": 25422,
+      "last_updated": 1787659060,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 25422,
+          "bs_estimate": 168032302,
+          "bs_estimate_human": "168m",
+          "last_updated": 1787659060,
+          "fair_fight": 18.71
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3431269,
+      "fair_fight": 7.17,
+      "bs_estimate": 20405289,
+      "bs_estimate_human": "20.4m",
+      "bss_public": 8859,
+      "last_updated": 1787620198,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 8859,
+          "bs_estimate": 20405289,
+          "bs_estimate_human": "20.4m",
+          "last_updated": 1787620198,
+          "fair_fight": 7.17
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3444778,
+      "fair_fight": 30.17,
+      "bs_estimate": 455739879,
+      "bs_estimate_human": "456m",
+      "bss_public": 41867,
+      "last_updated": 1787411430,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 41867,
+          "bs_estimate": 455739879,
+          "bs_estimate_human": "456m",
+          "last_updated": 1787411430,
+          "fair_fight": 30.17
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3464983,
+      "fair_fight": 13.18,
+      "bs_estimate": 79524932,
+      "bs_estimate_human": "79.5m",
+      "bss_public": 17489,
+      "last_updated": 1787274390,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 17489,
+          "bs_estimate": 79524932,
+          "bs_estimate_human": "79.5m",
+          "last_updated": 1787274390,
+          "fair_fight": 13.18
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3544678,
+      "fair_fight": 1.59,
+      "bs_estimate": 185208,
+      "bs_estimate_human": "185k",
+      "bss_public": 844,
+      "last_updated": 1787604959,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 844,
+          "bs_estimate": 185208,
+          "bs_estimate_human": "185k",
+          "last_updated": 1787604959,
+          "fair_fight": 1.59
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3570175,
+      "fair_fight": 8.26,
+      "bs_estimate": 28224446,
+      "bs_estimate_human": "28.2m",
+      "bss_public": 10419,
+      "last_updated": 1787582932,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 10419,
+          "bs_estimate": 28224446,
+          "bs_estimate_human": "28.2m",
+          "last_updated": 1787582932,
+          "fair_fight": 8.26
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3587388,
+      "fair_fight": 5.97,
+      "bs_estimate": 13247272,
+      "bs_estimate_human": "13.2m",
+      "bss_public": 7138,
+      "last_updated": 1787344500,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 7138,
+          "bs_estimate": 13247272,
+          "bs_estimate_human": "13.2m",
+          "last_updated": 1787344500,
+          "fair_fight": 5.97
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3605037,
+      "fair_fight": 1.99,
+      "bs_estimate": 519843,
+      "bs_estimate_human": "520k",
+      "bss_public": 1414,
+      "last_updated": 1787525602,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 1414,
+          "bs_estimate": 519843,
+          "bs_estimate_human": "520k",
+          "last_updated": 1787525602,
+          "fair_fight": 1.99
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3629756,
+      "fair_fight": 6.37,
+      "bs_estimate": 15447449,
+      "bs_estimate_human": "15.4m",
+      "bss_public": 7708,
+      "last_updated": 1787268953,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 7708,
+          "bs_estimate": 15447449,
+          "bs_estimate_human": "15.4m",
+          "last_updated": 1787268953,
+          "fair_fight": 6.37
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3673801,
+      "fair_fight": 5.12,
+      "bs_estimate": 9115143,
+      "bs_estimate_human": "9.12m",
+      "bss_public": 5921,
+      "last_updated": 1787578763,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 5921,
+          "bs_estimate": 9115143,
+          "bs_estimate_human": "9.12m",
+          "last_updated": 1787578763,
+          "fair_fight": 5.12
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3695403,
+      "fair_fight": 7.4,
+      "bs_estimate": 21958586,
+      "bs_estimate_human": "22m",
+      "bss_public": 9190,
+      "last_updated": 1787439382,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 9190,
+          "bs_estimate": 21958586,
+          "bs_estimate_human": "22m",
+          "last_updated": 1787439382,
+          "fair_fight": 7.4
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3763747,
+      "fair_fight": 23.27,
+      "bs_estimate": 265691163,
+      "bs_estimate_human": "266m",
+      "bss_public": 31967,
+      "last_updated": 1787310023,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 31967,
+          "bs_estimate": 265691163,
+          "bs_estimate_human": "266m",
+          "last_updated": 1787310023,
+          "fair_fight": 23.27
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3769401,
+      "fair_fight": 3.17,
+      "bs_estimate": 2526079,
+      "bs_estimate_human": "2.53m",
+      "bss_public": 3117,
+      "last_updated": 1787439781,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 3117,
+          "bs_estimate": 2526079,
+          "bs_estimate_human": "2.53m",
+          "last_updated": 1787439781,
+          "fair_fight": 3.17
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3777509,
+      "fair_fight": 3.1,
+      "bs_estimate": 2352497,
+      "bs_estimate_human": "2.35m",
+      "bss_public": 3008,
+      "last_updated": 1787325738,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 3008,
+          "bs_estimate": 2352497,
+          "bs_estimate_human": "2.35m",
+          "last_updated": 1787325738,
+          "fair_fight": 3.1
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3777907,
+      "fair_fight": 2.98,
+      "bs_estimate": 2097056,
+      "bs_estimate_human": "2.1m",
+      "bss_public": 2840,
+      "last_updated": 1787319132,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 2840,
+          "bs_estimate": 2097056,
+          "bs_estimate_human": "2.1m",
+          "last_updated": 1787319132,
+          "fair_fight": 2.98
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3818842,
+      "fair_fight": 3.4,
+      "bs_estimate": 3087478,
+      "bs_estimate_human": "3.09m",
+      "bss_public": 3446,
+      "last_updated": 1787526715,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 3446,
+          "bs_estimate": 3087478,
+          "bs_estimate_human": "3.09m",
+          "last_updated": 1787526715,
+          "fair_fight": 3.4
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3822726,
+      "fair_fight": 2.97,
+      "bs_estimate": 2073494,
+      "bs_estimate_human": "2.07m",
+      "bss_public": 2824,
+      "last_updated": 1787662231,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 2824,
+          "bs_estimate": 2073494,
+          "bs_estimate_human": "2.07m",
+          "last_updated": 1787662231,
+          "fair_fight": 2.97
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3826824,
+      "fair_fight": 4.83,
+      "bs_estimate": 7879307,
+      "bs_estimate_human": "7.88m",
+      "bss_public": 5505,
+      "last_updated": 1786813141,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 5505,
+          "bs_estimate": 7879307,
+          "bs_estimate_human": "7.88m",
+          "last_updated": 1786813141,
+          "fair_fight": 4.83
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3858605,
+      "fair_fight": 3.42,
+      "bs_estimate": 3127026,
+      "bs_estimate_human": "3.13m",
+      "bss_public": 3468,
+      "last_updated": 1787274656,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 3468,
+          "bs_estimate": 3127026,
+          "bs_estimate_human": "3.13m",
+          "last_updated": 1787274656,
+          "fair_fight": 3.42
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3897573,
+      "fair_fight": 2.98,
+      "bs_estimate": 2101489,
+      "bs_estimate_human": "2.1m",
+      "bss_public": 2843,
+      "last_updated": 1787274794,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 2843,
+          "bs_estimate": 2101489,
+          "bs_estimate_human": "2.1m",
+          "last_updated": 1787274794,
+          "fair_fight": 2.98
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 3930996,
+      "fair_fight": 3.48,
+      "bs_estimate": 3296988,
+      "bs_estimate_human": "3.3m",
+      "bss_public": 3561,
+      "last_updated": 1787282721,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 3561,
+          "bs_estimate": 3296988,
+          "bs_estimate_human": "3.3m",
+          "last_updated": 1787282721,
+          "fair_fight": 3.48
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 4019261,
+      "fair_fight": 5.01,
+      "bs_estimate": 8605222,
+      "bs_estimate_human": "8.61m",
+      "bss_public": 5753,
+      "last_updated": 1787282619,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 5753,
+          "bs_estimate": 8605222,
+          "bs_estimate_human": "8.61m",
+          "last_updated": 1787282619,
+          "fair_fight": 5.01
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 4037898,
+      "fair_fight": 4.1,
+      "bs_estimate": 5132465,
+      "bs_estimate_human": "5.13m",
+      "bss_public": 4443,
+      "last_updated": 1787652976,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 4443,
+          "bs_estimate": 5132465,
+          "bs_estimate_human": "5.13m",
+          "last_updated": 1787652976,
+          "fair_fight": 4.1
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 4067673,
+      "fair_fight": 1.88,
+      "bs_estimate": 415401,
+      "bs_estimate_human": "415k",
+      "bss_public": 1264,
+      "last_updated": 1787291207,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 1264,
+          "bs_estimate": 415401,
+          "bs_estimate_human": "415k",
+          "last_updated": 1787291207,
+          "fair_fight": 1.88
+        },
+        "premium": null,
+        "spies": null
+      },
+      "premium_insights_available": false
+    },
+    {
+      "player_id": 4067693,
+      "fair_fight": 1.74,
+      "bs_estimate": 295453,
+      "bs_estimate_human": "295k",
+      "bss_public": 1066,
+      "last_updated": 1785652846,
+      "source": "bss",
+      "distribution": null,
+      "spies": [],
+      "available_estimates": {
+        "bss": {
+          "bss_public": 1066,
+          "bs_estimate": 295453,
+          "bs_estimate_human": "295k",
+          "last_updated": 1785652846,
+          "fair_fight": 1.74
+        },
+        "premium": null,
+        "spies": null
       },
       "premium_insights_available": false
     }
